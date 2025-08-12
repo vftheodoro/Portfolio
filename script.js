@@ -95,40 +95,7 @@ document.querySelectorAll('.stat h3').forEach(counter => {
   counterObserver.observe(counter);
 });
 
-// Validação e envio do formulário
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-  const formInputs = contactForm.querySelectorAll('input, textarea');
-  contactForm.addEventListener('submit', e => {
-    e.preventDefault();
-    let isValid = true;
-    formInputs.forEach(input => {
-      if (!input.value.trim()) {
-        input.style.borderColor = '#ef4444';
-        isValid = false;
-      } else {
-        input.style.borderColor = '#2b3445';
-      }
-    });
 
-    if (isValid) {
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Enviando...';
-      submitBtn.disabled = true;
-      setTimeout(() => {
-        submitBtn.textContent = 'Mensagem Enviada!';
-        submitBtn.style.background = '#10b981';
-        setTimeout(() => {
-          contactForm.reset();
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-          submitBtn.style.background = '';
-        }, 2000);
-      }, 1500);
-    }
-  });
-}
 
 // Efeito de digitação: evitar quebrar HTML do título
 function typeWriter(element, text, speed = 100) {
