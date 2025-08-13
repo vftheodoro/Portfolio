@@ -50,26 +50,7 @@ Portifolio/
 Repositório do projeto citado:
 
 - APP‑WACS: `https://github.com/vftheodoro/APP-WACS`
-
-## 🌐 Deploy no GitHub Pages
-
-1. Crie um repositório no GitHub (ex.: `portifolio`)
-2. Envie os arquivos para a branch `main`
-3. Vá em Settings → Pages
-4. Em “Build and deployment”, escolha:
-   - Source: `Deploy from a branch`
-   - Branch: `main` e `/ (root)`
-5. Salve. Em alguns minutos, seu site ficará disponível em `https://seu-usuario.github.io/portifolio/`
-
-Opcional (Actions automatizado):
-- Você também pode manter em outra branch e publicar a pasta raiz usando a Action `peaceiris/actions-gh-pages`.
-
-## 🔧 Dicas de edição
-
-- Mantenha as imagens otimizadas (use `.jpg` ou `.webp` quando possível)
-- Para novas seções, copie a estrutura de uma seção existente em `index.html`
-- Quer trocar o conjunto de projetos? Edite os “cards” em `#projects`
-
+  
 ## 📄 Licença
 
 Este projeto é distribuído sob a licença MIT. Sinta‑se à vontade para usar e adaptar.
