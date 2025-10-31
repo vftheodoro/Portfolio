@@ -17,13 +17,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
     <header class="site-header" data-elevate>
       <div class="container nav">
-        <a href="#" class="brand" aria-label="Ir ao topo">
+        <a href="#home" class="brand" aria-label="Ir ao topo">
           <img src="assets/imgs/logo_vt.jpg" alt="Logo Victor Theodoro" class="brand__logo" />
           <span class="brand__name">Victor Theodoro</span>
         </a>
@@ -161,7 +162,9 @@
       <section class="section" id="reconhecimentos">
         <div class="container" data-reveal>
           <h2 class="section__title">Reconhecimentos</h2>
-          <div class="projects grid grid--2">
+          <div class="swiper-container recognitions-carousel">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
                 <article class="project" tabindex="0">
                   <div class="project__media">
                     <img src="assets/imgs/cnn.jpg" alt="Victor Theodoro sendo entrevistado pela CNN Brasil durante a FETEPS 2025" loading="lazy" decoding="async" onerror="this.parentElement.classList.add('no-img'); this.parentElement.setAttribute('data-alt', this.alt); this.style.display='none';" />
@@ -171,23 +174,46 @@
                     <p>Entrevista concedida durante a FETEPS 2025 sobre o projeto WACS – Autonomia Inteligente para PCDs, abordando inovação, impacto social e tecnologia.</p>
                     <div class="chips"><span>FETEPS 2025</span><span>WACS</span><span>Inovação</span></div>
                     <div class="project__links">
-                      <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--sm">Ver matéria</a>
+                      <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--sm" style="pointer-events: none; opacity: 0.5;" title="Link indisponível">Ver matéria</a>
                     </div>
                   </div>
                 </article>
-            <article class="project" tabindex="0">
-              <div class="project__media">
-                <img src="assets/imgs/estadao.jpg" alt="Equipe do projeto no estande da FETEPS 2025" loading="lazy" decoding="async" onerror="this.parentElement.classList.add('no-img'); this.parentElement.setAttribute('data-alt', this.alt); this.style.display='none';" />
               </div>
-              <div class="project__body">
-                <h3>📰 Entrevista • Estadão</h3>
-                <p>Reconhecimento do Estadão durante a FETEPS 2025 pela relevância e impacto do WACS na mobilidade inclusiva e acessibilidade.</p>
-                <div class="chips"><span>FETEPS 2025</span><span>WACS</span><span>Impacto Social</span></div>
-                <div class="project__links">
-                  <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--sm">Ver matéria</a>
-                </div>
+              <div class="swiper-slide">
+                <article class="project" tabindex="0">
+                  <div class="project__media">
+                    <img src="assets/imgs/estadao.jpg" alt="Equipe do projeto no estande da FETEPS 2025" loading="lazy" decoding="async" onerror="this.parentElement.classList.add('no-img'); this.parentElement.setAttribute('data-alt', this.alt); this.style.display='none';" />
+                  </div>
+                  <div class="project__body">
+                    <h3>📰 Entrevista • Estadão <span class="badge badge--danger">Em breve</span></h3>
+                    <p>Reconhecimento do Estadão durante a FETEPS 2025 pela relevância e impacto do WACS na mobilidade inclusiva e acessibilidade.</p>
+                    <div class="chips"><span>FETEPS 2025</span><span>WACS</span><span>Impacto Social</span></div>
+                    <div class="project__links">
+                      <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--sm" style="pointer-events: none; opacity: 0.5;" title="Link indisponível">Ver matéria</a>
+                    </div>
+                  </div>
+                </article>
               </div>
-            </article>
+            </div>
+            <div class="swiper-slide">
+                <article class="project" tabindex="0">
+                  <div class="project__media">
+                    <img src="assets/imgs/camera-prefeitura.png" alt="Citação do projeto WACS na Câmara Municipal de Registro" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="project__body">
+                    <h3>🏛️ Citação na Câmara Municipal</h3>
+                    <p>O projeto WACS foi citado pelo vereador Marcelo Comeron na Câmara Municipal de Registro, destacando a relevância e o impacto da solução para a comunidade local.</p>
+                    <div class="chips"><span>WACS</span><span>Câmara de Registro</span><span>Reconhecimento</span></div>
+                    <div class="project__links">
+                      <a href="https://www.instagram.com/reel/DNT5wrASjV4/?igsh=MW5wcjhjZDN4NWwzNw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn--sm">Ver no Instagram</a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
         </div>
       </section>
@@ -378,6 +404,7 @@
       </div>
     </footer>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

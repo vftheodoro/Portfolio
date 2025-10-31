@@ -215,4 +215,28 @@ document.getElementById('year').textContent = new Date().getFullYear();
   }
 })();
 
+// Recognitions Carousel
+(function recognitionsCarousel() {
+  const carousel = document.querySelector('.recognitions-carousel');
+  if (!carousel) return;
+  new Swiper(carousel, {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+    },
+  });
+})();
+
 
