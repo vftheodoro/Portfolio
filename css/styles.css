@@ -23,6 +23,25 @@
   --footer-grad: linear-gradient(180deg, transparent, rgba(0,0,0,0.25));
 }
 
+/* Awards: grid layout inside #premios */
+#premios .timeline {
+  padding-left: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+#premios .timeline::before { display: none; }
+#premios .timeline__item::before { display: none; }
+#premios .timeline__item { height: 100%; }
+#premios .timeline__content { height: 100%; display: flex; flex-direction: column; }
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  #premios .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  #premios .timeline { grid-template-columns: 1fr; }
+}
+
 /* Light theme */
 html[data-theme="light"] {
   --bg: #f7fafc;
@@ -138,13 +157,6 @@ a { color: inherit; text-decoration: none; }
   -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity 0.25s ease;
 }
 .project:hover::before, .project:focus::before { opacity: 1; }
-.project--featured { border: 2px solid var(--primary) !important; box-shadow: 0 0 0 3px rgba(59,130,246,0.2), var(--glow) !important; background: var(--card-bg); }
-.project--featured::before { opacity: 1 !important; background: radial-gradient(120% 120% at 0% 0%, rgba(59,130,246,0.6), rgba(37,99,235,0.25) 40%, transparent 60%) !important; }
-html[data-theme="light"] .project--featured { border-color: rgba(37,99,235,0.4) !important; box-shadow: 0 0 0 3px rgba(37,99,235,0.15), var(--glow) !important; }
-
-/* FETEPS highlight (gold glow) */
-.project--feteps { border-color: var(--gold) !important; box-shadow: 0 0 0 3px rgba(245,158,11,0.25), 0 0 50px rgba(245,158,11,0.35) !important; }
-.project--feteps::before { background: radial-gradient(120% 120% at 0% 0%, rgba(245,158,11,0.55), rgba(217,119,6,0.25) 45%, transparent 65%) !important; }
 .badge {
   display: inline-block;
   padding: 4px 8px;
@@ -165,27 +177,91 @@ html[data-theme="light"] .project--featured { border-color: rgba(37,99,235,0.4) 
   background-color: var(--danger);
   color: #fff;
 }
-@keyframes goldPulse { 0%,100% { box-shadow: 0 0 0 3px rgba(245,158,11,0.18), 0 0 30px rgba(245,158,11,0.28);} 50% { box-shadow: 0 0 0 4px rgba(245,158,11,0.25), 0 0 55px rgba(245,158,11,0.45);} }
-.project--feteps { animation: goldPulse 2.8s ease-in-out infinite; }
-
-/* Featured card polish */
-.project--feteps { border-radius: 18px; overflow: hidden; }
-.project--feteps .project__media { position: relative; border-bottom: 1px solid rgba(148,163,184,0.15); }
-.project--feteps .project__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.25)); pointer-events: none; }
-.project--feteps .project__body { padding: 20px 20px 16px; }
-.project--feteps h3 { margin: 0 0 10px; font-size: clamp(18px, 2.2vw, 22px); letter-spacing: .2px; }
-.project--feteps .lead { margin-bottom: 10px !important; }
-.project--feteps .chips { margin-top: 12px; }
 
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
 #bg-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
 
 /* Timeline */
-.timeline { display: grid; gap: 18px; }
-.timeline__item { padding: 18px; border: 1px solid rgba(148,163,184,0.18); border-radius: 16px; background: var(--panel-bg); transition: transform 0.2s ease, box-shadow 0.2s ease; }
-.timeline__item:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,0,0,0.35); }
-.timeline__meta { color: var(--muted); font-size: 14px; }
+.timeline { 
+  position: relative;
+  display: grid;
+  gap: 24px;
+  padding-left: 24px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, var(--primary), transparent);
+  opacity: 0.5;
+}
+
+.timeline__item {
+  position: relative;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 0 4px rgba(59,130,246,0.25);
+}
+
+.timeline__content {
+  border: 1px solid rgba(148,163,184,0.18);
+  border-radius: 16px;
+  background: var(--card-bg);
+  padding: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden; /* ensure media clips to rounded corners */
+}
+
+.timeline__content:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.timeline__img {
+  display: block;
+  width: calc(100% + 36px); /* bleed over inner padding (18px * 2) */
+  margin: -18px -18px 16px; /* pull image to edges of the card */
+  height: auto;
+  border: 0; /* avoid double border with the card */
+  border-radius: 0; /* radius comes from container via overflow */
+}
+
+.timeline__meta { 
+  color: var(--muted); 
+  font-size: 14px; 
+  margin-top: 12px;
+}
+
+/* Gold highlight for FETEPS item */
+.timeline__content--gold {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(245,158,11,0.18), 0 0 50px rgba(245,158,11,0.35);
+  animation: goldPulse 3s ease-in-out infinite;
+}
+
+@keyframes goldPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 2px rgba(245,158,11,0.16), 0 0 36px rgba(245,158,11,0.28);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(245,158,11,0.28), 0 0 70px rgba(245,158,11,0.5);
+  }
+}
+
 
 /* Projects */
 .projects { gap: 18px; }
@@ -361,6 +437,71 @@ html[data-theme="light"] .cta--gh { border-color: rgba(15,23,42,0.18); }
 
 .swiper-pagination-bullet-active {
   background: var(--primary);
+}
+
+/* Recognitions Carousel - New Styles */
+.recognitions-carousel .swiper-slide {
+  height: auto;
+  padding-bottom: 40px; /* Space for pagination */
+}
+
+.recognitions-carousel .project {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recognitions-carousel .project:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.recognitions-carousel .project__media {
+  aspect-ratio: 16/9;
+  width: 100%;
+  overflow: hidden;
+}
+
+.recognitions-carousel .project__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recognitions-carousel .project__body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.recognitions-carousel .project__body h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.recognitions-carousel .project__links {
+  margin-top: auto; /* Pushes button to the bottom */
+  padding-top: 12px;
+}
+
+/* Placeholder media */
+.media--placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  background: var(--surface);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.media--placeholder span {
+  font-weight: 700;
+  opacity: 0.8;
 }
 
 

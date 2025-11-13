@@ -219,10 +219,30 @@ document.getElementById('year').textContent = new Date().getFullYear();
 (function recognitionsCarousel() {
   const carousel = document.querySelector('.recognitions-carousel');
   if (!carousel) return;
+
   new Swiper(carousel, {
+    // Layout
     slidesPerView: 1,
     spaceBetween: 24,
     loop: true,
+    loopAdditionalSlides: 8,
+    centeredSlides: false,
+
+    // Continuous autoplay (infinite)
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    speed: 4000, // lower = slower transition speed
+
+    // Smooth drag without momentum snapping
+    freeMode: {
+      enabled: true,
+      momentum: false,
+    },
+
+    // Controls
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -231,10 +251,11 @@ document.getElementById('year').textContent = new Date().getFullYear();
       el: '.swiper-pagination',
       clickable: true,
     },
+
+    // Responsivo
     breakpoints: {
-      768: {
-        slidesPerView: 2,
-      },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
     },
   });
 })();
