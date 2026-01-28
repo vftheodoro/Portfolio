@@ -2043,6 +2043,16 @@ section {
     flex-wrap: wrap;
 }
 
+.featured-links .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.featured-links .btn i {
+    font-size: 1.1rem;
+}
+
 /* ==========================================
    PROJECT CAROUSEL
    ========================================== */
