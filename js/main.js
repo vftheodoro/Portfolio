@@ -1,36 +1,4 @@
-// ==========================================
-// INICIALIZAÇÃO DO TEMA
-// ==========================================
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Verificar tema salvo
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-});
-
-// ==========================================
-// GERENCIAMENTO DE TEMA (DARK/LIGHT)
-// ==========================================
-
-const themeToggle = document.getElementById('themeToggle');
-
-themeToggle.addEventListener('click', function() {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-});
-
-function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    const themeToggle = document.getElementById('themeToggle');
-    
-    if (theme === 'dark') {
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    } else {
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    }
-}
 
 // ==========================================
 // MENU MOBILE
@@ -527,6 +495,96 @@ showMoreRecognitionsBtn.addEventListener('click', function() {
         this.querySelector('i').style.transform = 'rotate(180deg)';
     }
 });
+
+// ==========================================
+// SCROLL-BASED ACTIVE NAVIGATION
+// ==========================================
+
+function setupActiveNavigation() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    function updateActiveLink() {
+        const scrollPosition = window.scrollY + 100; // Offset for navbar height
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                // Remove active class from all links
+                navLinks.forEach(link => link.classList.remove('active'));
+
+                // Add active class to current section link
+                const activeLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        });
+    }
+
+    // Update on scroll
+    window.addEventListener('scroll', updateActiveLink);
+
+    // Update on page load
+    updateActiveLink();
+
+    // Update on click for smooth transitions
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Small delay to allow smooth scroll to complete
+            setTimeout(updateActiveLink, 100);
+        });
+    });
+}
+
+setupActiveNavigation();
+
+// ==========================================
+// PROJECT CAROUSEL FUNCTIONALITY
+// ==========================================
+
+let slideIndex = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.dot');
+
+function showSlides(n) {
+    if (n >= slides.length) { slideIndex = 0; }
+    if (n < 0) { slideIndex = slides.length - 1; }
+
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    slides[slideIndex].classList.add('active');
+    dots[slideIndex].classList.add('active');
+}
+
+function nextSlide() {
+    slideIndex++;
+    showSlides(slideIndex);
+}
+
+function prevSlide() {
+    slideIndex--;
+    showSlides(slideIndex);
+}
+
+function currentSlide(n) {
+    slideIndex = n;
+    showSlides(slideIndex);
+}
+
+// Initialize carousel
+if (slides.length > 0) {
+    showSlides(slideIndex);
+
+    // Auto-play carousel
+    setInterval(() => {
+        nextSlide();
+    }, 4000); // Change slide every 4 seconds
+}
 
 // ==========================================
 // LOG DE INICIALIZAÇÃO

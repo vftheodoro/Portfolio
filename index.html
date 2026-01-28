@@ -85,13 +85,11 @@ ias<!DOCTYPE html>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#projetos">Destaque</a></li>
                     <li><a href="#reconhecimentos">Reconhecimentos</a></li>
                     <li><a href="#midia">Mídia</a></li>
                     <li><a href="#contato">Contato</a></li>
-                    <li><button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
-                        <i class="fas fa-moon"></i>
-                    </button></li>
+
                 </ul>
             </div>
         </div>
@@ -270,125 +268,151 @@ ias<!DOCTYPE html>
     <section id="projetos" class="projects">
         <div class="container">
             <div class="section-header animate-slide-in-up">
-                <h2>Projetos Destacados</h2>
+                <h2>Projeto Destaque</h2>
                 <div class="line animate-scale-in animate-delay-1"></div>
+                <p class="section-subtitle animate-slide-in-up animate-delay-2">Sistema revolucionário de tecnologia assistiva premiado nacionalmente</p>
             </div>
 
-            <!-- Project Filters -->
-            <div class="project-filters animate-slide-in-up animate-delay-2">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="frontend">Frontend</button>
-                <button class="filter-btn" data-filter="backend">Backend</button>
-                <button class="filter-btn" data-filter="fullstack">FullStack</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <!-- Featured Project Hero -->
+            <div class="featured-project-hero animate-slide-in-up animate-delay-3">
+                <div class="featured-project-content">
+                    <div class="featured-project-text">
+                        <h3>WACS - Wheelchair Automation Control System</h3>
+                        <p class="featured-description">Sistema inteligente de automação para cadeiras de rodas desenvolvido para promover independência e acessibilidade. Inclui controle por voz, navegação assistida por IA e integração completa com dispositivos IoT para pessoas com deficiência motora.</p>
+                        <div class="featured-tech">
+                            <span>Python</span>
+                            <span>Arduino</span>
+                            <span>IoT</span>
+                            <span>Inteligência Artificial</span>
+                            <span>TensorFlow</span>
+                            <span>Processamento de Voz</span>
+                        </div>
+                        <div class="featured-award">
+                            <div class="award-badge">
+                                <i class="fas fa-medal"></i>
+                                <div class="award-text">
+                                    <h4>🏆 FETEPS Premium Award</h4>
+                                    <p>Selecionado para a categoria premium da maior feira de tecnologia do SENAI-SP</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-links">
+                            <a href="#reconhecimentos" class="btn btn-primary">Ver Todos os Prêmios</a>
+                            <a href="https://feteps.cps.sp.gov.br/projetos/wacs-autonomia-inteligente-para-pcds/" class="btn btn-secondary" target="_blank">Site Oficial FETEPS</a>
+                        </div>
+                    </div>
+                    <div class="featured-project-visual">
+                        <div class="phone-mockup">
+                            <div class="phone-notch">
+                                <div class="phone-camera"></div>
+                                <div class="phone-speaker"></div>
+                            </div>
+                            <div class="phone-screen">
+                                <!-- Image Carousel -->
+                                <div class="project-carousel">
+                                    <div class="carousel-container">
+                                        <div class="carousel-slide active">
+                                            <img src="assets/images/wacs/Tela Inicial.jpeg" alt="Tela Inicial do App WACS" class="carousel-image">
+                                            <div class="carousel-caption">
+                                                <h4>Tela Inicial</h4>
+                                                <p>Interface principal com visão geral do sistema e controles rápidos</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-slide">
+                                            <img src="assets/images/wacs/Tela de Login.jpeg" alt="Tela de Login do App WACS" class="carousel-image">
+                                            <div class="carousel-caption">
+                                                <h4>Autenticação Segura</h4>
+                                                <p>Login seguro com validação de credenciais e recuperação de senha</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-slide">
+                                            <img src="assets/images/wacs/Tela de Controle.jpeg" alt="Tela de Controle do App WACS" class="carousel-image">
+                                            <div class="carousel-caption">
+                                                <h4>Controle em Tempo Real</h4>
+                                                <p>Interface intuitiva para controle remoto de dispositivos IoT</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-slide">
+                                            <img src="assets/images/wacs/Tela de Controle em modo de Segurança.jpeg" alt="Modo de Segurança do App WACS" class="carousel-image">
+                                            <div class="carousel-caption">
+                                                <h4>Modo de Segurança</h4>
+                                                <p>Controles especiais para situações de emergência e segurança</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-slide">
+                                            <img src="assets/images/wacs/Tela da Lista de Locais.jpeg" alt="Lista de Locais do App WACS" class="carousel-image">
+                                            <div class="carousel-caption">
+                                                <h4>Gestão de Locais</h4>
+                                                <p>Organização e gerenciamento de múltiplos locais e dispositivos</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-slide">
+                                            <img src="assets/images/wacs/Tela de Perfil.jpeg" alt="Perfil do Usuário do App WACS" class="carousel-image">
+                                            <div class="carousel-caption">
+                                                <h4>Perfil do Usuário</h4>
+                                                <p>Gerenciamento de conta, configurações e preferências pessoais</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-slide">
+                                            <img src="assets/images/wacs/Tela de Conexao.png" alt="Configuração de Conexão do App WACS" class="carousel-image">
+                                            <div class="carousel-caption">
+                                                <h4>Configuração de Conexão</h4>
+                                                <p>Setup e configuração de dispositivos IoT na rede</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-slide">
+                                            <img src="assets/images/wacs/kit_wacs.png" alt="Kit WACS Completo" class="carousel-image">
+                                            <div class="carousel-caption">
+                                                <h4>Kit WACS Completo</h4>
+                                                <p>Solução IoT integrada com hardware e software para controle inteligente</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-nav">
+                                        <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+                                        <div class="carousel-dots">
+                                            <span class="dot active" onclick="currentSlide(0)"></span>
+                                            <span class="dot" onclick="currentSlide(1)"></span>
+                                            <span class="dot" onclick="currentSlide(2)"></span>
+                                            <span class="dot" onclick="currentSlide(3)"></span>
+                                            <span class="dot" onclick="currentSlide(4)"></span>
+                                            <span class="dot" onclick="currentSlide(5)"></span>
+                                            <span class="dot" onclick="currentSlide(6)"></span>
+                                            <span class="dot" onclick="currentSlide(7)"></span>
+                                        </div>
+                                        <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="phone-home-indicator"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="projects-grid">
-                <div class="project-card animate-slide-in-left animate-delay-3">
-                    <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-                    <div class="project-content">
-                        <h3>E-Commerce Platform</h3>
-                        <p>Plataforma de e-commerce completa com carrinho de compras, integração de pagamento e painel administrativo. Desenvolvido com React e Node.js.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>Stripe</span>
-                            <span>MongoDB</span>
+            <!-- Project Impact Section -->
+            <div class="project-impact animate-slide-in-up animate-delay-4">
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-users"></i>
                         </div>
-                        <div class="project-links">
-                            <a href="#" class="link-btn" target="_blank">Ver Projeto</a>
-                            <a href="#" class="link-btn github" target="_blank">GitHub</a>
-                        </div>
+                        <h4>Impacto Social</h4>
+                        <p>Promovendo independência e qualidade de vida para pessoas com deficiência motora através da tecnologia assistiva.</p>
                     </div>
-                </div>
-
-                <div class="project-card animate-slide-in-right animate-delay-4">
-                    <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
-                    <div class="project-content">
-                        <h3>Task Management App</h3>
-                        <p>Aplicação de gerenciamento de tarefas com autenticação, categorização e relatórios. Interface intuitiva e responsiva para mobile e desktop.</p>
-                        <div class="project-tech">
-                            <span>Vue.js</span>
-                            <span>Firebase</span>
-                            <span>Vuex</span>
-                            <span>CSS Grid</span>
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-brain"></i>
                         </div>
-                        <div class="project-links">
-                            <a href="#" class="link-btn" target="_blank">Ver Projeto</a>
-                            <a href="#" class="link-btn github" target="_blank">GitHub</a>
-                        </div>
+                        <h4>Inovação Tecnológica</h4>
+                        <p>Combinação de IA, IoT e processamento de voz para criar soluções inteligentes e acessíveis.</p>
                     </div>
-                </div>
-
-                <div class="project-card animate-slide-in-left animate-delay-5">
-                    <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-                    <div class="project-content">
-                        <h3>Weather Dashboard</h3>
-                        <p>Dashboard meteorológico em tempo real com previsão de 7 dias, histórico de buscas e integração com API de clima. Totalmente responsivo.</p>
-                        <div class="project-tech">
-                            <span>JavaScript</span>
-                            <span>OpenWeather API</span>
-                            <span>LocalStorage</span>
-                            <span>CSS Animations</span>
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-trophy"></i>
                         </div>
-                        <div class="project-links">
-                            <a href="#" class="link-btn" target="_blank">Ver Projeto</a>
-                            <a href="#" class="link-btn github" target="_blank">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card animate-slide-in-right animate-delay-6">
-                    <div class="project-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
-                    <div class="project-content">
-                        <h3>Blog Platform</h3>
-                        <p>Plataforma de blog com editor de rich text, sistema de categorias, comentários e busca avançada. Otimizado para SEO e performance.</p>
-                        <div class="project-tech">
-                            <span>Express</span>
-                            <span>PostgreSQL</span>
-                            <span>React</span>
-                            <span>JWT</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="link-btn" target="_blank">Ver Projeto</a>
-                            <a href="#" class="link-btn github" target="_blank">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card animate-slide-in-left animate-delay-1">
-                    <div class="project-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
-                    <div class="project-content">
-                        <h3>Social Network</h3>
-                        <p>Rede social com feed em tempo real, sistema de likes/comentários e notificações. Implementado com WebSocket para comunicação real-time.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>WebSocket</span>
-                            <span>Redis</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="link-btn" target="_blank">Ver Projeto</a>
-                            <a href="#" class="link-btn github" target="_blank">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card animate-slide-in-right animate-delay-2">
-                    <div class="project-image" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);"></div>
-                    <div class="project-content">
-                        <h3>Fitness Tracker</h3>
-                        <p>Aplicação de rastreamento de exercícios com gráficos de progresso, planos de treino e integração com wearables. Progressive Web App.</p>
-                        <div class="project-tech">
-                            <span>PWA</span>
-                            <span>Web API</span>
-                            <span>Chart.js</span>
-                            <span>IndexedDB</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="link-btn" target="_blank">Ver Projeto</a>
-                            <a href="#" class="link-btn github" target="_blank">GitHub</a>
-                        </div>
+                        <h4>Reconhecimento Nacional</h4>
+                        <p>Premiado na FETEPS Premium e reconhecido por instituições governamentais e educacionais.</p>
                     </div>
                 </div>
             </div>
