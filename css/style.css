@@ -632,10 +632,13 @@ section {
 
 .projects {
     background: var(--secondary-color);
+    padding: 3rem 0 2rem 0;
 }
 
-/* ==========================================
-   PROJECT FILTERS
+.recognitions {
+    padding: 3rem 0;
+    background: var(--secondary-color);
+}
    ========================================== */
 
 .project-filters {
@@ -2215,7 +2218,7 @@ section {
    ========================================== */
 
 .recognitions {
-    padding: 5rem 0;
+    padding: 3rem 0;
     background: var(--secondary-color);
 }
 
