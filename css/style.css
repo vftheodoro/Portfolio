@@ -1045,20 +1045,45 @@ section {
 /* Cards de Imprensa */
 .media-card-press {
     background: var(--secondary-color);
-    border-radius: 12px;
+    border-radius: var(--radius);
     border: 1px solid rgba(59, 130, 246, 0.2);
     transition: var(--transition);
     overflow: hidden;
+    margin-bottom: var(--spacing-sm);
 }
 
 .media-card-press .media-badge {
-    padding: 0.8rem 1.2rem;
+    padding: 0.6rem 1rem;
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
     border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+    font-size: 0.8rem;
 }
 
 .media-card-press > :not(.media-badge) {
-    padding: 1.2rem;
+    padding: 0.8rem 1rem;
+}
+
+.media-card-press h4 {
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0.3rem 0;
+    line-height: 1.3;
+}
+
+.media-card-press p:not(.badge-subtitle) {
+    font-size: 0.8rem;
+    margin: 0.3rem 0;
+    line-height: 1.4;
+}
+
+.media-card-press .badge-subtitle {
+    font-size: 0.75rem;
+    margin-top: 0.2rem;
+}
+
+.media-card-press a {
+    font-size: 0.85rem;
+    margin-top: 0.8rem;
+    padding: 0.4rem 0;
 }
 
 .media-card-press:hover {
@@ -1138,6 +1163,288 @@ section {
 
 .media-link-press i {
     font-size: 0.8rem;
+}
+
+/* ==========================================
+   SHOW MORE FUNCTIONALITY
+   ========================================== */
+
+.hidden-media,
+.hidden-recognition {
+    display: none;
+}
+
+.show-more-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.show-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+}
+
+.show-more-btn.expanded .btn-text {
+    display: none;
+}
+
+.show-more-btn.expanded .btn-count {
+    display: none;
+}
+
+.show-more-btn.expanded i {
+    transform: rotate(180deg);
+}
+
+.btn-text,
+.btn-count {
+    display: inline-block;
+}
+
+.btn-count {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* ==========================================
+   ADVANCED ANIMATIONS
+   ========================================== */
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes float-slow {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes float-fast {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Pulse Animation */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+    }
+}
+
+/* Scale Animation */
+@keyframes scale-in {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scale-out {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Slide Animations */
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-up {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-down {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Rotate Animation */
+@keyframes rotate-in {
+    0% {
+        transform: rotate(-10deg) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Bounce Animation */
+@keyframes bounce-in {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Stagger Animation Classes */
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-fast {
+    animation: float-fast 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-scale-in {
+    animation: scale-in 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slide-in-left 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out;
+}
+
+.animate-slide-in-up {
+    animation: slide-in-up 0.8s ease-out;
+}
+
+.animate-slide-in-down {
+    animation: slide-in-down 0.8s ease-out;
+}
+
+.animate-rotate-in {
+    animation: rotate-in 0.8s ease-out;
+}
+
+.animate-bounce-in {
+    animation: bounce-in 0.8s ease-out;
+}
+
+/* Stagger Delays */
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+.animate-delay-5 { animation-delay: 0.5s; }
+.animate-delay-6 { animation-delay: 0.6s; }
+
+/* Responsive Animation Adjustments */
+@media (max-width: 768px) {
+    .animate-float,
+    .animate-float-slow,
+    .animate-float-fast {
+        animation-duration: 4s; /* Reduce animation speed on mobile */
+    }
+
+    .animate-pulse-glow {
+        animation-duration: 3s;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-float-slow,
+    .animate-float-fast,
+    .animate-pulse-glow {
+        animation: none;
+    }
+
+    .animate-scale-in,
+    .animate-slide-in-left,
+    .animate-slide-in-right,
+    .animate-slide-in-up,
+    .animate-slide-in-down,
+    .animate-rotate-in,
+    .animate-bounce-in {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
 }
 
 /* ==========================================
@@ -1490,6 +1797,118 @@ section {
 }
 
 /* ==========================================
+   RECONHECIMENTOS
+   ========================================== */
+
+.recognitions {
+    padding: 5rem 0;
+    background: var(--secondary-color);
+}
+
+.recognitions-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.recognitions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.recognition-card {
+    background: var(--primary-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.recognition-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.recognition-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.recognition-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.recognition-card:hover .recognition-image img {
+    transform: scale(1.05);
+}
+
+.recognition-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.recognition-content {
+    padding: 2rem;
+}
+
+.recognition-content h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.recognition-description {
+    color: var(--text-light);
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.recognition-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.recognition-issuer {
+    font-weight: 500;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.recognition-date {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ==========================================
    LIGHT THEME OVERRIDES
    ========================================== */
 
@@ -1517,19 +1936,22 @@ section {
 }
 
 [data-theme="light"] .about,
-[data-theme="light"] .projects {
+[data-theme="light"] .projects,
+[data-theme="light"] .recognitions {
     background: #f8fafc;
 }
 
 [data-theme="light"] .skill-category,
-[data-theme="light"] .media-card {
+[data-theme="light"] .media-card,
+[data-theme="light"] .recognition-card {
     background: #ffffff;
     border-color: #e2e8f0;
 }
 
 [data-theme="light"] .skill-category:hover,
 [data-theme="light"] .media-card:hover,
-[data-theme="light"] .stat:hover {
+[data-theme="light"] .stat:hover,
+[data-theme="light"] .recognition-card:hover {
     border-color: #3b82f6;
     box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
 }
@@ -1543,8 +1965,13 @@ section {
 [data-theme="light"] .media-card p,
 [data-theme="light"] .project-content p,
 [data-theme="light"] .contact-text,
-[data-theme="light"] .footer-content {
+[data-theme="light"] .footer-content,
+[data-theme="light"] .recognition-description {
     color: #475569;
+}
+
+[data-theme="light"] .recognition-content h3 {
+    color: var(--text-dark);
 }
 
 [data-theme="light"] .footer {

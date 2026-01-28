@@ -439,6 +439,96 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ==========================================
+// SHOW MORE FUNCTIONALITY
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize show more buttons
+    const showMoreButtons = document.querySelectorAll('.show-more-btn');
+
+    showMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const column = this.getAttribute('data-column');
+            const hiddenCount = parseInt(this.getAttribute('data-hidden'));
+
+            // Find the column container
+            const columnElement = this.closest('.media-column');
+            const hiddenItems = columnElement.querySelectorAll('.hidden-media');
+
+            // Toggle visibility
+            if (this.classList.contains('expanded')) {
+                // Hide items
+                hiddenItems.forEach(item => {
+                    item.style.display = 'none';
+                });
+                this.classList.remove('expanded');
+                this.querySelector('.btn-text').textContent = 'Ver Mais';
+                this.querySelector('.btn-count').textContent = `(+${hiddenCount})`;
+                this.querySelector('i').style.transform = 'rotate(0deg)';
+            } else {
+                // Show items with animation
+                hiddenItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.display = 'block';
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 50);
+                    }, index * 100);
+                });
+                this.classList.add('expanded');
+                this.querySelector('.btn-text').textContent = 'Ver Menos';
+                this.querySelector('.btn-count').textContent = '';
+                this.querySelector('i').style.transform = 'rotate(180deg)';
+            }
+        });
+    });
+});
+
+// ==========================================
+// VER MAIS RECONHECIMENTOS
+// ==========================================
+
+const showMoreRecognitionsBtn = document.getElementById('showMoreRecognitions');
+
+showMoreRecognitionsBtn.addEventListener('click', function() {
+    const hiddenCount = parseInt(this.getAttribute('data-hidden'));
+    const hiddenRecognitions = document.querySelectorAll('.hidden-recognition');
+
+    if (this.classList.contains('expanded')) {
+        // Hide items
+        hiddenRecognitions.forEach(item => {
+            item.style.display = 'none';
+        });
+        this.classList.remove('expanded');
+        this.querySelector('.btn-text').textContent = 'Ver Mais';
+        this.querySelector('.btn-count').textContent = `(+${hiddenCount})`;
+        this.querySelector('i').style.transform = 'rotate(0deg)';
+    } else {
+        // Show items with animation
+        hiddenRecognitions.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.display = 'block';
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 50);
+            }, index * 100);
+        });
+        this.classList.add('expanded');
+        this.querySelector('.btn-text').textContent = 'Ver Menos';
+        this.querySelector('.btn-count').textContent = '';
+        this.querySelector('i').style.transform = 'rotate(180deg)';
+    }
+});
+
+// ==========================================
 // LOG DE INICIALIZAÇÃO
 // ==========================================
 
