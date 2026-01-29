@@ -1,53 +1,282 @@
+// ==========================================
+// LANGUAGE TOGGLE - SISTEMA COMPLETO V2
+// ==========================================
 
+let currentLanguage = localStorage.getItem('language') || 'pt';
+
+// Traduções embutidas (sem dependência de fetch)
+const translations = {
+    pt: {
+        nav: { home: "Home", about: "Sobre", skills: "Skills", certifications: "Certificações", projects: "Projetos", media: "Mídia", contact: "Contato" },
+        hero: { subtitle: "Desenvolvedor de Software", description: "Especializado em criar soluções web e mobile modernas, escaláveis e focadas em impacto real.", cta1: "Ver Projetos", cta2: "Entrar em Contato", scroll: "Scroll para explorar" },
+        about: { 
+            title: "Sobre Mim",
+            subtitle: "Desenvolvedor apaixonado por criar soluções que transformam vidas",
+            education_title: "Formação & Experiência",
+            education_desc: "Atualmente cursando Técnico em Desenvolvimento de Sistemas na ETEC de Registro (2023-2025). Experiência prática em desenvolvimento fullstack com foco em soluções inovadoras.",
+            project_title: "Projeto WACS",
+            project_desc: "Desenvolvedor fullstack do projeto WACS - Wheelchair Automation Control System. Solução inovadora de tecnologia assistiva que combina hardware IoT, inteligência artificial e interface mobile intuitiva para melhorar a mobilidade de pessoas com deficiência.",
+            stack_title: "Stack Técnico",
+            stack_desc: "Especializado em desenvolvimento web moderno com HTML5, CSS3 e JavaScript. Back-end robusto com Node.js e APIs REST. Experiência em bancos de dados SQL e Firebase, com foco em segurança e escalabilidade.",
+            vision_title: "Objetivos & Visão",
+            vision_desc: "Apaixonado por tecnologia assistiva e inovação social. Objetivo: criar soluções que empoderem pessoas com deficiência através da tecnologia. Compromisso com código limpo, acessibilidade web e impacto social positivo."
+        },
+        skills: { title: "Tecnologias & Skills", frontend: "Front-end", backend: "Back-end", others: "Outros" },
+        certifications: { title: "Certificações & Educação" },
+        recognitions: { 
+            title: "Reconhecimentos", 
+            subtitle: "Prêmios, certificados e conquistas que marcaram minha trajetória profissional.",
+            mocao_title: "Moção de Aplauso - Prefeitura de Registro - SP",
+            mocao_desc: "Honra de receber Moção de Aplauso da Câmara Municipal de Registro pelo 7º lugar na maior feira de tecnologia da América Latina, reconhecendo liderança e inovação no Vale do Ribeira.",
+            mencao_title: "Menção Especial na Câmara Municipal",
+            mencao_desc: "Menção especial do vereador Marcelo Comeron ao projeto WACS na sessão ordinária da Câmara, destacando impacto social e compromisso com acessibilidade."
+        },
+        projects: { 
+            title: "Projetos",
+            subtitle: "Sistema revolucionário de tecnologia assistiva premiado nacionalmente",
+            description: "Sistema inteligente de automação para cadeiras de rodas desenvolvido para promover independência e acessibilidade. Inclui controle por voz, navegação assistida por IA e integração completa com dispositivos IoT para pessoas com deficiência motora.",
+            award: "7º LUGAR - FETEPS (2025)",
+            award_desc: "A maior feira de tecnologia pública da América Latina, reunindo inovações e projetos transformadores do Brasil",
+            visit_website: "Site Oficial",
+            instagram: "@wacs_etec"
+        },
+        media: { 
+            title: "Mídia",
+            subtitle: "Confira as entrevistas, artigos e reconhecimentos que destacam minha trajetória profissional.",
+            interviews: "Entrevistas",
+            press: "Na Imprensa",
+            cnn_title: "Entrevista CNN Brasil",
+            cnn_desc: "Victor Theodoro foi entrevistado pela CNN Brasil, onde apresentou suas habilidades em desenvolvimento fullstack e sua experiência em projetos de tecnologia assistiva. A entrevista destacou sua trajetória como jovem desenvolvedor e sua contribuição para a inovação tecnológica no Brasil.",
+            cnn_btn: "Ver Post",
+            estadao_title: "Entrevista Estadão",
+            estadao_desc: "Victor Theodoro foi destaque em entrevista exclusiva no jornal Estadão, onde compartilhou sua experiência como desenvolvedor fullstack junior e sua participação em projetos inovadores de tecnologia assistiva. A matéria destacou sua trajetória acadêmica e profissional, enfatizando seu compromisso com a inovação social através da tecnologia.",
+            estadao_btn: "Ver Matéria",
+            jornal_title: "Edição Impressa - Jornal Estadão",
+            jornal_desc: "Victor Theodoro foi mencionado na edição impressa do Estadão, o maior jornal do Brasil, destacando sua trajetória como jovem talento em desenvolvimento de software. Esta cobertura impressa alcança milhões de leitores e reforça sua posição como profissional promissor na área de tecnologia.",
+            jornal_btn: "Ver Edição",
+            cps_title: "Victor Theodoro - Destaque em Inovação Tecnológica",
+            cps_desc: "Victor Theodoro foi destacado pelo Centro Paula Souza como um dos jovens talentos em desenvolvimento de software. A matéria apresenta sua trajetória acadêmica na Etec de Registro, destacando suas habilidades em desenvolvimento fullstack e sua participação em projetos inovadores. Esta cobertura institucional reconhece sua dedicação aos estudos e seu potencial como profissional da tecnologia.",
+            cps_btn: "Acessar"
+        },
+        contact: { 
+            title: "Entrar em Contato",
+            subtitle: "Vamos conversar e criar algo incrível juntos",
+            name: "Nome",
+            email: "E-mail",
+            message: "Mensagem",
+            send: "Enviar Mensagem"
+        },
+        footer: { 
+            nav: "Navegação",
+            links: "Links Úteis",
+            hiring: "Está Contratando?",
+            hiring_text: "Estou aberto a novas oportunidades e amaria conversar sobre projetos inovadores.",
+            email: "Envie um Email",
+            privacy: "Política de Privacidade",
+            rights: "Todos os direitos reservados."
+        }
+    },
+    en: {
+        nav: { home: "Home", about: "About", skills: "Skills", certifications: "Certifications", projects: "Projects", media: "Media", contact: "Contact" },
+        hero: { subtitle: "Software Developer", description: "Specialized in creating modern, scalable web and mobile solutions focused on real impact.", cta1: "View Projects", cta2: "Get in Touch", scroll: "Scroll to explore" },
+        about: { 
+            title: "About Me",
+            subtitle: "Passionate developer creating solutions that transform lives",
+            education_title: "Education & Experience",
+            education_desc: "Currently pursuing a Technical Degree in Systems Development at ETEC Registro (2023-2025). Hands-on experience in fullstack development focusing on innovative solutions.",
+            project_title: "WACS Project",
+            project_desc: "Fullstack developer of the WACS project - Wheelchair Automation Control System. An innovative assistive technology solution that combines IoT hardware, artificial intelligence, and intuitive mobile interface to improve mobility for people with disabilities.",
+            stack_title: "Technical Stack",
+            stack_desc: "Specialized in modern web development with HTML5, CSS3, and JavaScript. Robust back-end with Node.js and REST APIs. Experience with SQL databases and Firebase, focusing on security and scalability.",
+            vision_title: "Goals & Vision",
+            vision_desc: "Passionate about assistive technology and social innovation. Goal: create solutions that empower people with disabilities through technology. Commitment to clean code, web accessibility, and positive social impact."
+        },
+        skills: { title: "Technologies & Skills", frontend: "Front-end", backend: "Back-end", others: "Others" },
+        certifications: { title: "Certifications & Education" },
+        recognitions: { 
+            title: "Recognitions", 
+            subtitle: "Awards, certificates and achievements that marked my professional journey.",
+            mocao_title: "Motion of Applause - Registro City Hall - SP",
+            mocao_desc: "Honored to receive a Motion of Applause from the Registro City Council for 7th place in Latin America's largest technology fair, recognizing leadership and innovation in Vale do Ribeira.",
+            mencao_title: "Special Mention at City Council",
+            mencao_desc: "Special mention from councilman Marcelo Comeron to the WACS project at the City Council's ordinary session, highlighting social impact and commitment to accessibility."
+        },
+        projects: { 
+            title: "Projects",
+            subtitle: "Revolutionary assistive technology system awarded nationally",
+            description: "Intelligent automation system for wheelchairs developed to promote independence and accessibility. Includes voice control, AI-assisted navigation and complete integration with IoT devices for people with motor disabilities.",
+            award: "7TH PLACE - FETEPS (2025)",
+            award_desc: "Latin America's largest public technology fair, bringing together innovations and transformative projects from Brazil",
+            visit_website: "Official Website",
+            instagram: "@wacs_etec"
+        },
+        media: { 
+            title: "Media",
+            subtitle: "Check out the interviews, articles and recognitions that highlight my professional journey.",
+            interviews: "Interviews",
+            press: "In the Press",
+            cnn_title: "CNN Brasil Interview",
+            cnn_desc: "Victor Theodoro was interviewed by CNN Brasil, where he presented his fullstack development skills and his experience in assistive technology projects. The interview highlighted his trajectory as a young developer and his contribution to technological innovation in Brazil.",
+            cnn_btn: "View Post",
+            estadao_title: "Estadão Interview",
+            estadao_desc: "Victor Theodoro was featured in an exclusive interview with the Estadão newspaper, where he shared his experience as a junior fullstack developer and his participation in innovative assistive technology projects. The article highlighted his academic and professional trajectory, emphasizing his commitment to social innovation through technology.",
+            estadao_btn: "View Article",
+            jornal_title: "Printed Edition - Estadão Newspaper",
+            jornal_desc: "Victor Theodoro was mentioned in the printed edition of Estadão, Brazil's largest newspaper, highlighting his trajectory as a young talent in software development. This printed coverage reaches millions of readers and reinforces his position as a promising professional in the technology field.",
+            jornal_btn: "View Edition",
+            cps_title: "Victor Theodoro - Highlight in Technological Innovation",
+            cps_desc: "Victor Theodoro was highlighted by Centro Paula Souza as one of the young talents in software development. The article presents his academic trajectory at Etec Registro, highlighting his fullstack development skills and his participation in innovative projects. This institutional coverage recognizes his dedication to studies and his potential as a technology professional.",
+            cps_btn: "Access"
+        },
+        contact: { 
+            title: "Get in Touch",
+            subtitle: "Let's talk and create something amazing together",
+            name: "Name",
+            email: "Email",
+            message: "Message",
+            send: "Send Message"
+        },
+        footer: { 
+            nav: "Navigation",
+            links: "Useful Links",
+            hiring: "Now Hiring?",
+            hiring_text: "I'm open to new opportunities and would love to discuss innovative projects.",
+            email: "Send an Email",
+            privacy: "Privacy Policy",
+            rights: "All rights reserved."
+        }
+    }
+};
+
+function getTranslation(key) {
+    const keys = key.split('.');
+    let value = translations[currentLanguage];
+    for (let k of keys) {
+        value = value[k];
+        if (!value) return null;
+    }
+    return value;
+}
+
+function applyTranslations() {
+    // Traduzir todos elementos com data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const text = getTranslation(key);
+        if (text) {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                el.placeholder = text;
+            } else {
+                el.textContent = text;
+            }
+        }
+    });
+    
+    // Traduzir todos elementos com data-i18n-html
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        const text = getTranslation(key);
+        if (text) el.innerHTML = text;
+    });
+}
+
+function toggleLanguage() {
+    currentLanguage = currentLanguage === 'pt' ? 'en' : 'pt';
+    localStorage.setItem('language', currentLanguage);
+    
+    // Update button
+    const langBtn = document.getElementById('languageToggle');
+    if (langBtn) {
+        const langText = langBtn.querySelector('.lang-text');
+        if (langText) langText.textContent = currentLanguage === 'pt' ? 'PT' : 'EN';
+    }
+    
+    // Apply all translations
+    applyTranslations();
+}
+
+function initializeLanguage() {
+    const languageToggle = document.getElementById('languageToggle');
+    if (languageToggle) {
+        languageToggle.addEventListener('click', toggleLanguage);
+        const langText = languageToggle.querySelector('.lang-text');
+        if (langText) langText.textContent = currentLanguage === 'pt' ? 'PT' : 'EN';
+    }
+    
+    // Apply translations on page load
+    applyTranslations();
+}
+
+// Initialize on DOM ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeLanguage);
+} else {
+    initializeLanguage();
+}
+
+// ==========================================
+// END LANGUAGE TOGGLE
+// ==========================================
+
+
+
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinksEl = document.getElementById('navLinks');
+const navbarEl = document.querySelector('.navbar');
+const heroScrollEl = document.querySelector('.hero-scroll');
+
+function setBodyLoaded() {
+    document.body.classList.remove('is-loading');
+}
+
+window.addEventListener('load', setBodyLoaded);
+
+// ==========================================
+// TEMA
+// ==========================================
+// Tema fixo em dark (sem alternância).
+document.documentElement.setAttribute('data-theme', 'dark');
 
 // ==========================================
 // MENU MOBILE
 // ==========================================
 
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const navLinks = document.getElementById('navLinks');
+function setMobileMenuOpen(isOpen) {
+    if (!navLinksEl) return;
+    navLinksEl.classList.toggle('active', isOpen);
+    if (mobileMenuBtn) {
+        mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+        mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    }
+}
 
-mobileMenuBtn.addEventListener('click', function() {
-    navLinks.classList.toggle('active');
-});
+if (mobileMenuBtn && navLinksEl) {
+    mobileMenuBtn.addEventListener('click', () => {
+        const isOpen = navLinksEl.classList.contains('active');
+        setMobileMenuOpen(!isOpen);
+    });
+}
 
 // Fechar menu ao clicar em um link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', function() {
-        navLinks.classList.remove('active');
-    });
+document.querySelectorAll('.nav-links a').forEach((link) => {
+    link.addEventListener('click', () => setMobileMenuOpen(false));
 });
 
 // ==========================================
 // SCROLL SUAVE E NAVBAR DINÂMICA
 // ==========================================
 
-let lastScrollTop = 0;
-const navbar = document.querySelector('.navbar');
-const heroScroll = document.querySelector('.hero-scroll');
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // Adicionar shadow ao scroll
-    if (scrollTop > 10) {
-        navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
-    } else {
-        navbar.style.boxShadow = 'none';
+    if (navbarEl) {
+        navbarEl.classList.toggle('navbar--scrolled', scrollTop > 10);
     }
-    
+
     // Ocultar scroll para explorar quando usuário começa a rolar
-    if (heroScroll) {
-        if (scrollTop > 50) {
-            heroScroll.style.opacity = '0';
-            heroScroll.style.pointerEvents = 'none';
-        } else {
-            heroScroll.style.opacity = '1';
-            heroScroll.style.pointerEvents = 'auto';
-        }
+    if (heroScrollEl) {
+        heroScrollEl.classList.toggle('is-hidden', scrollTop > 50);
     }
-    
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
 // ==========================================
@@ -62,60 +291,20 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('is-visible');
         }
     });
 }, observerOptions);
 
 // Observar cards e seções
-document.querySelectorAll('.project-card, .media-card, .skill-category, .stat').forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(20px)';
-    element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(element);
-});
-
-// ==========================================
-// CONTADOR ANIMADO
-// ==========================================
-
-function animateCounters() {
-    const stats = document.querySelectorAll('.stat h3');
-    
-    stats.forEach(stat => {
-        const target = parseInt(stat.innerText);
-        if (isNaN(target)) return;
-        
-        const increment = target / 50;
-        let current = 0;
-        
-        const counter = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                stat.innerText = stat.innerText; // Manter o texto original (15+, 2+, etc)
-                clearInterval(counter);
-            } else {
-                stat.innerText = Math.ceil(current) + '+';
-            }
-        }, 30);
+document
+    .querySelectorAll(
+        '.about-paragraph, .skill-category, .certification-card, .recognition-card, .media-card-video, .media-card-press'
+    )
+    .forEach((element) => {
+        element.classList.add('reveal-on-scroll');
+        observer.observe(element);
     });
-}
-
-// Animar contadores quando chegarem à seção
-const aboutSection = document.querySelector('.about');
-let countersAnimated = false;
-
-const aboutObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !countersAnimated) {
-            animateCounters();
-            countersAnimated = true;
-        }
-    });
-}, { threshold: 0.5 });
-
-aboutObserver.observe(aboutSection);
 
 // ==========================================
 // FILTRO DE PROJETOS INTERATIVO
@@ -182,7 +371,9 @@ function setupProjectFilters() {
     });
 }
 
-setupProjectFilters();
+if (document.querySelector('.projects-grid') && document.querySelectorAll('.filter-btn').length) {
+    setupProjectFilters();
+}
 
 // ==========================================
 // LINKS DE CONTATO INTERATIVOS
@@ -222,76 +413,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // EFEITO DE PARALLAX SUAVE (HERO)
 // ==========================================
 
-const hero = document.querySelector('.hero');
-
-window.addEventListener('scroll', function() {
-    const scrollPosition = window.pageYOffset;
-    
-    if (scrollPosition < hero.offsetHeight) {
-        hero.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
-    }
-});
-
-// ==========================================
-// LOADING ANIMATION
-// ==========================================
-
-window.addEventListener('load', function() {
-    // Animação de entrada suave
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease-in';
-        document.body.style.opacity = '1';
-    }, 100);
-});
-
-// ==========================================
-// COPIAR EMAIL PARA CLIPBOARD
-// ==========================================
-
-function setupEmailCopy() {
-    const emailLink = document.querySelector('a[href^="mailto:"]');
-    if (emailLink) {
-        emailLink.addEventListener('click', function(e) {
-            const email = this.href.replace('mailto:', '');
-            // Deixar o navegador abrir o cliente de email, mas podemos adicionar feedback visual
-            console.log('Email: ' + email);
-        });
-    }
-}
-
-setupEmailCopy();
-
-// ==========================================
-// VALIDAÇÃO BÁSICA DE FORMULÁRIO (SE EXISTIR)
-// ==========================================
-
-function setupFormValidation() {
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Aqui você pode adicionar lógica de validação
-            console.log('Formulário submetido');
-            
-            // Feedback visual
-            const btn = form.querySelector('button[type="submit"]');
-            const originalText = btn.innerText;
-            btn.innerText = '';
-            btn.innerHTML = '<i class="fas fa-check"></i> Enviado!';
-            btn.style.background = '#22c55e';
-            
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.style.background = '';
-                form.reset();
-            }, 2000);
-        });
-    });
-}
-
-setupFormValidation();
+// (Parallax removido: era custo extra e não agregava visualmente)
 
 // ==========================================
 // FUNÇÃO PARA ADICIONAR PROJETOS DINAMICAMENTE
@@ -372,51 +494,7 @@ function addMediaItem(source, date, title, description, linkText, linkUrl) {
 //     'https://github.com/seu-usuario/seu-projeto'
 // );
 
-// ==========================================
-// EFEITO DE DIGITAÇÃO NO HERO
-// ==========================================
-
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        } else {
-            // Adiciona cursor piscando após completar
-            element.innerHTML += '<span class="cursor">|</span>';
-            setInterval(() => {
-                const cursor = element.querySelector('.cursor');
-                if (cursor) {
-                    cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
-                }
-            }, 500);
-        }
-    }
-
-    type();
-}
-
-// ==========================================
-// INICIALIZAR EFEITO DE DIGITAÇÃO
-// ==========================================
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Verificar tema salvo
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-
-    // Iniciar efeito de digitação após um pequeno delay
-    setTimeout(() => {
-        const subtitleElement = document.querySelector('.hero-subtitle');
-        if (subtitleElement) {
-            typeWriter(subtitleElement, 'Desenvolvedor FullStack Junior', 150);
-        }
-    }, 1000);
-});
+// (Typewriter removido: visualmente menos “corporate” e gerava pisca)
 
 // ==========================================
 // SHOW MORE FUNCTIONALITY
@@ -424,7 +502,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize show more buttons
-    const showMoreButtons = document.querySelectorAll('.show-more-btn');
+    const showMoreButtons = document.querySelectorAll('.show-more-btn[data-column]');
 
     showMoreButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -433,6 +511,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Find the column container
             const columnElement = this.closest('.media-column');
+            if (!columnElement) return;
             const hiddenItems = columnElement.querySelectorAll('.hidden-media');
 
             // Toggle visibility
@@ -474,39 +553,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const showMoreRecognitionsBtn = document.getElementById('showMoreRecognitions');
 
-showMoreRecognitionsBtn.addEventListener('click', function() {
-    const hiddenCount = parseInt(this.getAttribute('data-hidden'));
-    const hiddenRecognitions = document.querySelectorAll('.hidden-recognition');
+if (showMoreRecognitionsBtn) {
+    showMoreRecognitionsBtn.addEventListener('click', function() {
+        const hiddenCount = parseInt(this.getAttribute('data-hidden'), 10);
+        const hiddenRecognitions = document.querySelectorAll('.hidden-recognition');
 
-    if (this.classList.contains('expanded')) {
-        // Hide items
-        hiddenRecognitions.forEach(item => {
-            item.style.display = 'none';
-        });
-        this.classList.remove('expanded');
-        this.querySelector('.btn-text').textContent = 'Ver Mais';
-        this.querySelector('.btn-count').textContent = `(+${hiddenCount})`;
-        this.querySelector('i').style.transform = 'rotate(0deg)';
-    } else {
-        // Show items with animation
-        hiddenRecognitions.forEach((item, index) => {
-            setTimeout(() => {
-                item.style.display = 'block';
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
+        if (this.classList.contains('expanded')) {
+            // Hide items
+            hiddenRecognitions.forEach(item => {
+                item.style.display = 'none';
+            });
+            this.classList.remove('expanded');
+            this.querySelector('.btn-text').textContent = 'Ver Mais';
+            this.querySelector('.btn-count').textContent = `(+${hiddenCount})`;
+            this.querySelector('i').style.transform = 'rotate(0deg)';
+        } else {
+            // Show items with animation
+            hiddenRecognitions.forEach((item, index) => {
                 setTimeout(() => {
-                    item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                }, 50);
-            }, index * 100);
-        });
-        this.classList.add('expanded');
-        this.querySelector('.btn-text').textContent = 'Ver Menos';
-        this.querySelector('.btn-count').textContent = '';
-        this.querySelector('i').style.transform = 'rotate(180deg)';
-    }
-});
+                    item.style.display = 'block';
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                }, index * 100);
+            });
+            this.classList.add('expanded');
+            this.querySelector('.btn-text').textContent = 'Ver Menos';
+            this.querySelector('.btn-count').textContent = '';
+            this.querySelector('i').style.transform = 'rotate(180deg)';
+        }
+    });
+}
 
 // ==========================================
 // SCROLL-BASED ACTIVE NAVIGATION
@@ -514,7 +595,7 @@ showMoreRecognitionsBtn.addEventListener('click', function() {
 
 function setupActiveNavigation() {
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navAnchorLinks = document.querySelectorAll('.nav-links a');
 
     function updateActiveLink() {
         const scrollPosition = window.scrollY + 100; // Offset for navbar height
@@ -526,7 +607,7 @@ function setupActiveNavigation() {
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 // Remove active class from all links
-                navLinks.forEach(link => link.classList.remove('active'));
+                navAnchorLinks.forEach(link => link.classList.remove('active'));
 
                 // Add active class to current section link
                 const activeLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
@@ -544,7 +625,7 @@ function setupActiveNavigation() {
     updateActiveLink();
 
     // Update on click for smooth transitions
-    navLinks.forEach(link => {
+    navAnchorLinks.forEach(link => {
         link.addEventListener('click', function() {
             // Small delay to allow smooth scroll to complete
             setTimeout(updateActiveLink, 100);
@@ -588,6 +669,11 @@ function currentSlide(n) {
     showSlides(slideIndex);
 }
 
+// Expor no window para funcionar com onclick do HTML
+window.nextSlide = nextSlide;
+window.prevSlide = prevSlide;
+window.currentSlide = currentSlide;
+
 // Initialize carousel
 if (slides.length > 0) {
     showSlides(slideIndex);
@@ -606,70 +692,113 @@ console.log('%cPortfólio Victor Theodoro carregado com sucesso! 🚀', 'color: 
 console.log('%cProto: Use as funções addProject() e addMediaItem() para adicionar conteúdo dinamicamente', 'color: #8b5cf6; font-size: 12px;');
 
 // ==========================================
-// EMAIL JS - FORMULÁRIO DE CONTATO
+// FORMULÁRIO DE CONTATO (mailto)
 // ==========================================
 
-// Inicializar EmailJS
-emailjs.init('SUA_PUBLIC_KEY_AQUI'); // Você vai trocar isso depois
-
-// Configuração do formulário
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         const submitBtn = document.getElementById('submitBtn');
         const btnText = document.getElementById('btnText');
-        const btnIcon = document.getElementById('btnIcon');
         const formMessage = document.getElementById('formMessage');
-        
-        // Desabilitar botão durante envio
-        submitBtn.disabled = true;
-        btnText.textContent = 'Enviando...';
-        
-        // Preparar dados do formulário
-        const templateParams = {
-            to_email: 'victorgft@outlook.com',
-            from_name: document.getElementById('name').value,
-            from_email: document.getElementById('email').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
-        
-        // Enviar email
-        emailjs.send('SUA_SERVICE_ID_AQUI', 'SUA_TEMPLATE_ID_AQUI', templateParams)
-            .then(function(response) {
-                // Sucesso
-                formMessage.className = 'form-message success';
-                formMessage.textContent = '✓ Mensagem enviada com sucesso!';
-                
-                // Limpar formulário
-                contactForm.reset();
-                
-                // Reset botão após 3 segundos
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                    btnText.textContent = 'Enviar Mensagem';
-                }, 3000);
-                
-                // Remover mensagem após 5 segundos
-                setTimeout(() => {
-                    formMessage.textContent = '';
-                    formMessage.className = '';
-                }, 5000);
-            })
-            .catch(function(error) {
-                // Erro
-                formMessage.className = 'form-message error';
-                formMessage.textContent = '✗ Erro ao enviar. Tente novamente ou use outro contato.';
-                
-                // Reset botão
-                submitBtn.disabled = false;
-                btnText.textContent = 'Enviar Mensagem';
-                
-                console.error('Erro no EmailJS:', error);
-            });
+
+        const name = document.getElementById('name')?.value?.trim() || '';
+        const email = document.getElementById('email')?.value?.trim() || '';
+        const subject = document.getElementById('subject')?.value?.trim() || '';
+        const message = document.getElementById('message')?.value?.trim() || '';
+
+        if (!name || !email || !subject || !message) {
+            if (formMessage) {
+                formMessage.className = 'form-message error is-visible';
+                formMessage.textContent = 'Por favor, preencha todos os campos.';
+            }
+            return;
+        }
+
+        if (submitBtn) submitBtn.disabled = true;
+        if (btnText) btnText.textContent = 'Abrindo email...';
+
+        const to = 'victorgft@outlook.com';
+        const mailSubject = `[Portfólio] ${subject}`;
+        const mailBody =
+            `Nome: ${name}\n` +
+            `Email: ${email}\n\n` +
+            `${message}\n\n` +
+            `Enviado via portfólio.`;
+
+        const mailto = `mailto:${to}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+
+        if (formMessage) {
+            formMessage.className = 'form-message success is-visible';
+            formMessage.textContent = 'Abrindo seu aplicativo de email...';
+        }
+
+        // Disparar o cliente de email do usuário
+        window.location.href = mailto;
+
+        setTimeout(() => {
+            if (submitBtn) submitBtn.disabled = false;
+            if (btnText) btnText.textContent = 'Enviar Mensagem';
+        }, 1200);
+    });
+}
+
+// ==========================================
+// SCROLL SPY - Highlight current section
+// ==========================================
+
+function updateActiveNavLink() {
+    const sections = [
+        { id: 'home', name: 'home' },
+        { id: 'sobre', name: 'sobre' },
+        { id: 'skills', name: 'skills' },
+        { id: 'certificacoes', name: 'certificacoes' },
+        { id: 'projetos', name: 'projetos' },
+        { id: 'midia', name: 'midia' },
+        { id: 'contato', name: 'contato' }
+    ];
+
+    const scrollPosition = window.pageYOffset + 200;
+
+    sections.forEach(section => {
+        const element = document.getElementById(section.id);
+        if (!element) return;
+
+        const { offsetTop, offsetHeight } = element;
+        const isInView = scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight;
+
+        const navLink = document.querySelector(`.nav-link[href="#${section.id}"]`);
+        if (navLink) {
+            navLink.classList.toggle('active', isInView);
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveNavLink);
+window.addEventListener('load', updateActiveNavLink);
+
+// ==========================================
+// BACK TO TOP BUTTON
+// ==========================================
+
+const backToTopBtn = document.getElementById('backToTop');
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.style.opacity = '1';
+            backToTopBtn.style.pointerEvents = 'auto';
+        } else {
+            backToTopBtn.style.opacity = '0';
+            backToTopBtn.style.pointerEvents = 'none';
+        }
+    });
+
+    backToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 

@@ -1,5 +1,5 @@
-ias<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,17 +20,26 @@ ias<!DOCTYPE html>
     <link rel="canonical" href="https://victortheodoro.dev">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://kit.fontawesome.com https://ka-f.fontawesome.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://ka-f.fontawesome.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://ka-f.fontawesome.com; frame-src 'self' https://www.youtube.com;">
+    
     <title>Victor Theodoro - Desenvolvedor FullStack Junior | Portfólio Profissional</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/improvements.css">
 
     <!-- Google Analytics -->
+    <!-- IMPORTANTE: Substitua 'GA_MEASUREMENT_ID' pelo seu ID real do Google Analytics (formato: G-XXXXXXXXXX) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
+        gtag('config', 'GA_MEASUREMENT_ID'); // Substitua aqui também
     </script>
 
     <!-- Structured Data -->
@@ -70,29 +79,43 @@ ias<!DOCTYPE html>
     }
     </script>
 </head>
-<body>
+<body class="is-loading">
+    <a class="skip-link" href="#home">Pular para o conteúdo</a>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="navbar-content">
-                <a href="#home" class="logo">
-                    <span class="logo-letter">V</span>
-                    <span class="logo-letter">T</span>
+                <a href="#home" class="logo" aria-label="Ir para o início">
+                    <span class="logo-mark" aria-hidden="true">
+                        <span class="logo-letter">V</span>
+                        <span class="logo-letter">T</span>
+                    </span>
                 </a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
+
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#sobre" class="nav-link" data-i18n="nav.about">Sobre</a></li>
+                    <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+                    <li><a href="#certificacoes" class="nav-link" data-i18n="nav.certifications">Certificações</a></li>
+                    <li><a href="#projetos" class="nav-link" data-i18n="nav.projects">Projetos</a></li>
+                    <li><a href="#midia" class="nav-link" data-i18n="nav.media">Mídia</a></li>
+                </ul>
+
+                <button class="language-toggle" id="languageToggle" aria-label="Alternar idioma" title="PT | EN">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-text">PT</span>
+                </button>
+
+                <a class="btn btn-primary btn-sm navbar-cta" href="#contato">
+                    <span data-i18n="nav.contact">Contato</span>
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                </a>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Abrir menu" aria-controls="navLinks" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#certificacoes">Certificações</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#midia">Mídia</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
             </div>
         </div>
     </nav>
@@ -112,18 +135,18 @@ ias<!DOCTYPE html>
                         <span class="word">Theodoro</span>
                     </h1>
                     <div class="hero-divider animate-scale-in animate-delay-1"></div>
-                    <p class="hero-role animate-slide-in-left animate-delay-2">Desenvolvedor de Software</p>
-                    <p class="hero-description animate-slide-in-right animate-delay-3">
+                    <p class="hero-role animate-slide-in-left animate-delay-2" data-i18n="hero.subtitle">Desenvolvedor de Software</p>
+                    <p class="hero-description animate-slide-in-right animate-delay-3" data-i18n="hero.description">
                         Especializado em criar soluções web e mobile modernas, escaláveis e focadas em impacto real.
                     </p>
 
                     <div class="hero-cta animate-scale-in animate-delay-5">
                         <a href="#projetos" class="btn btn-primary">
-                            <span>Ver Projetos</span>
+                            <span data-i18n="hero.cta1">Ver Projetos</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="#contato" class="btn btn-secondary">
-                            <span>Entrar em Contato</span>
+                            <span data-i18n="hero.cta2">Entrar em Contato</span>
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
@@ -131,7 +154,7 @@ ias<!DOCTYPE html>
             </div>
 
             <div class="hero-scroll animate-float-slow">
-                <span>Scroll para explorar</span>
+                <span data-i18n="hero.scroll">Scroll para explorar</span>
                 <div class="scroll-icon">
                     <i class="fas fa-chevron-down"></i>
                 </div>
@@ -143,9 +166,9 @@ ias<!DOCTYPE html>
     <section id="sobre" class="about">
         <div class="container">
             <div class="section-header animate-slide-in-up">
-                <h2>Sobre Mim</h2>
+                <h2 data-i18n="about.title">Sobre Mim</h2>
                 <div class="line animate-scale-in animate-delay-1"></div>
-                <p class="section-subtitle animate-slide-in-up animate-delay-2">Desenvolvedor apaixonado por criar soluções que transformam vidas</p>
+                <p class="section-subtitle animate-slide-in-up animate-delay-2" data-i18n="about.subtitle">Desenvolvedor apaixonado por criar soluções que transformam vidas</p>
             </div>
             <div class="about-content animate-slide-in-up animate-delay-3">
                 <div class="about-text">
@@ -154,9 +177,9 @@ ias<!DOCTYPE html>
                             <i class="fas fa-graduation-cap"></i>
                         </div>
                         <div class="paragraph-content">
-                            <h3>Formação & Experiência</h3>
-                            <p>
-                                Sou Desenvolvedor de Software formado em Desenvolvimento de Sistemas pela ETEC, com experiência prática em criação de aplicações web e mobile, integração com bancos de dados e desenvolvimento de soluções focadas em impacto real.
+                            <h3 data-i18n="about.education_title">Formação & Experiência</h3>
+                            <p data-i18n="about.education_desc">
+                                Atualmente cursando Técnico em Desenvolvimento de Sistemas na ETEC de Registro (2023-2025). Experiência prática em desenvolvimento fullstack com foco em soluções inovadoras.
                             </p>
                         </div>
                     </div>
@@ -166,9 +189,9 @@ ias<!DOCTYPE html>
                             <i class="fas fa-wheelchair"></i>
                         </div>
                         <div class="paragraph-content">
-                            <h3>Projeto WACS</h3>
-                            <p>
-                                Participei do desenvolvimento do WACS (Wheelchair Automation Control System), uma cadeira de rodas automatizada controlada por aplicativo. Esse projeto consolidou minha visão sobre como a tecnologia pode transformar vidas e gerar impacto social real.
+                            <h3 data-i18n="about.project_title">Projeto WACS</h3>
+                            <p data-i18n="about.project_desc">
+                                Desenvolvedor fullstack do projeto WACS - Wheelchair Automation Control System. Solução inovadora de tecnologia assistiva que combina hardware IoT, inteligência artificial e interface mobile intuitiva para melhorar a mobilidade de pessoas com deficiência.
                             </p>
                         </div>
                     </div>
@@ -178,9 +201,9 @@ ias<!DOCTYPE html>
                             <i class="fas fa-code"></i>
                         </div>
                         <div class="paragraph-content">
-                            <h3>Stack Técnico</h3>
-                            <p>
-                                JavaScript, TypeScript, React Native, HTML, CSS, SQL, Firebase, Git/GitHub e Python. Sou versátil, atuando tanto no front-end quanto no back-end, com facilidade para aprender novas tecnologias e me adaptar a diferentes desafios.
+                            <h3 data-i18n="about.stack_title">Stack Técnico</h3>
+                            <p data-i18n="about.stack_desc">
+                                Especializado em desenvolvimento web moderno com HTML5, CSS3 e JavaScript. Back-end robusto com Node.js e APIs REST. Experiência em bancos de dados SQL e Firebase, com foco em segurança e escalabilidade.
                             </p>
                         </div>
                     </div>
@@ -190,9 +213,9 @@ ias<!DOCTYPE html>
                             <i class="fas fa-rocket"></i>
                         </div>
                         <div class="paragraph-content">
-                            <h3>Objetivos & Visão</h3>
-                            <p>
-                                Busco constantemente evoluir como desenvolvedor, criando soluções eficientes, escaláveis e bem estruturadas. Meu objetivo é atuar em projetos inovadores e gerar impacto positivo por meio da tecnologia.
+                            <h3 data-i18n="about.vision_title">Objetivos & Visão</h3>
+                            <p data-i18n="about.vision_desc">
+                                Apaixonado por tecnologia assistiva e inovação social. Objetivo: criar soluções que empoderem pessoas com deficiência através da tecnologia. Compromisso com código limpo, acessibilidade web e impacto social positivo.
                             </p>
                         </div>
                     </div>
@@ -205,14 +228,14 @@ ias<!DOCTYPE html>
     <section id="skills" class="skills">
         <div class="container">
             <div class="section-header animate-slide-in-up">
-                <h2>Tecnologias & Skills</h2>
+                <h2 data-i18n="skills.title">Tecnologias & Skills</h2>
                 <div class="line animate-scale-in animate-delay-1"></div>
             </div>
             <div class="skills-grid">
                 <div class="skill-category animate-slide-in-left animate-delay-2">
                     <div class="skill-header">
                         <i class="fas fa-laptop-code"></i>
-                        <h3>💻 Front-end</h3>
+                        <h3 data-i18n="skills.frontend">Front-end</h3>
                     </div>
                     <p class="skill-category-label">Tecnologias</p>
                     <div class="skill-list">
@@ -228,7 +251,7 @@ ias<!DOCTYPE html>
                 <div class="skill-category animate-slide-in-up animate-delay-3">
                     <div class="skill-header">
                         <i class="fas fa-cogs"></i>
-                        <h3>⚙️ Back-end</h3>
+                        <h3 data-i18n="skills.backend">Back-end</h3>
                     </div>
                     <p class="skill-category-label">Tecnologias</p>
                     <div class="skill-list">
@@ -244,7 +267,7 @@ ias<!DOCTYPE html>
                 <div class="skill-category animate-slide-in-right animate-delay-4">
                     <div class="skill-header">
                         <i class="fas fa-tools"></i>
-                        <h3>🛠️ Outros</h3>
+                        <h3 data-i18n="skills.others">🛠️ Outros</h3>
                     </div>
                     <p class="skill-category-label">Tecnologias</p>
                     <div class="skill-list">
@@ -266,7 +289,7 @@ ias<!DOCTYPE html>
     <section id="certificacoes" class="certifications">
         <div class="container">
             <div class="section-header">
-                <h2>Certificações</h2>
+                <h2 data-i18n="certifications.title">Certificações</h2>
                 <div class="line"></div>
             </div>
             <div class="certifications-grid">
@@ -337,9 +360,9 @@ ias<!DOCTYPE html>
     <section id="projetos" class="projects">
         <div class="container">
             <div class="section-header animate-slide-in-up">
-                <h2>Projeto Destaque</h2>
+                <h2 data-i18n="projects.title">Projeto Destaque</h2>
                 <div class="line animate-scale-in animate-delay-1"></div>
-                <p class="section-subtitle animate-slide-in-up animate-delay-2">Sistema revolucionário de tecnologia assistiva premiado nacionalmente</p>
+                <p class="section-subtitle animate-slide-in-up animate-delay-2" data-i18n="projects.subtitle">Sistema revolucionário de tecnologia assistiva premiado nacionalmente</p>
             </div>
 
             <!-- Featured Project Hero -->
@@ -347,7 +370,7 @@ ias<!DOCTYPE html>
                 <div class="featured-project-content">
                     <div class="featured-project-text">
                         <h3>WACS - Wheelchair Automation Control System</h3>
-                        <p class="featured-description">Sistema inteligente de automação para cadeiras de rodas desenvolvido para promover independência e acessibilidade. Inclui controle por voz, navegação assistida por IA e integração completa com dispositivos IoT para pessoas com deficiência motora.</p>
+                        <p class="featured-description" data-i18n="projects.description">Sistema inteligente de automação para cadeiras de rodas desenvolvido para promover independência e acessibilidade. Inclui controle por voz, navegação assistida por IA e integração completa com dispositivos IoT para pessoas com deficiência motora.</p>
                         <div class="featured-tech">
                             <span>Python</span>
                             <span>Arduino</span>
@@ -362,19 +385,19 @@ ias<!DOCTYPE html>
                             <div class="award-badge">
                                 <i class="fas fa-medal"></i>
                                 <div class="award-text">
-                                    <h4>🏆 7º LUGAR - FETEPS (2025)</h4>
-                                    <p>A maior feira de tecnologia pública da América Latina, reunindo inovações e projetos transformadores do Brasil</p>
+                                    <h4 data-i18n="projects.award">7º LUGAR - FETEPS (2025)</h4>
+                                    <p data-i18n="projects.award_desc">A maior feira de tecnologia pública da América Latina, reunindo inovações e projetos transformadores do Brasil</p>
                                 </div>
                             </div>
                         </div>
                         <div class="featured-links">
-                            <a href="https://www.appwacs.com.br" class="btn btn-primary" target="_blank">
+                            <a href="https://www.appwacs.com.br" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-globe"></i>
-                                Site Oficial
+                                <span data-i18n="projects.visit_website">Site Oficial</span>
                             </a>
-                            <a href="https://instagram.com/wacs_etec" class="btn btn-secondary" target="_blank">
+                            <a href="https://instagram.com/wacs_etec" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-instagram"></i>
-                                @wacs_etec
+                                <span data-i18n="projects.instagram">@wacs_etec</span>
                             </a>
                         </div>
                     </div>
@@ -389,56 +412,56 @@ ias<!DOCTYPE html>
                                 <div class="project-carousel">
                                     <div class="carousel-container">
                                         <div class="carousel-slide active">
-                                            <img src="assets/images/wacs/Tela de Login.jpeg" alt="Tela de Login do App WACS" class="carousel-image">
+                                            <img src="assets/images/wacs/Tela de Login.jpeg" alt="Tela de Login do App WACS" class="carousel-image" loading="lazy">
                                             <div class="carousel-caption">
                                                 <h4>Autenticação Segura</h4>
                                                 <p>Login seguro com validação de credenciais</p>
                                             </div>
                                         </div>
                                         <div class="carousel-slide">
-                                            <img src="assets/images/wacs/Tela Inicial.jpeg" alt="Tela Inicial do App WACS" class="carousel-image">
+                                            <img src="assets/images/wacs/Tela Inicial.jpeg" alt="Tela Inicial do App WACS" class="carousel-image" loading="lazy">
                                             <div class="carousel-caption">
                                                 <h4>Tela Inicial</h4>
                                                 <p>Interface principal com visão geral do sistema</p>
                                             </div>
                                         </div>
                                         <div class="carousel-slide">
-                                            <img src="assets/images/wacs/Tela de Controle.jpeg" alt="Tela de Controle do App WACS" class="carousel-image">
+                                            <img src="assets/images/wacs/Tela de Controle.jpeg" alt="Tela de Controle do App WACS" class="carousel-image" loading="lazy">
                                             <div class="carousel-caption">
                                                 <h4>Controle em Tempo Real</h4>
                                                 <p>Interface para controle de dispositivos</p>
                                             </div>
                                         </div>
                                         <div class="carousel-slide">
-                                            <img src="assets/images/wacs/Tela de Controle em modo de Segurança.jpeg" alt="Modo de Segurança do App WACS" class="carousel-image">
+                                            <img src="assets/images/wacs/Tela de Controle em modo de Segurança.jpeg" alt="Modo de Segurança do App WACS" class="carousel-image" loading="lazy">
                                             <div class="carousel-caption">
                                                 <h4>Modo de Segurança</h4>
                                                 <p>Controles especiais para situações de emergência</p>
                                             </div>
                                         </div>
                                         <div class="carousel-slide">
-                                            <img src="assets/images/wacs/Tela da Lista de Locais.jpeg" alt="Lista de Locais do App WACS" class="carousel-image">
+                                            <img src="assets/images/wacs/Tela da Lista de Locais.jpeg" alt="Lista de Locais do App WACS" class="carousel-image" loading="lazy">
                                             <div class="carousel-caption">
                                                 <h4>Gestão de Locais</h4>
                                                 <p>Gerenciamento de múltiplos locais</p>
                                             </div>
                                         </div>
                                         <div class="carousel-slide">
-                                            <img src="assets/images/wacs/Tela de Perfil.jpeg" alt="Perfil do Usuário do App WACS" class="carousel-image">
+                                            <img src="assets/images/wacs/Tela de Perfil.jpeg" alt="Perfil do Usuário do App WACS" class="carousel-image" loading="lazy">
                                             <div class="carousel-caption">
                                                 <h4>Perfil do Usuário</h4>
                                                 <p>Gerenciamento de configurações pessoais</p>
                                             </div>
                                         </div>
                                         <div class="carousel-slide">
-                                            <img src="assets/images/wacs/Tela de Conexao.png" alt="Configuração de Conexão do App WACS" class="carousel-image">
+                                            <img src="assets/images/wacs/Tela de Conexao.png" alt="Configuração de Conexão do App WACS" class="carousel-image" loading="lazy">
                                             <div class="carousel-caption">
                                                 <h4>Configuração de Conexão</h4>
                                                 <p>Setup de dispositivos IoT na rede</p>
                                             </div>
                                         </div>
                                         <div class="carousel-slide">
-                                            <img src="assets/images/wacs/kit_wacs.png" alt="Kit WACS Completo" class="carousel-image">
+                                            <img src="assets/images/wacs/kit_wacs.png" alt="Kit WACS Completo" class="carousel-image" loading="lazy">
                                             <div class="carousel-caption">
                                                 <h4>Kit WACS Completo</h4>
                                                 <p>Solução IoT integrada com hardware</p>
@@ -473,9 +496,9 @@ ias<!DOCTYPE html>
     <section id="reconhecimentos" class="recognitions">
         <div class="container">
             <div class="section-header">
-                <h2>Reconhecimentos</h2>
+                <h2 data-i18n="recognitions.title">Reconhecimentos</h2>
                 <div class="line"></div>
-                <p class="recognitions-subtitle">Prêmios, certificados e conquistas que marcaram minha trajetória profissional.</p>
+                <p class="recognitions-subtitle" data-i18n="recognitions.subtitle">Prêmios, certificados e conquistas que marcaram minha trajetória profissional.</p>
             </div>
             <div class="recognitions-grid">
                 <!-- Moção de Aplauso - Primeiro Lugar FETEPS -->
@@ -487,8 +510,8 @@ ias<!DOCTYPE html>
                         </div>
                     </div>
                     <div class="recognition-content">
-                        <h3>Moção de Aplauso - Prefeitura de Registro - SP</h3>
-                        <p class="recognition-description">Honra de receber Moção de Aplauso da Câmara Municipal de Registro pelo 7º lugar na maior feira de tecnologia da América Latina, reconhecendo liderança e inovação no Vale do Ribeira.</p>
+                        <h3 data-i18n="recognitions.mocao_title">Moção de Aplauso - Prefeitura de Registro - SP</h3>
+                        <p class="recognition-description" data-i18n="recognitions.mocao_desc">Honra de receber Moção de Aplauso da Câmara Municipal de Registro pelo 7º lugar na maior feira de tecnologia da América Latina, reconhecendo liderança e inovação no Vale do Ribeira.</p>
                         <div class="recognition-meta">
                             <span class="recognition-issuer">Câmara Municipal de Registro</span>
                             <span class="recognition-date">24/11/2024</span>
@@ -505,8 +528,8 @@ ias<!DOCTYPE html>
                         </div>
                     </div>
                     <div class="recognition-content">
-                        <h3>Menção Especial na Câmara Municipal</h3>
-                        <p class="recognition-description">Menção especial do vereador Marcelo Comeron ao projeto WACS na sessão ordinária da Câmara, destacando impacto social e compromisso com acessibilidade.</p>
+                        <h3 data-i18n="recognitions.mencao_title">Menção Especial na Câmara Municipal</h3>
+                        <p class="recognition-description" data-i18n="recognitions.mencao_desc">Menção especial do vereador Marcelo Comeron ao projeto WACS na sessão ordinária da Câmara, destacando impacto social e compromisso com acessibilidade.</p>
                         <div class="recognition-meta">
                             <span class="recognition-issuer">Vereador Marcelo Comeron / Câmara Municipal de Registro</span>
                             <span class="recognition-date">2024</span>
@@ -600,39 +623,45 @@ ias<!DOCTYPE html>
     <section id="midia" class="media">
         <div class="container">
             <div class="section-header">
-                <h2>Mídia</h2>
+                <h2 data-i18n="media.title">Mídia</h2>
                 <div class="line"></div>
-                <p class="media-subtitle">Confira as entrevistas, artigos e reconhecimentos que destacam minha trajetória profissional.</p>
+                <p class="media-subtitle" data-i18n="media.subtitle">Confira as entrevistas, artigos e reconhecimentos que destacam minha trajetória profissional.</p>
             </div>
             <div class="media-container">
                 <!-- Coluna Entrevistas -->
                 <div class="media-column">
-                    <h3 class="column-title"><i class="fas fa-microphone"></i> Entrevistas</h3>
+                    <h3 class="column-title" data-i18n-html="media.interviews"><i class="fas fa-microphone"></i> Entrevistas</h3>
                     <div class="media-cards-column">
                         <article class="media-card-video">
+                            <div class="media-badge">
+                                <span class="badge badge-premium"><i class="fas fa-video"></i> Grande Mídia</span>
+                            </div>
                             <div class="media-thumbnail">
-                                <img src="assets/images/entrevista-cnn.jpg" alt="Entrevista CNN Brasil">
+                                <img src="assets/images/entrevista-cnn.jpg" alt="Victor Theodoro sendo entrevistado pela CNN Brasil sobre o projeto WACS e tecnologia assistiva" loading="lazy">
                                 <div class="play-icon"><i class="fas fa-play"></i></div>
                             </div>
                             <div class="media-icon">
                                 <i class="fas fa-video"></i>
                             </div>
-                            <h4>Entrevista CNN Brasil</h4>
-                            <p>Victor Theodoro foi entrevistado pela CNN Brasil, onde apresentou suas habilidades em desenvolvimento fullstack e sua experiência em projetos de tecnologia assistiva. A entrevista destacou sua trajetória como jovem desenvolvedor e sua contribuição para a inovação tecnológica no Brasil.</p>
-                            <a href="https://www.instagram.com/p/DPQr2keDQy4/" class="media-btn" target="_blank">Ver Post <i class="fas fa-arrow-right"></i></a>
+                            <h4 data-i18n="media.cnn_title">Entrevista CNN Brasil</h4>
+                            <p data-i18n="media.cnn_desc">Victor Theodoro foi entrevistado pela CNN Brasil, onde apresentou suas habilidades em desenvolvimento fullstack e sua experiência em projetos de tecnologia assistiva. A entrevista destacou sua trajetória como jovem desenvolvedor e sua contribuição para a inovação tecnológica no Brasil.</p>
+                            <a href="https://www.instagram.com/p/DPQr2keDQy4/" class="media-btn" target="_blank" rel="noopener noreferrer"><span data-i18n="media.cnn_btn">Ver Post</span> <i class="fas fa-arrow-right"></i></a>
                         </article>
 
                         <article class="media-card-video">
+                            <div class="media-badge">
+                                <span class="badge badge-premium"><i class="fas fa-video"></i> Grande Mídia</span>
+                            </div>
                             <div class="media-thumbnail">
-                                <img src="assets/images/entrevista-estadao.jpg" alt="Entrevista Estadão">
+                                <img src="assets/images/entrevista-estadao.jpg" alt="Victor Theodoro em entrevista exclusiva ao jornal Estadão sobre desenvolvimento fullstack" loading="lazy">
                                 <div class="play-icon"><i class="fas fa-play"></i></div>
                             </div>
                             <div class="media-icon">
                                 <i class="fas fa-video"></i>
                             </div>
-                            <h4>Entrevista Estadão</h4>
-                            <p>Victor Theodoro foi destaque em entrevista exclusiva no jornal Estadão, onde compartilhou sua experiência como desenvolvedor fullstack junior e sua participação em projetos inovadores de tecnologia assistiva. A matéria destacou sua trajetória acadêmica e profissional, enfatizando seu compromisso com a inovação social através da tecnologia.</p>
-                            <a href="https://www.instagram.com/p/DQj8IxEkdov/" class="media-btn" target="_blank">Ver Matéria <i class="fas fa-arrow-right"></i></a>
+                            <h4 data-i18n="media.estadao_title">Entrevista Estadão</h4>
+                            <p data-i18n="media.estadao_desc">Victor Theodoro foi destaque em entrevista exclusiva no jornal Estadão, onde compartilhou sua experiência como desenvolvedor fullstack junior e sua participação em projetos inovadores de tecnologia assistiva. A matéria destacou sua trajetória acadêmica e profissional, enfatizando seu compromisso com a inovação social através da tecnologia.</p>
+                            <a href="https://www.instagram.com/p/DQj8IxEkdov/" class="media-btn" target="_blank" rel="noopener noreferrer"><span data-i18n="media.estadao_btn">Ver Matéria</span> <i class="fas fa-arrow-right"></i></a>
                         </article>
 
                         <article class="media-card-video premium hidden-media">
@@ -640,15 +669,15 @@ ias<!DOCTYPE html>
                                 <span class="badge badge-premium"><i class="fas fa-newspaper"></i> Impressa Premium</span>
                             </div>
                             <div class="media-thumbnail">
-                                <img src="assets/images/jornal-estadao.jpg" alt="Citação Jornal Estadão">
+                                <img src="assets/images/jornal-estadao.jpg" alt="Matéria sobre Victor Theodoro publicada na edição impressa do jornal Estadão" loading="lazy">
                                 <div class="play-icon"><i class="fas fa-newspaper"></i></div>
                             </div>
                             <div class="media-icon">
                                 <i class="fas fa-newspaper"></i>
                             </div>
-                            <h4>Edição Impressa - Jornal Estadão</h4>
-                            <p>Victor Theodoro foi mencionado na edição impressa do Estadão, o maior jornal do Brasil, destacando sua trajetória como jovem talento em desenvolvimento de software. Esta cobertura impressa alcança milhões de leitores e reforça sua posição como profissional promissor na área de tecnologia.</p>
-                            <a href="assets/pdfs/estadao.pdf" class="media-btn" target="_blank">Ver Edição <i class="fas fa-arrow-right"></i></a>
+                            <h4 data-i18n="media.jornal_title">Edição Impressa - Jornal Estadão</h4>
+                            <p data-i18n="media.jornal_desc">Victor Theodoro foi mencionado na edição impressa do Estadão, o maior jornal do Brasil, destacando sua trajetória como jovem talento em desenvolvimento de software. Esta cobertura impressa alcança milhões de leitores e reforça sua posição como profissional promissor na área de tecnologia.</p>
+                            <a href="assets/pdfs/estadao.pdf" class="media-btn" target="_blank" rel="noopener noreferrer"><span data-i18n="media.jornal_btn">Ver Edição</span> <i class="fas fa-arrow-right"></i></a>
                         </article>
 
                         <article class="media-card-video tier-2 hidden-media">
@@ -664,7 +693,7 @@ ias<!DOCTYPE html>
                             </div>
                             <h4>Câmara Municipal de Registro</h4>
                             <p>Citação oficial do projeto WACS e reconhecimento do impacto social na região. Apoio institucional.</p>
-                            <a href="https://www.instagram.com/p/DRhNkyNiKor/" class="media-btn" target="_blank">Ver Reels <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://www.instagram.com/p/DRhNkyNiKor/" class="media-btn" target="_blank" rel="noopener noreferrer">Ver Reels <i class="fas fa-arrow-right"></i></a>
                         </article>
                     </div>
                     <button class="show-more-btn" data-column="interviews" data-hidden="2">
@@ -676,26 +705,26 @@ ias<!DOCTYPE html>
 
                 <!-- Coluna Na Imprensa -->
                 <div class="media-column">
-                    <h3 class="column-title"><i class="fas fa-newspaper"></i> Na Imprensa</h3>
+                    <h3 class="column-title" data-i18n-html="media.press"><i class="fas fa-newspaper"></i> Na Imprensa</h3>
                     <div class="media-cards-column press-column">
-                        <article class="media-card-press tier-1">
+                        <article class="media-card-press">
                             <div class="media-badge">
-                                <span class="badge badge-tier1"><i class="fas fa-fire"></i> Tier-1 Nacional</span>
+                                <span class="badge badge-tier1"><i class="fas fa-award"></i> Destaque Nacional</span>
                             </div>
                             <span class="media-source"><i class="fas fa-building"></i> Centro Paula Souza</span>
-                            <h4>Victor Theodoro - Destaque em Inovação Tecnológica</h4>
-                            <p class="badge-subtitle">Victor Theodoro foi destacado pelo Centro Paula Souza como um dos jovens talentos em desenvolvimento de software. A matéria apresenta sua trajetória acadêmica na Etec de Registro, destacando suas habilidades em desenvolvimento fullstack e sua participação em projetos inovadores. Esta cobertura institucional reconhece sua dedicação aos estudos e seu potencial como profissional da tecnologia.</p>
-                            <a href="https://www.cps.sp.gov.br/grupo-da-etec-registro-cria-cadeira-de-rodas-com-sistema-de-acessibilidade-inteligente/" target="_blank">Acessar <i class="fas fa-arrow-right"></i></a>
+                            <h4 data-i18n="media.cps_title">Victor Theodoro - Destaque em Inovação Tecnológica</h4>
+                            <p class="badge-subtitle" data-i18n="media.cps_desc">Victor Theodoro foi destacado pelo Centro Paula Souza como um dos jovens talentos em desenvolvimento de software. A matéria apresenta sua trajetória acadêmica na Etec de Registro, destacando suas habilidades em desenvolvimento fullstack e sua participação em projetos inovadores. Esta cobertura institucional reconhece sua dedicação aos estudos e seu potencial como profissional da tecnologia.</p>
+                            <a href="https://www.cps.sp.gov.br/grupo-da-etec-registro-cria-cadeira-de-rodas-com-sistema-de-acessibilidade-inteligente/" target="_blank" rel="noopener noreferrer"><span data-i18n="media.cps_btn">Acessar</span> <i class="fas fa-arrow-right"></i></a>
                         </article>
 
-                        <article class="media-card-press tier-1">
+                        <article class="media-card-press">
                             <div class="media-badge">
                                 <span class="badge badge-tier1"><i class="fas fa-trophy"></i> Campeão Nacional</span>
                             </div>
                             <span class="media-source"><i class="fas fa-robot"></i> Robótica CPS</span>
                             <h4>11º Torneio de Robocode - 2º Lugar BarbieScript</h4>
                             <p class="badge-subtitle">Conquista histórica no torneio nacional de robótica organizado pelo Centro Paula Souza. O projeto BarbieScript, desenvolvido pela equipe da Etec de Registro, alcançou a segunda colocação em uma competição que reuniu instituições de todo o Brasil. Esta vitória demonstra a excelência técnica dos estudantes e o alto nível de qualidade dos projetos desenvolvidos na instituição, consolidando a posição da Etec como referência em educação tecnológica e inovação.</p>
-                            <a href="https://robotica.cps.sp.gov.br/11o-torneio-de-robocode/" target="_blank">Ver Resultado <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://robotica.cps.sp.gov.br/11o-torneio-de-robocode/" target="_blank" rel="noopener noreferrer">Ver Resultado <i class="fas fa-arrow-right"></i></a>
                         </article>
 
                         <article class="media-card-press premium">
@@ -704,28 +733,28 @@ ias<!DOCTYPE html>
                             </div>
                             <span class="media-source"><i class="fas fa-star"></i> FETEPS Oficial</span>
                             <h4>Victor Theodoro - Destaque na FETEPS Premium</h4>
-                            <p class="badge-subtitle">Victor Theodoro foi destaque na categoria premium da FETEPS, a maior feira de tecnologia do SENAI-SP. Sua participação nesta exposição de alto nível demonstra suas habilidades avançadas em desenvolvimento de soluções tecnológicas inovadoras. Esta seleção premium reconhece seu talento e potencial como profissional da tecnologia, conectando-o com empresários, investidores e líderes da indústria.</p>
-                            <a href="https://feteps.cps.sp.gov.br/projetos/wacs-autonomia-inteligente-para-pcds/" target="_blank">Ver Projeto <i class="fas fa-arrow-right"></i></a>
+                            <p class="badge-subtitle">Victor Theodoro foi destaque na categoria premium da FETEPS, a maior feira de tecnologia do Centro Paula Souza. Sua participação nesta exposição de alto nível demonstra suas habilidades avançadas em desenvolvimento de soluções tecnológicas inovadoras. Esta seleção premium reconhece seu talento e potencial como profissional da tecnologia, conectando-o com empresários, investidores e líderes da indústria.</p>
+                            <a href="https://feteps.cps.sp.gov.br/projetos/wacs-autonomia-inteligente-para-pcds/" target="_blank" rel="noopener noreferrer">Ver Projeto <i class="fas fa-arrow-right"></i></a>
                         </article>
 
-                        <article class="media-card-press tier-2 hidden-media">
+                        <article class="media-card-press hidden-media">
                             <div class="media-badge">
-                                <span class="badge badge-tier2"><i class="fas fa-school"></i> Educacional</span>
+                                <span class="badge badge-secondary"><i class="fas fa-school"></i> Etec Registro</span>
                             </div>
                             <span class="media-source"><i class="fas fa-chalkboard-user"></i> Etec Registro</span>
                             <h4>Victor Theodoro - Destaque na 16ª FETEPS</h4>
                             <p class="badge-subtitle">Victor Theodoro foi destacado como um dos estudantes de destaque na 16ª edição da Feira Tecnológica do Centro Paula Souza. A publicação institucional apresenta seus projetos inovadores e enfatiza a qualidade do ensino técnico oferecido pela Etec de Registro. Esta cobertura demonstra o compromisso da instituição com a formação de profissionais capacitados e inovadores, contribuindo para o desenvolvimento tecnológico regional.</p>
-                            <a href="https://etecregistro.cps.sp.gov.br/alunos-da-etec-de-registro-sao-destaques-na-16a-feira-de-tecnologia-do-centro-paula-souza/" target="_blank">Conhecer <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://etecregistro.cps.sp.gov.br/alunos-da-etec-de-registro-sao-destaques-na-16a-feira-de-tecnologia-do-centro-paula-souza/" target="_blank" rel="noopener noreferrer">Conhecer <i class="fas fa-arrow-right"></i></a>
                         </article>
 
-                        <article class="media-card-press tier-2 hidden-media">
+                        <article class="media-card-press hidden-media">
                             <div class="media-badge">
-                                <span class="badge badge-tier2"><i class="fas fa-school"></i> Educacional</span>
+                                <span class="badge badge-secondary"><i class="fas fa-school"></i> Etec Registro</span>
                             </div>
                             <span class="media-source"><i class="fas fa-chalkboard-user"></i> Etec Registro</span>
                             <h4>Victor Theodoro - Destaque na FETEPS 2026</h4>
                             <p class="badge-subtitle">Publicação especial da Etec de Registro celebrando a participação de Victor Theodoro na FETEPS 2026. A matéria expressa o orgulho institucional pelos estudantes que desenvolveram soluções tecnológicas inovadoras, destacando como seu trabalho representa o sucesso do modelo educacional da instituição e o impacto positivo na comunidade, inspirando outros estudantes a se dedicarem à inovação e à solução de problemas sociais.</p>
-                            <a href="https://etecregistro.cps.sp.gov.br/feteps-2026-que-orgulho/" target="_blank">Acompanhar <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://etecregistro.cps.sp.gov.br/feteps-2026-que-orgulho/" target="_blank" rel="noopener noreferrer">Acompanhar <i class="fas fa-arrow-right"></i></a>
                         </article>
 
                         <article class="media-card-press online hidden-media">
@@ -735,7 +764,7 @@ ias<!DOCTYPE html>
                             <span class="media-source"><i class="fas fa-newspaper"></i> Região Hoje</span>
                             <h4>Victor Theodoro - Inovação em Tecnologia Assistiva</h4>
                             <p class="badge-subtitle">Cobertura de mídia regional online destacando o trabalho inovador de Victor Theodoro em desenvolvimento de soluções tecnológicas para acessibilidade. A matéria apresenta suas contribuições para a área de tecnologia assistiva e seu impacto na comunidade local.</p>
-                            <a href="https://www.regiaohoje.com.br/noticia/38090/santa-barbara/brasil/grupo-de-etec-cria-cadeira-de-rodas-com-sistema-de-acessibilidade-inteligente.html" target="_blank">Ler Matéria <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://www.regiaohoje.com.br/noticia/38090/santa-barbara/brasil/grupo-de-etec-cria-cadeira-de-rodas-com-sistema-de-acessibilidade-inteligente.html" target="_blank" rel="noopener noreferrer">Ler Matéria <i class="fas fa-arrow-right"></i></a>
                         </article>
 
                         <article class="media-card-press online hidden-media">
@@ -745,7 +774,7 @@ ias<!DOCTYPE html>
                             <span class="media-source"><i class="fas fa-newspaper"></i> ABC do ABC</span>
                             <h4>Victor Theodoro - Inovação Tecnológica</h4>
                             <p class="badge-subtitle">Publicação no portal ABC do ABC destacando o trabalho inovador de Victor Theodoro em desenvolvimento de soluções tecnológicas para acessibilidade. A matéria apresenta suas habilidades em desenvolvimento fullstack e sua contribuição para projetos que combinam tecnologia embarcada, inteligência artificial e design ergonômico. Esta cobertura regional reforça sua posição como profissional promissor na área de tecnologia.</p>
-                            <a href="https://abcdoabc.com.br/etec-projeta-cadeira-de-rodas-inteligente/" target="_blank">Acessar <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://abcdoabc.com.br/etec-projeta-cadeira-de-rodas-inteligente/" target="_blank" rel="noopener noreferrer">Acessar <i class="fas fa-arrow-right"></i></a>
                         </article>
                     </div>
                     <button class="show-more-btn" data-column="press" data-hidden="4">
@@ -762,35 +791,60 @@ ias<!DOCTYPE html>
     <section id="contato" class="contact">
         <div class="container">
             <div class="section-header animate-slide-in-up">
-                <h2>Contato</h2>
+                <h2 data-i18n="contact.title">Contato</h2>
                 <div class="line animate-scale-in animate-delay-1"></div>
-                <p class="section-subtitle animate-slide-in-up animate-delay-2">Vamos conversar e criar algo incrível juntos</p>
+                <p class="section-subtitle animate-slide-in-up animate-delay-2" data-i18n="contact.subtitle">Vamos conversar e criar algo incrível juntos</p>
             </div>
             <div class="contact-content animate-slide-in-up animate-delay-3">
+                <!-- Contact Form (abre o app de email do usuário) -->
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name" data-i18n="contact.name">Seu nome</label>
+                        <input id="name" name="name" type="text" placeholder="Ex: Victor" autocomplete="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="contact.email">Seu email</label>
+                        <input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Assunto</label>
+                        <input id="subject" name="subject" type="text" placeholder="Proposta / Oportunidade / Projeto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="contact.message">Mensagem</label>
+                        <textarea id="message" name="message" placeholder="Conte um pouco sobre o que você precisa..." required></textarea>
+                    </div>
+                    <button id="submitBtn" type="submit">
+                        <span id="btnText" data-i18n="contact.send">Enviar Mensagem</span>
+                        <i id="btnIcon" class="fas fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                    <div id="formMessage" class="form-message" aria-live="polite"></div>
+                </form>
+
                 <!-- Social Links -->
                 <div class="contact-links">
-                    <a href="https://wa.me/5513996016551" class="contact-btn contact-btn-whatsapp animate-bounce-in animate-delay-4" target="_blank">
+                    <a href="https://wa.me/5513996016551" class="contact-btn contact-btn-whatsapp animate-bounce-in animate-delay-4" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-whatsapp"></i>
                         <div class="contact-info">
                             <h4>WhatsApp</h4>
                             <p>+55 13 99601-6551</p>
                         </div>
                     </a>
-                    <a href="https://github.com/vftheodoro" class="contact-btn contact-btn-github animate-bounce-in animate-delay-5" target="_blank">
+                    <a href="https://github.com/vftheodoro" class="contact-btn contact-btn-github animate-bounce-in animate-delay-5" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-github"></i>
                         <div class="contact-info">
                             <h4>GitHub</h4>
                             <p>vftheodoro</p>
                         </div>
                     </a>
-                    <a href="https://linkedin.com/in/vftheodoro" class="contact-btn contact-btn-linkedin animate-bounce-in animate-delay-6" target="_blank">
+                    <a href="https://linkedin.com/in/vftheodoro" class="contact-btn contact-btn-linkedin animate-bounce-in animate-delay-6" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-linkedin"></i>
                         <div class="contact-info">
                             <h4>LinkedIn</h4>
                             <p>vftheodoro</p>
                         </div>
                     </a>
-                    <a href="https://www.instagram.com/vftheodoro/" class="contact-btn contact-btn-instagram animate-bounce-in animate-delay-1" target="_blank">
+                    <a href="https://www.instagram.com/vftheodoro/" class="contact-btn contact-btn-instagram animate-bounce-in animate-delay-1" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-instagram"></i>
                         <div class="contact-info">
                             <h4>Instagram</h4>
@@ -803,10 +857,56 @@ ias<!DOCTYPE html>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer-enhanced">
+        <div class="footer-background"></div>
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 Victor Theodoro. Todos os direitos reservados.</p>
+            <!-- Footer Grid -->
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3 data-i18n="footer.nav">Navegação</h3>
+                    <div class="footer-links">
+                        <a href="#home" class="footer-link">Home</a>
+                        <a href="#sobre" class="footer-link">Sobre Mim</a>
+                        <a href="#skills" class="footer-link">Skills</a>
+                        <a href="#certificacoes" class="footer-link">Certificações</a>
+                        <a href="#projetos" class="footer-link">Projetos</a>
+                        <a href="#midia" class="footer-link">Mídia</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 data-i18n="footer.links">Links Úteis</h3>
+                    <div class="footer-links">
+                        <a href="https://github.com/vftheodoro" target="_blank" rel="noopener noreferrer" class="footer-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/vftheodoro" target="_blank" rel="noopener noreferrer" class="footer-link">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-link">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                        <a href="https://wa.me/5513996016551" target="_blank" rel="noopener noreferrer" class="footer-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 data-i18n="footer.hiring">Está Contratando?</h3>
+                    <p class="footer-desc" data-i18n="footer.hiring_text">Estou aberto a novas oportunidades e amaria conversar sobre projetos inovadores.</p>
+                    <a href="#contato" class="btn btn-primary btn-sm" style="margin-top: 1rem; display: inline-block;">
+                        <i class="fas fa-envelope"></i> <span data-i18n="footer.email">Envie um Email</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Victor Theodoro. <span data-i18n="footer.rights">Todos os direitos reservados.</span> | <a href="#" class="footer-link-inline" data-i18n="footer.privacy">Política de Privacidade</a></p>
+                <a href="#home" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
             </div>
         </div>
     </footer>
