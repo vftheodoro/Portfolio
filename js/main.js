@@ -592,3 +592,72 @@ if (slides.length > 0) {
 
 console.log('%cPortfólio Victor Theodoro carregado com sucesso! 🚀', 'color: #3b82f6; font-size: 14px; font-weight: bold;');
 console.log('%cProto: Use as funções addProject() e addMediaItem() para adicionar conteúdo dinamicamente', 'color: #8b5cf6; font-size: 12px;');
+
+// ==========================================
+// EMAIL JS - FORMULÁRIO DE CONTATO
+// ==========================================
+
+// Inicializar EmailJS
+emailjs.init('SUA_PUBLIC_KEY_AQUI'); // Você vai trocar isso depois
+
+// Configuração do formulário
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnIcon = document.getElementById('btnIcon');
+        const formMessage = document.getElementById('formMessage');
+        
+        // Desabilitar botão durante envio
+        submitBtn.disabled = true;
+        btnText.textContent = 'Enviando...';
+        
+        // Preparar dados do formulário
+        const templateParams = {
+            to_email: 'victorgft@outlook.com',
+            from_name: document.getElementById('name').value,
+            from_email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value
+        };
+        
+        // Enviar email
+        emailjs.send('SUA_SERVICE_ID_AQUI', 'SUA_TEMPLATE_ID_AQUI', templateParams)
+            .then(function(response) {
+                // Sucesso
+                formMessage.className = 'form-message success';
+                formMessage.textContent = '✓ Mensagem enviada com sucesso!';
+                
+                // Limpar formulário
+                contactForm.reset();
+                
+                // Reset botão após 3 segundos
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    btnText.textContent = 'Enviar Mensagem';
+                }, 3000);
+                
+                // Remover mensagem após 5 segundos
+                setTimeout(() => {
+                    formMessage.textContent = '';
+                    formMessage.className = '';
+                }, 5000);
+            })
+            .catch(function(error) {
+                // Erro
+                formMessage.className = 'form-message error';
+                formMessage.textContent = '✗ Erro ao enviar. Tente novamente ou use outro contato.';
+                
+                // Reset botão
+                submitBtn.disabled = false;
+                btnText.textContent = 'Enviar Mensagem';
+                
+                console.error('Erro no EmailJS:', error);
+            });
+    });
+}
+
