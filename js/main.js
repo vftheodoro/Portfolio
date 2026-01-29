@@ -24,6 +24,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 let lastScrollTop = 0;
 const navbar = document.querySelector('.navbar');
+const heroScroll = document.querySelector('.hero-scroll');
 
 window.addEventListener('scroll', function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -33,6 +34,17 @@ window.addEventListener('scroll', function() {
         navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
     } else {
         navbar.style.boxShadow = 'none';
+    }
+    
+    // Ocultar scroll para explorar quando usuário começa a rolar
+    if (heroScroll) {
+        if (scrollTop > 50) {
+            heroScroll.style.opacity = '0';
+            heroScroll.style.pointerEvents = 'none';
+        } else {
+            heroScroll.style.opacity = '1';
+            heroScroll.style.pointerEvents = 'auto';
+        }
     }
     
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;

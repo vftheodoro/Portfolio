@@ -75,7 +75,10 @@ ias<!DOCTYPE html>
     <nav class="navbar">
         <div class="container">
             <div class="navbar-content">
-                <a href="#home" class="logo">VT</a>
+                <a href="#home" class="logo">
+                    <span class="logo-letter">V</span>
+                    <span class="logo-letter">T</span>
+                </a>
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <span></span>
                     <span></span>
@@ -85,11 +88,9 @@ ias<!DOCTYPE html>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projetos">Destaque</a></li>
-                    <li><a href="#reconhecimentos">Reconhecimentos</a></li>
-                    <li><a href="#midia">Mídia</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#certificacoes">Certificações</a></li>
                     <li><a href="#contato">Contato</a></li>
-
                 </ul>
             </div>
         </div>
@@ -97,19 +98,72 @@ ias<!DOCTYPE html>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-glow hero-glow-2"></div>
+            <div class="hero-glow hero-glow-3"></div>
+        </div>
         <div class="container">
-            <div class="hero-content animate-slide-in-up">
-                <h1 class="hero-title animate-bounce-in">Victor Theodoro</h1>
-                <p class="hero-subtitle animate-slide-in-left animate-delay-2">Desenvolvedor FullStack Junior</p>
-                <p class="hero-description animate-slide-in-right animate-delay-3">Criando soluções web modernas, escaláveis e centradas no usuário</p>
-                <div class="hero-cta animate-scale-in animate-delay-4">
-                    <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
-                    <a href="#contato" class="btn btn-secondary">Entrar em Contato</a>
+            <div class="hero-content">
+                <div class="hero-text-container animate-slide-in-up">
+                    <h1 class="hero-title animate-bounce-in">
+                        <span class="word">Victor</span>
+                        <span class="word">Theodoro</span>
+                    </h1>
+                    <div class="hero-divider animate-scale-in animate-delay-1"></div>
+                    <p class="hero-role animate-slide-in-left animate-delay-2">Desenvolvedor de Software</p>
+                    <p class="hero-description animate-slide-in-right animate-delay-3">
+                        Especializado em criar soluções web e mobile modernas, escaláveis e focadas em impacto real.
+                    </p>
+                    
+                    <div class="hero-highlights animate-slide-in-up animate-delay-4">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h3>FullStack</h3>
+                                <p>Front-end & Back-end</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h3>Mobile</h3>
+                                <p>React Native & Expo</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h3>Inovação</h3>
+                                <p>Soluções criativas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta animate-scale-in animate-delay-5">
+                        <a href="#projetos" class="btn btn-primary">
+                            <span>Ver Projetos</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contato" class="btn btn-secondary">
+                            <span>Entrar em Contato</span>
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
+
             <div class="hero-scroll animate-float-slow">
                 <span>Scroll para explorar</span>
-                <div class="scroll-icon"><i class="fas fa-chevron-down"></i></div>
+                <div class="scroll-icon">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
             </div>
         </div>
     </section>
@@ -120,21 +174,57 @@ ias<!DOCTYPE html>
             <div class="section-header animate-slide-in-up">
                 <h2>Sobre Mim</h2>
                 <div class="line animate-scale-in animate-delay-1"></div>
+                <p class="section-subtitle animate-slide-in-up animate-delay-2">Desenvolvedor apaixonado por criar soluções que transformam vidas</p>
             </div>
-            <div class="about-content">
-                <div class="about-text animate-slide-in-left animate-delay-2">
-                    <p>
-                        Sou Desenvolvedor de Software formado em Desenvolvimento de Sistemas pela ETEC, com experiência prática em criação de aplicações web e mobile, integração com bancos de dados e desenvolvimento de soluções focadas em impacto real.
-                    </p>
-                    <p>
-                        Participei do desenvolvimento do projeto WACS (Wheelchair Automation Control System), uma cadeira de rodas automatizada controlada por aplicativo, reconhecida por seu caráter social e tecnológico. Esse projeto consolidou minha visão sobre como a tecnologia pode transformar vidas.
-                    </p>
-                    <p>
-                        Tenho experiência com JavaScript, TypeScript, React Native, HTML, CSS, SQL, Firebase, Git/GitHub e Python, atuando tanto no front-end quanto no back-end. Sou um profissional versátil, com facilidade para aprender novas tecnologias e me adaptar a diferentes desafios.
-                    </p>
-                    <p>
-                        Busco constantemente evoluir como desenvolvedor, criando soluções eficientes, escaláveis e bem estruturadas. Meu objetivo é atuar em projetos inovadores, contribuir com equipes de alto nível e gerar impacto positivo por meio da tecnologia.
-                    </p>
+            <div class="about-content animate-slide-in-up animate-delay-3">
+                <div class="about-text">
+                    <div class="about-paragraph animate-slide-in-left animate-delay-3">
+                        <div class="paragraph-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="paragraph-content">
+                            <h3>Formação & Experiência</h3>
+                            <p>
+                                Sou Desenvolvedor de Software formado em Desenvolvimento de Sistemas pela ETEC, com experiência prática em criação de aplicações web e mobile, integração com bancos de dados e desenvolvimento de soluções focadas em impacto real.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="about-paragraph animate-slide-in-up animate-delay-4">
+                        <div class="paragraph-icon">
+                            <i class="fas fa-wheelchair"></i>
+                        </div>
+                        <div class="paragraph-content">
+                            <h3>Projeto WACS</h3>
+                            <p>
+                                Participei do desenvolvimento do WACS (Wheelchair Automation Control System), uma cadeira de rodas automatizada controlada por aplicativo. Esse projeto consolidou minha visão sobre como a tecnologia pode transformar vidas e gerar impacto social real.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="about-paragraph animate-slide-in-right animate-delay-5">
+                        <div class="paragraph-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="paragraph-content">
+                            <h3>Stack Técnico</h3>
+                            <p>
+                                JavaScript, TypeScript, React Native, HTML, CSS, SQL, Firebase, Git/GitHub e Python. Sou versátil, atuando tanto no front-end quanto no back-end, com facilidade para aprender novas tecnologias e me adaptar a diferentes desafios.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="about-paragraph animate-slide-in-left animate-delay-6">
+                        <div class="paragraph-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="paragraph-content">
+                            <h3>Objetivos & Visão</h3>
+                            <p>
+                                Busco constantemente evoluir como desenvolvedor, criando soluções eficientes, escaláveis e bem estruturadas. Meu objetivo é atuar em projetos inovadores e gerar impacto positivo por meio da tecnologia.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
