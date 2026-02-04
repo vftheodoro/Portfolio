@@ -294,7 +294,11 @@
                 <h2 data-i18n="certifications.title">Certificações</h2>
                 <div class="line"></div>
             </div>
-            <div class="certifications-grid">
+            <div class="certifications-carousel">
+                <button class="carousel-arrow prev" type="button" aria-label="Anterior" data-carousel="certifications" data-dir="-1">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div class="certifications-track" id="certificationsTrack">
                 <div class="certification-card">
                     <div class="certification-icon">
                         <i class="fas fa-code"></i>
@@ -354,6 +358,10 @@
                         <span class="certification-badge">Workshop</span>
                     </div>
                 </div>
+                </div>
+                <button class="carousel-arrow next" type="button" aria-label="Próximo" data-carousel="certifications" data-dir="1">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -502,7 +510,11 @@
                 <div class="line"></div>
                 <p class="section-subtitle" data-i18n="awards.subtitle">Conquistas registradas oficialmente em eventos acadêmicos e esportivos.</p>
             </div>
-            <div class="awards-list">
+            <div class="awards-carousel">
+                <button class="carousel-arrow prev" type="button" aria-label="Anterior" data-carousel="awards" data-dir="-1">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div class="awards-track" id="awardsTrack">
                 <article class="award-card">
                     <div class="award-header">
                         <span class="award-rank" data-i18n="awards.a1.rank">1º Lugar</span>
@@ -513,7 +525,7 @@
                     <p data-i18n="awards.a1.desc">Projeto WACS — Autonomia Inteligente para PCD’s. Reconhecimento pelo impacto social e inovação.</p>
                 </article>
 
-                <article class="award-card">
+                <article class="award-card award-highlight">
                     <div class="award-header">
                         <span class="award-rank" data-i18n="awards.a2.rank">7º Lugar</span>
                         <span class="award-date" data-i18n="awards.a2.date">out 2025</span>
@@ -563,6 +575,10 @@
                     <p data-i18n="awards.a6.desc">Classificação para representar a instituição na fase regional.</p>
                 </article>
             </div>
+                <button class="carousel-arrow next" type="button" aria-label="Pr?ximo" data-carousel="awards" data-dir="1">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -573,7 +589,11 @@
                 <div class="line"></div>
                 <p class="recognitions-subtitle" data-i18n="recognitions.subtitle">Prêmios, certificados e conquistas que marcaram minha trajetória profissional.</p>
             </div>
-            <div class="recognitions-grid">
+                        <div class="recognitions-carousel">
+                <button class="carousel-arrow prev" type="button" aria-label="Anterior" data-carousel="recognitions" data-dir="-1">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div class="recognitions-track" id="recognitionsTrack">
                 <!-- Moção de Aplauso - Primeiro Lugar FETEPS -->
                 <div class="recognition-card">
                     <div class="recognition-image">
@@ -683,13 +703,20 @@
                 </div>
 
                 <!-- Add more recognition cards here -->
+            
+                </div>
+                <button class="carousel-arrow next" type="button" aria-label="Pr?ximo" data-carousel="recognitions" data-dir="1">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
             </div>
-                    <button class="show-more-btn" id="showMoreRecognitions" data-hidden="3">
-                        <span class="btn-text" data-i18n="ui.show_more">Ver Mais</span>
-                        <span class="btn-count">(+3)</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-        </div>
+
+            <div class="recognitions-more">
+<button class="show-more-btn" id="showMoreRecognitions" data-hidden="3">
+                    <span class="btn-text" data-i18n="ui.show_more">Ver Mais</span>
+                    <span class="btn-count">(+3)</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
     </section>
 
     <!-- Mídia & Reconhecimentos -->
@@ -933,59 +960,30 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer-enhanced">
-        <div class="footer-background"></div>
+    <footer class="footer-minimal">
         <div class="container">
-            <div class="footer-brand">
-                <img src="assets/logos/logo_theodoro_branca.png" alt="Logo Victor Theodoro" class="footer-logo">
-                <span class="footer-brand-text" data-i18n="footer.brand">Victor Theodoro • Software Developer</span>
-            </div>
-            <!-- Footer Grid -->
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3 data-i18n="footer.nav">Navegação</h3>
-                    <div class="footer-links">
-                        <a href="#home" class="footer-link">Home</a>
-                        <a href="#sobre" class="footer-link">Sobre Mim</a>
-                        <a href="#skills" class="footer-link">Skills</a>
-                        <a href="#certificacoes" class="footer-link">Certificações</a>
-                        <a href="#premios-oficiais" class="footer-link">Prêmios Oficiais</a>
-                        <a href="#reconhecimentos" class="footer-link">Reconhecimentos</a>
-                        <a href="#projetos" class="footer-link">Projetos</a>
-                        <a href="#midia" class="footer-link">Mídia</a>
-                    </div>
+            <div class="footer-minimal-top">
+                <div class="footer-minimal-brand">
+                    <img src="assets/logos/logo_theodoro_branca.png" alt="Logo Victor Theodoro" class="footer-logo">
+                    <span data-i18n="footer.brand">Victor Theodoro • Software Developer</span>
                 </div>
-
-                <div class="footer-section">
-                    <h3 data-i18n="footer.links">Links Úteis</h3>
-                    <div class="footer-links">
-                        <a href="https://github.com/vftheodoro" target="_blank" rel="noopener noreferrer" class="footer-link">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="https://linkedin.com/in/vftheodoro" target="_blank" rel="noopener noreferrer" class="footer-link">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-link">
-                            <i class="fab fa-instagram"></i> Instagram
-                        </a>
-                        <a href="https://wa.me/5513996016551" target="_blank" rel="noopener noreferrer" class="footer-link">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
-                    </div>
+                <div class="footer-minimal-links">
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#sobre" class="footer-link">Sobre</a>
+                    <a href="#premios-oficiais" class="footer-link">Prêmios</a>
+                    <a href="#reconhecimentos" class="footer-link">Reconhecimentos</a>
+                    <a href="#projetos" class="footer-link">Projetos</a>
+                    <a href="#contato" class="footer-link">Contato</a>
                 </div>
-
-                <div class="footer-section">
-                    <h3 data-i18n="footer.hiring">Está Contratando?</h3>
-                    <p class="footer-desc" data-i18n="footer.hiring_text">Estou aberto a novas oportunidades e amaria conversar sobre projetos inovadores.</p>
-                    <a href="#contato" class="btn btn-primary btn-sm" style="margin-top: 1rem; display: inline-block;">
-                        <i class="fas fa-envelope"></i> <span data-i18n="footer.email">Envie um Email</span>
-                    </a>
+                <div class="footer-minimal-social">
+                    <a href="https://github.com/vftheodoro" target="_blank" rel="noopener noreferrer" class="footer-link"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/vftheodoro" target="_blank" rel="noopener noreferrer" class="footer-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/vftheodoro/" target="_blank" rel="noopener noreferrer" class="footer-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5513996016551" target="_blank" rel="noopener noreferrer" class="footer-link"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p>&copy; 2024 Victor Theodoro. <span data-i18n="footer.rights">Todos os direitos reservados.</span> | <a href="#" class="footer-link-inline" data-i18n="footer.privacy">Política de Privacidade</a></p>
+            <div class="footer-minimal-bottom">
+                <p>&copy; 2024 Victor Theodoro. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
                 <a href="#home" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
                     <i class="fas fa-arrow-up"></i>
                 </a>

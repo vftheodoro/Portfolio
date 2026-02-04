@@ -818,6 +818,32 @@ if (slides.length > 0) {
 }
 
 // ==========================================
+// CERTIFICATIONS CAROUSEL (HORIZONTAL SCROLL)
+// ==========================================
+
+function setupHorizontalCarousel(trackId, cardSelector, carouselName) {
+    const track = document.getElementById(trackId);
+    const arrows = document.querySelectorAll(`.carousel-arrow[data-carousel="${carouselName}"]`);
+    if (!track || !arrows.length) return;
+
+    arrows.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const dir = Number(btn.getAttribute('data-dir')) || 1;
+            const cardWidth = track.querySelector(cardSelector)?.offsetWidth || 280;
+            const gap = 24;
+            track.scrollBy({
+                left: dir * (cardWidth + gap),
+                behavior: 'smooth'
+            });
+        });
+    });
+}
+
+setupHorizontalCarousel('certificationsTrack', '.certification-card', 'certifications');
+setupHorizontalCarousel('awardsTrack', '.award-card', 'awards');
+setupHorizontalCarousel('recognitionsTrack', '.recognition-card', 'recognitions');
+
+// ==========================================
 // LOG DE INICIALIZAÇÃO
 // ==========================================
 
