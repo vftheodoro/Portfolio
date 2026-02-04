@@ -21,7 +21,7 @@ const translations = {
             vision_title: "Objetivos & Visão",
             vision_desc: "Apaixonado por tecnologia assistiva e inovação social. Objetivo: criar soluções que empoderem pessoas com deficiência através da tecnologia. Compromisso com código limpo, acessibilidade web e impacto social positivo."
         },
-        skills: { title: "Tecnologias & Skills", frontend: "Front-end", backend: "Back-end", others: "Outros" },
+        skills: { title: "Tecnologias & Skills", frontend: "Front-end", backend: "Back-end", others: "Outros", category_label: "Tecnologias" },
         certifications: { title: "Certificações & Educação" },
         recognitions: { 
             title: "Reconhecimentos", 
@@ -56,7 +56,14 @@ const translations = {
             jornal_btn: "Ver Edição",
             cps_title: "Victor Theodoro - Destaque em Inovação Tecnológica",
             cps_desc: "Victor Theodoro foi destacado pelo Centro Paula Souza como um dos jovens talentos em desenvolvimento de software. A matéria apresenta sua trajetória acadêmica na Etec de Registro, destacando suas habilidades em desenvolvimento fullstack e sua participação em projetos inovadores. Esta cobertura institucional reconhece sua dedicação aos estudos e seu potencial como profissional da tecnologia.",
-            cps_btn: "Acessar"
+            cps_btn: "Acessar",
+            reels_btn: "Ver Reels",
+            robocode_btn: "Ver Resultado",
+            feteps_btn: "Ver Projeto",
+            etec16_btn: "Conhecer",
+            feteps2026_btn: "Acompanhar",
+            regiaohoje_btn: "Ler Matéria",
+            abc_btn: "Acessar"
         },
         contact: { 
             title: "Entrar em Contato",
@@ -64,6 +71,8 @@ const translations = {
             name: "Nome",
             email: "E-mail",
             message: "Mensagem",
+            subject_label: "Assunto",
+            subject_placeholder: "Proposta / Oportunidade / Projeto",
             send: "Enviar Mensagem"
         },
         footer: { 
@@ -73,7 +82,12 @@ const translations = {
             hiring_text: "Estou aberto a novas oportunidades e amaria conversar sobre projetos inovadores.",
             email: "Envie um Email",
             privacy: "Política de Privacidade",
-            rights: "Todos os direitos reservados."
+            rights: "Todos os direitos reservados.",
+            brand: "Victor Theodoro • Desenvolvedor de Software"
+        },
+        ui: {
+            show_more: "Ver Mais",
+            show_less: "Ver Menos"
         }
     },
     en: {
@@ -91,7 +105,7 @@ const translations = {
             vision_title: "Goals & Vision",
             vision_desc: "Passionate about assistive technology and social innovation. Goal: create solutions that empower people with disabilities through technology. Commitment to clean code, web accessibility, and positive social impact."
         },
-        skills: { title: "Technologies & Skills", frontend: "Front-end", backend: "Back-end", others: "Others" },
+        skills: { title: "Technologies & Skills", frontend: "Front-end", backend: "Back-end", others: "Others", category_label: "Technologies" },
         certifications: { title: "Certifications & Education" },
         recognitions: { 
             title: "Recognitions", 
@@ -126,7 +140,14 @@ const translations = {
             jornal_btn: "View Edition",
             cps_title: "Victor Theodoro - Highlight in Technological Innovation",
             cps_desc: "Victor Theodoro was highlighted by Centro Paula Souza as one of the young talents in software development. The article presents his academic trajectory at Etec Registro, highlighting his fullstack development skills and his participation in innovative projects. This institutional coverage recognizes his dedication to studies and his potential as a technology professional.",
-            cps_btn: "Access"
+            cps_btn: "Access",
+            reels_btn: "Watch Reels",
+            robocode_btn: "View Results",
+            feteps_btn: "View Project",
+            etec16_btn: "Learn More",
+            feteps2026_btn: "Follow",
+            regiaohoje_btn: "Read Article",
+            abc_btn: "Access"
         },
         contact: { 
             title: "Get in Touch",
@@ -134,6 +155,8 @@ const translations = {
             name: "Name",
             email: "Email",
             message: "Message",
+            subject_label: "Subject",
+            subject_placeholder: "Proposal / Opportunity / Project",
             send: "Send Message"
         },
         footer: { 
@@ -143,7 +166,12 @@ const translations = {
             hiring_text: "I'm open to new opportunities and would love to discuss innovative projects.",
             email: "Send an Email",
             privacy: "Privacy Policy",
-            rights: "All rights reserved."
+            rights: "All rights reserved.",
+            brand: "Victor Theodoro • Software Developer"
+        },
+        ui: {
+            show_more: "Show More",
+            show_less: "Show Less"
         }
     }
 };
@@ -177,6 +205,15 @@ function applyTranslations() {
         const key = el.getAttribute('data-i18n-html');
         const text = getTranslation(key);
         if (text) el.innerHTML = text;
+    });
+
+    // Ajustar botões "Ver Mais / Ver Menos" conforme estado
+    document.querySelectorAll('.show-more-btn').forEach(btn => {
+        const textEl = btn.querySelector('.btn-text');
+        if (!textEl) return;
+        const key = btn.classList.contains('expanded') ? 'ui.show_less' : 'ui.show_more';
+        const text = getTranslation(key);
+        if (text) textEl.textContent = text;
     });
 }
 
@@ -521,7 +558,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     item.style.display = 'none';
                 });
                 this.classList.remove('expanded');
-                this.querySelector('.btn-text').textContent = 'Ver Mais';
+                const showMoreText = getTranslation('ui.show_more') || 'Ver Mais';
+                this.querySelector('.btn-text').textContent = showMoreText;
                 this.querySelector('.btn-count').textContent = `(+${hiddenCount})`;
                 this.querySelector('i').style.transform = 'rotate(0deg)';
             } else {
@@ -539,7 +577,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     }, index * 100);
                 });
                 this.classList.add('expanded');
-                this.querySelector('.btn-text').textContent = 'Ver Menos';
+                const showLessText = getTranslation('ui.show_less') || 'Ver Menos';
+                this.querySelector('.btn-text').textContent = showLessText;
                 this.querySelector('.btn-count').textContent = '';
                 this.querySelector('i').style.transform = 'rotate(180deg)';
             }
@@ -563,11 +602,12 @@ if (showMoreRecognitionsBtn) {
             hiddenRecognitions.forEach(item => {
                 item.style.display = 'none';
             });
-            this.classList.remove('expanded');
-            this.querySelector('.btn-text').textContent = 'Ver Mais';
-            this.querySelector('.btn-count').textContent = `(+${hiddenCount})`;
-            this.querySelector('i').style.transform = 'rotate(0deg)';
-        } else {
+        this.classList.remove('expanded');
+        const showMoreText = getTranslation('ui.show_more') || 'Ver Mais';
+        this.querySelector('.btn-text').textContent = showMoreText;
+        this.querySelector('.btn-count').textContent = `(+${hiddenCount})`;
+        this.querySelector('i').style.transform = 'rotate(0deg)';
+    } else {
             // Show items with animation
             hiddenRecognitions.forEach((item, index) => {
                 setTimeout(() => {
@@ -581,12 +621,13 @@ if (showMoreRecognitionsBtn) {
                     }, 50);
                 }, index * 100);
             });
-            this.classList.add('expanded');
-            this.querySelector('.btn-text').textContent = 'Ver Menos';
-            this.querySelector('.btn-count').textContent = '';
-            this.querySelector('i').style.transform = 'rotate(180deg)';
-        }
-    });
+        this.classList.add('expanded');
+        const showLessText = getTranslation('ui.show_less') || 'Ver Menos';
+        this.querySelector('.btn-text').textContent = showLessText;
+        this.querySelector('.btn-count').textContent = '';
+        this.querySelector('i').style.transform = 'rotate(180deg)';
+    }
+});
 }
 
 // ==========================================

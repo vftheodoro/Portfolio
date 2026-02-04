@@ -7,27 +7,28 @@
     <meta name="keywords" content="desenvolvedor fullstack, react, node.js, python, javascript, portfólio, web development, frontend, backend">
     <meta name="author" content="Victor Theodoro">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#0f172a">
-    <meta property="og:title" content="Victor Theodoro - Desenvolvedor FullStack Junior">
+    <meta name="theme-color" content="#0a1020">
+    <meta property="og:title" content="Victor Theodoro | Portfólio de Software">
     <meta property="og:description" content="Portfólio profissional com projetos inovadores em desenvolvimento web. Especialista em React, Node.js e tecnologias modernas.">
     <meta property="og:image" content="https://victortheodoro.dev/preview.jpg">
     <meta property="og:url" content="https://victortheodoro.dev">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Victor Theodoro - Desenvolvedor FullStack Junior">
+    <meta name="twitter:title" content="Victor Theodoro | Portfólio de Software">
     <meta name="twitter:description" content="Portfólio profissional com projetos inovadores em desenvolvimento web.">
     <meta name="twitter:image" content="https://victortheodoro.dev/preview.jpg">
     <link rel="canonical" href="https://victortheodoro.dev">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/logos/logo_theodoro_branca.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/logos/logo_theodoro_branca.png">
     
     <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://kit.fontawesome.com https://ka-f.fontawesome.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://ka-f.fontawesome.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://ka-f.fontawesome.com; frame-src 'self' https://www.youtube.com;">
     
-    <title>Victor Theodoro - Desenvolvedor FullStack Junior | Portfólio Profissional</title>
+    <title>Victor Theodoro | Portfólio de Software</title>
+    <meta name="application-name" content="Victor Theodoro | Portfólio de Software">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/improvements.css">
@@ -87,8 +88,7 @@
             <div class="navbar-content">
                 <a href="#home" class="logo" aria-label="Ir para o início">
                     <span class="logo-mark" aria-hidden="true">
-                        <span class="logo-letter">V</span>
-                        <span class="logo-letter">T</span>
+                        <img src="assets/logos/logo_theodoro_branca.png" alt="" class="logo-image">
                     </span>
                 </a>
 
@@ -237,7 +237,7 @@
                         <i class="fas fa-laptop-code"></i>
                         <h3 data-i18n="skills.frontend">Front-end</h3>
                     </div>
-                    <p class="skill-category-label">Tecnologias</p>
+                    <p class="skill-category-label" data-i18n="skills.category_label">Tecnologias</p>
                     <div class="skill-list">
                         <span class="skill-tag animate-bounce-in animate-delay-3" data-skill="html5">HTML5</span>
                         <span class="skill-tag animate-bounce-in animate-delay-4" data-skill="css3">CSS3</span>
@@ -253,7 +253,7 @@
                         <i class="fas fa-cogs"></i>
                         <h3 data-i18n="skills.backend">Back-end</h3>
                     </div>
-                    <p class="skill-category-label">Tecnologias</p>
+                    <p class="skill-category-label" data-i18n="skills.category_label">Tecnologias</p>
                     <div class="skill-list">
                         <span class="skill-tag animate-bounce-in animate-delay-4" data-skill="nodejs">Node.js</span>
                         <span class="skill-tag animate-bounce-in animate-delay-5" data-skill="python">Python</span>
@@ -269,7 +269,7 @@
                         <i class="fas fa-tools"></i>
                         <h3 data-i18n="skills.others">🛠️ Outros</h3>
                     </div>
-                    <p class="skill-category-label">Tecnologias</p>
+                    <p class="skill-category-label" data-i18n="skills.category_label">Tecnologias</p>
                     <div class="skill-list">
                         <span class="skill-tag animate-bounce-in animate-delay-5" data-skill="git">Git / GitHub</span>
                         <span class="skill-tag animate-bounce-in animate-delay-6" data-skill="os">Windows / Linux / Android</span>
@@ -611,11 +611,11 @@
 
                 <!-- Add more recognition cards here -->
             </div>
-            <button class="show-more-btn" id="showMoreRecognitions" data-hidden="3">
-                <span class="btn-text">Ver Mais</span>
-                <span class="btn-count">(+3)</span>
-                <i class="fas fa-chevron-down"></i>
-            </button>
+                    <button class="show-more-btn" id="showMoreRecognitions" data-hidden="3">
+                        <span class="btn-text" data-i18n="ui.show_more">Ver Mais</span>
+                        <span class="btn-count">(+3)</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
         </div>
     </section>
 
@@ -693,11 +693,11 @@
                             </div>
                             <h4>Câmara Municipal de Registro</h4>
                             <p>Citação oficial do projeto WACS e reconhecimento do impacto social na região. Apoio institucional.</p>
-                            <a href="https://www.instagram.com/p/DRhNkyNiKor/" class="media-btn" target="_blank" rel="noopener noreferrer">Ver Reels <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://www.instagram.com/p/DRhNkyNiKor/" class="media-btn" target="_blank" rel="noopener noreferrer"><span data-i18n="media.reels_btn">Ver Reels</span> <i class="fas fa-arrow-right"></i></a>
                         </article>
                     </div>
                     <button class="show-more-btn" data-column="interviews" data-hidden="2">
-                        <span class="btn-text">Ver Mais</span>
+                        <span class="btn-text" data-i18n="ui.show_more">Ver Mais</span>
                         <span class="btn-count">(+2)</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
@@ -724,7 +724,7 @@
                             <span class="media-source"><i class="fas fa-robot"></i> Robótica CPS</span>
                             <h4>11º Torneio de Robocode - 2º Lugar BarbieScript</h4>
                             <p class="badge-subtitle">Conquista histórica no torneio nacional de robótica organizado pelo Centro Paula Souza. O projeto BarbieScript, desenvolvido pela equipe da Etec de Registro, alcançou a segunda colocação em uma competição que reuniu instituições de todo o Brasil. Esta vitória demonstra a excelência técnica dos estudantes e o alto nível de qualidade dos projetos desenvolvidos na instituição, consolidando a posição da Etec como referência em educação tecnológica e inovação.</p>
-                            <a href="https://robotica.cps.sp.gov.br/11o-torneio-de-robocode/" target="_blank" rel="noopener noreferrer">Ver Resultado <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://robotica.cps.sp.gov.br/11o-torneio-de-robocode/" target="_blank" rel="noopener noreferrer"><span data-i18n="media.robocode_btn">Ver Resultado</span> <i class="fas fa-arrow-right"></i></a>
                         </article>
 
                         <article class="media-card-press premium">
@@ -734,7 +734,7 @@
                             <span class="media-source"><i class="fas fa-star"></i> FETEPS Oficial</span>
                             <h4>Victor Theodoro - Destaque na FETEPS Premium</h4>
                             <p class="badge-subtitle">Victor Theodoro foi destaque na categoria premium da FETEPS, a maior feira de tecnologia do Centro Paula Souza. Sua participação nesta exposição de alto nível demonstra suas habilidades avançadas em desenvolvimento de soluções tecnológicas inovadoras. Esta seleção premium reconhece seu talento e potencial como profissional da tecnologia, conectando-o com empresários, investidores e líderes da indústria.</p>
-                            <a href="https://feteps.cps.sp.gov.br/projetos/wacs-autonomia-inteligente-para-pcds/" target="_blank" rel="noopener noreferrer">Ver Projeto <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://feteps.cps.sp.gov.br/projetos/wacs-autonomia-inteligente-para-pcds/" target="_blank" rel="noopener noreferrer"><span data-i18n="media.feteps_btn">Ver Projeto</span> <i class="fas fa-arrow-right"></i></a>
                         </article>
 
                         <article class="media-card-press hidden-media">
@@ -744,7 +744,7 @@
                             <span class="media-source"><i class="fas fa-chalkboard-user"></i> Etec Registro</span>
                             <h4>Victor Theodoro - Destaque na 16ª FETEPS</h4>
                             <p class="badge-subtitle">Victor Theodoro foi destacado como um dos estudantes de destaque na 16ª edição da Feira Tecnológica do Centro Paula Souza. A publicação institucional apresenta seus projetos inovadores e enfatiza a qualidade do ensino técnico oferecido pela Etec de Registro. Esta cobertura demonstra o compromisso da instituição com a formação de profissionais capacitados e inovadores, contribuindo para o desenvolvimento tecnológico regional.</p>
-                            <a href="https://etecregistro.cps.sp.gov.br/alunos-da-etec-de-registro-sao-destaques-na-16a-feira-de-tecnologia-do-centro-paula-souza/" target="_blank" rel="noopener noreferrer">Conhecer <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://etecregistro.cps.sp.gov.br/alunos-da-etec-de-registro-sao-destaques-na-16a-feira-de-tecnologia-do-centro-paula-souza/" target="_blank" rel="noopener noreferrer"><span data-i18n="media.etec16_btn">Conhecer</span> <i class="fas fa-arrow-right"></i></a>
                         </article>
 
                         <article class="media-card-press hidden-media">
@@ -754,7 +754,7 @@
                             <span class="media-source"><i class="fas fa-chalkboard-user"></i> Etec Registro</span>
                             <h4>Victor Theodoro - Destaque na FETEPS 2026</h4>
                             <p class="badge-subtitle">Publicação especial da Etec de Registro celebrando a participação de Victor Theodoro na FETEPS 2026. A matéria expressa o orgulho institucional pelos estudantes que desenvolveram soluções tecnológicas inovadoras, destacando como seu trabalho representa o sucesso do modelo educacional da instituição e o impacto positivo na comunidade, inspirando outros estudantes a se dedicarem à inovação e à solução de problemas sociais.</p>
-                            <a href="https://etecregistro.cps.sp.gov.br/feteps-2026-que-orgulho/" target="_blank" rel="noopener noreferrer">Acompanhar <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://etecregistro.cps.sp.gov.br/feteps-2026-que-orgulho/" target="_blank" rel="noopener noreferrer"><span data-i18n="media.feteps2026_btn">Acompanhar</span> <i class="fas fa-arrow-right"></i></a>
                         </article>
 
                         <article class="media-card-press online hidden-media">
@@ -764,7 +764,7 @@
                             <span class="media-source"><i class="fas fa-newspaper"></i> Região Hoje</span>
                             <h4>Victor Theodoro - Inovação em Tecnologia Assistiva</h4>
                             <p class="badge-subtitle">Cobertura de mídia regional online destacando o trabalho inovador de Victor Theodoro em desenvolvimento de soluções tecnológicas para acessibilidade. A matéria apresenta suas contribuições para a área de tecnologia assistiva e seu impacto na comunidade local.</p>
-                            <a href="https://www.regiaohoje.com.br/noticia/38090/santa-barbara/brasil/grupo-de-etec-cria-cadeira-de-rodas-com-sistema-de-acessibilidade-inteligente.html" target="_blank" rel="noopener noreferrer">Ler Matéria <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://www.regiaohoje.com.br/noticia/38090/santa-barbara/brasil/grupo-de-etec-cria-cadeira-de-rodas-com-sistema-de-acessibilidade-inteligente.html" target="_blank" rel="noopener noreferrer"><span data-i18n="media.regiaohoje_btn">Ler Matéria</span> <i class="fas fa-arrow-right"></i></a>
                         </article>
 
                         <article class="media-card-press online hidden-media">
@@ -774,11 +774,11 @@
                             <span class="media-source"><i class="fas fa-newspaper"></i> ABC do ABC</span>
                             <h4>Victor Theodoro - Inovação Tecnológica</h4>
                             <p class="badge-subtitle">Publicação no portal ABC do ABC destacando o trabalho inovador de Victor Theodoro em desenvolvimento de soluções tecnológicas para acessibilidade. A matéria apresenta suas habilidades em desenvolvimento fullstack e sua contribuição para projetos que combinam tecnologia embarcada, inteligência artificial e design ergonômico. Esta cobertura regional reforça sua posição como profissional promissor na área de tecnologia.</p>
-                            <a href="https://abcdoabc.com.br/etec-projeta-cadeira-de-rodas-inteligente/" target="_blank" rel="noopener noreferrer">Acessar <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://abcdoabc.com.br/etec-projeta-cadeira-de-rodas-inteligente/" target="_blank" rel="noopener noreferrer"><span data-i18n="media.abc_btn">Acessar</span> <i class="fas fa-arrow-right"></i></a>
                         </article>
                     </div>
                     <button class="show-more-btn" data-column="press" data-hidden="4">
-                        <span class="btn-text">Ver Mais</span>
+                        <span class="btn-text" data-i18n="ui.show_more">Ver Mais</span>
                         <span class="btn-count">(+4)</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
@@ -807,8 +807,8 @@
                         <input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="subject">Assunto</label>
-                        <input id="subject" name="subject" type="text" placeholder="Proposta / Oportunidade / Projeto" required>
+                        <label for="subject" data-i18n="contact.subject_label">Assunto</label>
+                        <input id="subject" name="subject" type="text" placeholder="Proposta / Oportunidade / Projeto" data-i18n="contact.subject_placeholder" required>
                     </div>
                     <div class="form-group">
                         <label for="message" data-i18n="contact.message">Mensagem</label>
@@ -860,6 +860,10 @@
     <footer class="footer-enhanced">
         <div class="footer-background"></div>
         <div class="container">
+            <div class="footer-brand">
+                <img src="assets/logos/logo_theodoro_branca.png" alt="Logo Victor Theodoro" class="footer-logo">
+                <span class="footer-brand-text" data-i18n="footer.brand">Victor Theodoro • Software Developer</span>
+            </div>
             <!-- Footer Grid -->
             <div class="footer-grid">
                 <div class="footer-section">
