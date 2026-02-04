@@ -7,7 +7,7 @@ let currentLanguage = localStorage.getItem('language') || 'pt';
 // Traduções embutidas (sem dependência de fetch)
 const translations = {
     pt: {
-        nav: { home: "Home", about: "Sobre", skills: "Skills", certifications: "Certificações", projects: "Projetos", media: "Mídia", contact: "Contato" },
+        nav: { home: "Home", about: "Sobre", skills: "Skills", certifications: "Certificações", awards: "Prêmios", recognitions: "Reconhecimentos", projects: "Projetos", media: "Mídia", contact: "Contato" },
         hero: { subtitle: "Desenvolvedor de Software", description: "Especializado em criar soluções web e mobile modernas, escaláveis e focadas em impacto real.", cta1: "Ver Projetos", cta2: "Entrar em Contato", scroll: "Scroll para explorar" },
         about: { 
             title: "Sobre Mim",
@@ -31,12 +31,58 @@ const translations = {
             mencao_title: "Menção Especial na Câmara Municipal",
             mencao_desc: "Menção especial do vereador Marcelo Comeron ao projeto WACS na sessão ordinária da Câmara, destacando impacto social e compromisso com acessibilidade."
         },
+        awards: {
+            title: "Prêmios Oficiais",
+            subtitle: "Conquistas registradas oficialmente em eventos acadêmicos e esportivos.",
+            a1: {
+                rank: "1º Lugar",
+                date: "out 2025",
+                title: "Votação popular de melhor projeto da 6ª FETEC",
+                meta: "Concedido por Etec de Registro",
+                desc: "Projeto WACS — Autonomia Inteligente para PCD’s. Reconhecimento pelo impacto social e inovação."
+            },
+            a2: {
+                rank: "7º Lugar",
+                date: "out 2025",
+                title: "16ª FETEPS — Melhor Projeto",
+                meta: "Concedido por Centro Paula Souza",
+                desc: "Representante do WACS da Etec de Registro no maior evento acadêmico de tecnologia e inovação do Brasil."
+            },
+            a3: {
+                rank: "1º Lugar",
+                date: "out 2024",
+                title: "Votação popular de melhor projeto da 5ª FETEC",
+                meta: "Concedido por Etec de Registro",
+                desc: "Projeto “Educação Sexual”. Reconhecimento pela relevância e impacto na comunidade."
+            },
+            a4: {
+                rank: "1º Lugar",
+                date: "set 2024",
+                title: "Campeonato Brasileiro de Fisiculturismo",
+                meta: "Categoria Men’s Physique Sub Junior até 18 anos",
+                desc: "Campeão no 7º Campeonato Brasileiro. Local: Osasco-SP."
+            },
+            a5: {
+                rank: "2º Lugar",
+                date: "set 2023",
+                title: "Torneio Estadual de RoboCode",
+                meta: "Concedido por Robótica Paula Souza",
+                desc: "Destaque em programação e estratégia de robôs na competição estadual."
+            },
+            a6: {
+                rank: "1º Lugar",
+                date: "ago 2023",
+                title: "Campeonato de RoboCode (ETEC Registro)",
+                meta: "Concedido por Etec Registro",
+                desc: "Classificação para representar a instituição na fase regional."
+            }
+        },
         projects: { 
             title: "Projetos",
             subtitle: "Sistema revolucionário de tecnologia assistiva premiado nacionalmente",
             description: "Sistema inteligente de automação para cadeiras de rodas desenvolvido para promover independência e acessibilidade. Inclui controle por voz, navegação assistida por IA e integração completa com dispositivos IoT para pessoas com deficiência motora.",
             award: "7º LUGAR - FETEPS (2025)",
-            award_desc: "A maior feira de tecnologia pública da América Latina, reunindo inovações e projetos transformadores do Brasil",
+            award_desc: "A maior feira de tecnologia pública da <span class=\"award-glow\">América Latina</span>, reunindo inovações e projetos transformadores do Brasil",
             visit_website: "Site Oficial",
             instagram: "@wacs_etec"
         },
@@ -91,7 +137,7 @@ const translations = {
         }
     },
     en: {
-        nav: { home: "Home", about: "About", skills: "Skills", certifications: "Certifications", projects: "Projects", media: "Media", contact: "Contact" },
+        nav: { home: "Home", about: "About", skills: "Skills", certifications: "Certifications", awards: "Awards", recognitions: "Recognitions", projects: "Projects", media: "Media", contact: "Contact" },
         hero: { subtitle: "Software Developer", description: "Specialized in creating modern, scalable web and mobile solutions focused on real impact.", cta1: "View Projects", cta2: "Get in Touch", scroll: "Scroll to explore" },
         about: { 
             title: "About Me",
@@ -115,12 +161,58 @@ const translations = {
             mencao_title: "Special Mention at City Council",
             mencao_desc: "Special mention from councilman Marcelo Comeron to the WACS project at the City Council's ordinary session, highlighting social impact and commitment to accessibility."
         },
+        awards: {
+            title: "Official Awards",
+            subtitle: "Officially recorded achievements in academic and sports events.",
+            a1: {
+                rank: "1st Place",
+                date: "Oct 2025",
+                title: "Popular vote for best project at the 6th FETEC",
+                meta: "Granted by Etec de Registro",
+                desc: "WACS — Intelligent Autonomy for PWDs. Recognition for social impact and innovation."
+            },
+            a2: {
+                rank: "7th Place",
+                date: "Oct 2025",
+                title: "16th FETEPS — Best Project",
+                meta: "Granted by Centro Paula Souza",
+                desc: "Representing WACS from Etec de Registro at Brazil's largest academic tech and innovation event."
+            },
+            a3: {
+                rank: "1st Place",
+                date: "Oct 2024",
+                title: "Popular vote for best project at the 5th FETEC",
+                meta: "Granted by Etec de Registro",
+                desc: "“Sex Education” project. Recognized for relevance and community impact."
+            },
+            a4: {
+                rank: "1st Place",
+                date: "Sep 2024",
+                title: "Brazilian Bodybuilding Championship",
+                meta: "Men’s Physique Sub Junior up to 18 years",
+                desc: "Champion at the 7th Brazilian Championship. Location: Osasco-SP."
+            },
+            a5: {
+                rank: "2nd Place",
+                date: "Sep 2023",
+                title: "State RoboCode Tournament",
+                meta: "Granted by Robótica Paula Souza",
+                desc: "Highlighted for programming and robot strategy in the state competition."
+            },
+            a6: {
+                rank: "1st Place",
+                date: "Aug 2023",
+                title: "RoboCode Championship (ETEC Registro)",
+                meta: "Granted by Etec Registro",
+                desc: "Qualified to represent the institution in the regional stage."
+            }
+        },
         projects: { 
             title: "Projects",
             subtitle: "Revolutionary assistive technology system awarded nationally",
             description: "Intelligent automation system for wheelchairs developed to promote independence and accessibility. Includes voice control, AI-assisted navigation and complete integration with IoT devices for people with motor disabilities.",
             award: "7TH PLACE - FETEPS (2025)",
-            award_desc: "Latin America's largest public technology fair, bringing together innovations and transformative projects from Brazil",
+            award_desc: "Latin America's largest public technology fair across <span class=\"award-glow\">Latin America</span>, bringing together innovations and transformative projects from Brazil",
             visit_website: "Official Website",
             instagram: "@wacs_etec"
         },
@@ -797,6 +889,8 @@ function updateActiveNavLink() {
         { id: 'sobre', name: 'sobre' },
         { id: 'skills', name: 'skills' },
         { id: 'certificacoes', name: 'certificacoes' },
+        { id: 'premios-oficiais', name: 'premios-oficiais' },
+        { id: 'reconhecimentos', name: 'reconhecimentos' },
         { id: 'projetos', name: 'projetos' },
         { id: 'midia', name: 'midia' },
         { id: 'contato', name: 'contato' }
