@@ -1623,93 +1623,53 @@ section > .container {
    ===================================================== */
 
 .contact {
-    background: linear-gradient(180deg, rgba(5, 7, 15, 0.95) 0%, rgba(10, 16, 32, 0.95) 100%);
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.05), transparent 55%),
+        linear-gradient(180deg, rgba(5, 7, 15, 0.98) 0%, rgba(10, 16, 32, 0.95) 100%);
+    padding: 4rem 0 5rem;
 }
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 0.9fr;
-    gap: 2.5rem;
-    align-items: start;
+    grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+    gap: 2rem;
+    align-items: stretch;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
 }
 
-.contact-form {
-    padding: 2rem;
-    display: grid;
-    gap: 1.2rem;
+.section-header + .contact-content {
+    margin-top: 1.5rem;
 }
 
-.form-group {
-    display: grid;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--text-muted);
-}
-
-.form-group input,
-.form-group textarea {
-    background: rgba(5, 7, 15, 0.7);
+.contact-panel {
+    background: linear-gradient(135deg, rgba(16, 28, 50, 0.95) 0%, rgba(8, 14, 28, 0.98) 100%);
     border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-panel-title {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
     color: var(--text-strong);
-    padding: 0.9rem 1rem;
-    border-radius: 12px;
-    font-size: 0.95rem;
-    font-family: var(--font-mono);
-    transition: border-color var(--transition), box-shadow var(--transition);
-}
-
-.form-group textarea {
-    min-height: 140px;
-    resize: vertical;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(47, 123, 255, 0.2);
-    outline: none;
-}
-
-.contact-form button {
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    color: #05070f;
-    border: none;
-    padding: 0.95rem 1.5rem;
-    border-radius: 12px;
-    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-family: var(--font-mono);
-    cursor: pointer;
-    transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.contact-form button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(47, 123, 255, 0.45);
-}
-
-.form-message {
-    font-size: 0.9rem;
+.contact-note {
     color: var(--text-muted);
-}
-
-.form-message.success {
-    color: #5cc8ff;
-}
-
-.form-message.error {
-    color: #ff6b6b;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 42ch;
 }
 
 .contact-links {
     display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
 }
 
@@ -1717,31 +1677,133 @@ section > .container {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1rem 1.4rem;
-    transition: transform var(--transition), border-color var(--transition);
+    padding: 1.15rem 1.4rem;
+    border-radius: 16px;
+    border: 1px solid rgba(92, 129, 255, 0.2);
+    background: rgba(10, 16, 32, 0.7);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
 }
 
 .contact-btn i {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: var(--accent-2);
-    background: rgba(47, 123, 255, 0.15);
-    width: 46px;
-    height: 46px;
+    width: 42px;
+    height: 42px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgba(47, 123, 255, 0.2);
+    border: 1px solid rgba(92, 129, 255, 0.3);
+}
+
+.contact-btn:hover {
+    transform: translateY(-4px);
+    border-color: rgba(92, 200, 255, 0.7);
+    box-shadow: 0 18px 35px rgba(2, 4, 12, 0.7);
+}
+
+.contact-btn-whatsapp {
+    border-color: rgba(37, 211, 102, 0.6);
+}
+
+.contact-btn-whatsapp i {
+    background: rgba(37, 211, 102, 0.8);
+}
+
+.contact-btn-github {
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.contact-btn-github i {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.contact-btn-linkedin {
+    border-color: rgba(10, 102, 194, 0.8);
+}
+
+.contact-btn-linkedin i {
+    background: rgba(10, 102, 194, 0.9);
+}
+
+.contact-btn-instagram {
+    border-color: rgba(225, 48, 108, 0.8);
+}
+
+.contact-btn-instagram i {
+    background: linear-gradient(135deg, #e1306c, #f77737, #405de6);
 }
 
 .contact-info h4 {
     color: var(--text-strong);
     margin-bottom: 0.2rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
 .contact-info p {
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.8rem;
+}
+
+/* Social Media Buttons */
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.social-button {
+    padding: 0.85rem 1.8rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     font-size: 0.9rem;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.social-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.facebook-button {
+    background: linear-gradient(135deg, #1877F2 0%, #0A66C2 100%);
+    color: white;
+}
+
+.facebook-button:hover {
+    box-shadow: 0 8px 20px rgba(24, 119, 242, 0.5);
+}
+
+.twitter-button {
+    background: linear-gradient(135deg, #1DA1F2 0%, #1570A6 100%);
+    color: white;
+}
+
+.twitter-button:hover {
+    box-shadow: 0 8px 20px rgba(29, 161, 242, 0.5);
+}
+
+.instagram-button {
+    background: linear-gradient(135deg, #E1306C 0%, #405DE6 50%, #5B51D8 100%);
+    color: white;
+}
+
+.instagram-button:hover {
+    box-shadow: 0 8px 20px rgba(225, 48, 108, 0.5);
 }
 
 /* =====================================================
@@ -2040,6 +2102,14 @@ section > .container {
 
     .awards-carousel,
     .recognitions-carousel {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links {
         grid-template-columns: 1fr;
     }
 }

@@ -92,16 +92,16 @@ const translations = {
             interviews: "Entrevistas",
             press: "Na Imprensa",
             cnn_title: "Entrevista CNN Brasil",
-            cnn_desc: "Victor Theodoro foi entrevistado pela CNN Brasil, onde apresentou suas habilidades em desenvolvimento fullstack e sua experiência em projetos de tecnologia assistiva. A entrevista destacou sua trajetória como jovem desenvolvedor e sua contribuição para a inovação tecnológica no Brasil.",
+            cnn_desc: "Entrevista sobre o projeto WACS, trajetória e impacto social em tecnologia assistiva.",
             cnn_btn: "Ver Post",
             estadao_title: "Entrevista Estadão",
-            estadao_desc: "Victor Theodoro foi destaque em entrevista exclusiva no jornal Estadão, onde compartilhou sua experiência como desenvolvedor fullstack junior e sua participação em projetos inovadores de tecnologia assistiva. A matéria destacou sua trajetória acadêmica e profissional, enfatizando seu compromisso com a inovação social através da tecnologia.",
+            estadao_desc: "Entrevista no Estadão sobre WACS, desenvolvimento fullstack e inovação social.",
             estadao_btn: "Ver Matéria",
             jornal_title: "Edição Impressa - Jornal Estadão",
-            jornal_desc: "Victor Theodoro foi mencionado na edição impressa do Estadão, o maior jornal do Brasil, destacando sua trajetória como jovem talento em desenvolvimento de software. Esta cobertura impressa alcança milhões de leitores e reforça sua posição como profissional promissor na área de tecnologia.",
+            jornal_desc: "Menção na edição impressa do Estadão destacando trajetória e trabalho em software.",
             jornal_btn: "Ver Edição",
             cps_title: "Victor Theodoro - Destaque em Inovação Tecnológica",
-            cps_desc: "Victor Theodoro foi destacado pelo Centro Paula Souza como um dos jovens talentos em desenvolvimento de software. A matéria apresenta sua trajetória acadêmica na Etec de Registro, destacando suas habilidades em desenvolvimento fullstack e sua participação em projetos inovadores. Esta cobertura institucional reconhece sua dedicação aos estudos e seu potencial como profissional da tecnologia.",
+            cps_desc: "Destaque institucional do CPS pela trajetória e projetos em software e tecnologia assistiva.",
             cps_btn: "Acessar",
             reels_btn: "Ver Reels",
             robocode_btn: "Ver Resultado",
@@ -114,6 +114,8 @@ const translations = {
         contact: { 
             title: "Entrar em Contato",
             subtitle: "Vamos conversar e criar algo incrível juntos",
+            social_note: "Escolha sua rede social favorita para seguir a conversa",
+            panel_title: "Bora conversar?",
             name: "Nome",
             email: "E-mail",
             message: "Mensagem",
@@ -222,16 +224,16 @@ const translations = {
             interviews: "Interviews",
             press: "In the Press",
             cnn_title: "CNN Brasil Interview",
-            cnn_desc: "Victor Theodoro was interviewed by CNN Brasil, where he presented his fullstack development skills and his experience in assistive technology projects. The interview highlighted his trajectory as a young developer and his contribution to technological innovation in Brazil.",
+            cnn_desc: "Interview about the WACS project, career path, and social impact in assistive tech.",
             cnn_btn: "View Post",
             estadao_title: "Estadão Interview",
-            estadao_desc: "Victor Theodoro was featured in an exclusive interview with the Estadão newspaper, where he shared his experience as a junior fullstack developer and his participation in innovative assistive technology projects. The article highlighted his academic and professional trajectory, emphasizing his commitment to social innovation through technology.",
+            estadao_desc: "Estadão interview on WACS, fullstack development, and social innovation.",
             estadao_btn: "View Article",
             jornal_title: "Printed Edition - Estadão Newspaper",
-            jornal_desc: "Victor Theodoro was mentioned in the printed edition of Estadão, Brazil's largest newspaper, highlighting his trajectory as a young talent in software development. This printed coverage reaches millions of readers and reinforces his position as a promising professional in the technology field.",
+            jornal_desc: "Mention in Estadão print edition highlighting his software trajectory and projects.",
             jornal_btn: "View Edition",
             cps_title: "Victor Theodoro - Highlight in Technological Innovation",
-            cps_desc: "Victor Theodoro was highlighted by Centro Paula Souza as one of the young talents in software development. The article presents his academic trajectory at Etec Registro, highlighting his fullstack development skills and his participation in innovative projects. This institutional coverage recognizes his dedication to studies and his potential as a technology professional.",
+            cps_desc: "CPS institutional highlight for his academic journey and software/assistive-tech projects.",
             cps_btn: "Access",
             reels_btn: "Watch Reels",
             robocode_btn: "View Results",
@@ -244,6 +246,8 @@ const translations = {
         contact: { 
             title: "Get in Touch",
             subtitle: "Let's talk and create something amazing together",
+            social_note: "Pick your favorite social network to continue the conversation",
+            panel_title: "Let’s talk?",
             name: "Name",
             email: "Email",
             message: "Message",
@@ -849,61 +853,6 @@ setupHorizontalCarousel('recognitionsTrack', '.recognition-card', 'recognitions'
 
 console.log('%cPortfólio Victor Theodoro carregado com sucesso! 🚀', 'color: #3b82f6; font-size: 14px; font-weight: bold;');
 console.log('%cProto: Use as funções addProject() e addMediaItem() para adicionar conteúdo dinamicamente', 'color: #8b5cf6; font-size: 12px;');
-
-// ==========================================
-// FORMULÁRIO DE CONTATO (mailto)
-// ==========================================
-
-const contactForm = document.getElementById('contactForm');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const submitBtn = document.getElementById('submitBtn');
-        const btnText = document.getElementById('btnText');
-        const formMessage = document.getElementById('formMessage');
-
-        const name = document.getElementById('name')?.value?.trim() || '';
-        const email = document.getElementById('email')?.value?.trim() || '';
-        const subject = document.getElementById('subject')?.value?.trim() || '';
-        const message = document.getElementById('message')?.value?.trim() || '';
-
-        if (!name || !email || !subject || !message) {
-            if (formMessage) {
-                formMessage.className = 'form-message error is-visible';
-                formMessage.textContent = 'Por favor, preencha todos os campos.';
-            }
-            return;
-        }
-
-        if (submitBtn) submitBtn.disabled = true;
-        if (btnText) btnText.textContent = 'Abrindo email...';
-
-        const to = 'victorgft@outlook.com';
-        const mailSubject = `[Portfólio] ${subject}`;
-        const mailBody =
-            `Nome: ${name}\n` +
-            `Email: ${email}\n\n` +
-            `${message}\n\n` +
-            `Enviado via portfólio.`;
-
-        const mailto = `mailto:${to}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
-
-        if (formMessage) {
-            formMessage.className = 'form-message success is-visible';
-            formMessage.textContent = 'Abrindo seu aplicativo de email...';
-        }
-
-        // Disparar o cliente de email do usuário
-        window.location.href = mailto;
-
-        setTimeout(() => {
-            if (submitBtn) submitBtn.disabled = false;
-            if (btnText) btnText.textContent = 'Enviar Mensagem';
-        }, 1200);
-    });
-}
 
 // ==========================================
 // SCROLL SPY - Highlight current section
