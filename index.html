@@ -33,15 +33,15 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/improvements.css">
 
-    <!-- Google Analytics -->
-    <!-- IMPORTANTE: Substitua 'GA_MEASUREMENT_ID' pelo seu ID real do Google Analytics (formato: G-XXXXXXXXXX) -->
+    <!-- Google Analytics - Descomente e substitua GA_MEASUREMENT_ID pelo seu ID real (formato: G-XXXXXXXXXX)
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID'); // Substitua aqui também
+        gtag('config', 'GA_MEASUREMENT_ID');
     </script>
+    -->
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -81,7 +81,7 @@
     </script>
 </head>
 <body class="is-loading">
-    <a class="skip-link" href="#home">Pular para o conteúdo</a>
+    <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -114,6 +114,7 @@
         </div>
     </nav>
 
+    <main id="main-content">
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-background">
@@ -471,18 +472,18 @@
                                         </div>
                                     </div>
                                     <div class="carousel-nav">
-                                        <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
-                                        <div class="carousel-dots">
-                                            <span class="dot active" onclick="currentSlide(0)"></span>
-                                            <span class="dot" onclick="currentSlide(1)"></span>
-                                            <span class="dot" onclick="currentSlide(2)"></span>
-                                            <span class="dot" onclick="currentSlide(3)"></span>
-                                            <span class="dot" onclick="currentSlide(4)"></span>
-                                            <span class="dot" onclick="currentSlide(5)"></span>
-                                            <span class="dot" onclick="currentSlide(6)"></span>
-                                            <span class="dot" onclick="currentSlide(7)"></span>
+                                        <button class="carousel-btn prev" data-action="prev" aria-label="Slide anterior">&#10094;</button>
+                                        <div class="carousel-dots" role="tablist" aria-label="Slides do projeto">
+                                            <span class="dot active" data-slide="0" role="tab" aria-label="Slide 1" aria-selected="true" tabindex="0"></span>
+                                            <span class="dot" data-slide="1" role="tab" aria-label="Slide 2" aria-selected="false" tabindex="-1"></span>
+                                            <span class="dot" data-slide="2" role="tab" aria-label="Slide 3" aria-selected="false" tabindex="-1"></span>
+                                            <span class="dot" data-slide="3" role="tab" aria-label="Slide 4" aria-selected="false" tabindex="-1"></span>
+                                            <span class="dot" data-slide="4" role="tab" aria-label="Slide 5" aria-selected="false" tabindex="-1"></span>
+                                            <span class="dot" data-slide="5" role="tab" aria-label="Slide 6" aria-selected="false" tabindex="-1"></span>
+                                            <span class="dot" data-slide="6" role="tab" aria-label="Slide 7" aria-selected="false" tabindex="-1"></span>
+                                            <span class="dot" data-slide="7" role="tab" aria-label="Slide 8" aria-selected="false" tabindex="-1"></span>
                                         </div>
-                                        <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+                                        <button class="carousel-btn next" data-action="next" aria-label="Próximo slide">&#10095;</button>
                                     </div>
                                 </div>
                             </div>
@@ -567,7 +568,7 @@
                     <p data-i18n="awards.a6.desc">Classificação para representar a instituição na fase regional.</p>
                 </article>
             </div>
-                <button class="carousel-arrow next" type="button" aria-label="Pr?ximo" data-carousel="awards" data-dir="1">
+                <button class="carousel-arrow next" type="button" aria-label="Próximo" data-carousel="awards" data-dir="1">
                     <i class="fas fa-chevron-right" aria-hidden="true"></i>
                 </button>
             </div>
@@ -697,7 +698,7 @@
                 <!-- Add more recognition cards here -->
             
                 </div>
-                <button class="carousel-arrow next" type="button" aria-label="Pr?ximo" data-carousel="recognitions" data-dir="1">
+                <button class="carousel-arrow next" type="button" aria-label="Próximo" data-carousel="recognitions" data-dir="1">
                     <i class="fas fa-chevron-right" aria-hidden="true"></i>
                 </button>
             </div>
@@ -929,6 +930,7 @@
         </div>
     </section>
 
+    </main>
     <!-- Footer -->
     <footer class="footer-minimal">
         <div class="container">
@@ -953,7 +955,7 @@
                 </div>
             </div>
             <div class="footer-minimal-bottom">
-                <p>&copy; 2024 Victor Theodoro. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
+                <p>&copy; 2025 Victor Theodoro. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
                 <a href="#home" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
                     <i class="fas fa-arrow-up"></i>
                 </a>
