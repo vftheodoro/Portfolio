@@ -93,7 +93,10 @@ export default function Services() {
           <h3 className="text-2xl font-semibold text-center mb-10">
             {t("process_title")}
           </h3>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+            {/* Connector lines for desktop */}
+            <div className="hidden lg:block absolute top-[27px] left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-primary/5 via-primary/30 to-primary/5 z-0" />
+            
             {[1, 2, 3, 4].map((step, index) => {
               const StepIcon = stepIcons[index];
               return (
@@ -103,18 +106,18 @@ export default function Services() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.15 }}
-                  className="text-center"
+                  className="relative z-10 text-center group"
                 >
-                  <div className="w-14 h-14 mx-auto mb-4 bg-primary/10 rounded-xl flex items-center justify-center">
-                    <StepIcon size={24} className="text-primary" />
+                  <div className="w-14 h-14 mx-auto mb-4 bg-surface border border-border rounded-2xl flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all duration-300 shadow-sm shadow-primary/5">
+                    <StepIcon size={24} className="text-primary group-hover:scale-110 transition-transform" />
                   </div>
-                  <div className="text-xs text-primary font-mono mb-1">
-                    0{step}
+                  <div className="text-[10px] text-primary/60 font-mono mb-2 bg-primary/5 w-fit mx-auto px-2 py-0.5 rounded-full border border-primary/10 tracking-widest">
+                    STEP 0{step}
                   </div>
-                  <h4 className="font-semibold mb-1 text-sm sm:text-base">
+                  <h4 className="font-semibold mb-2 text-sm sm:text-base group-hover:text-primary transition-colors">
                     {t(`step${step}_title`)}
                   </h4>
-                  <p className="text-muted text-xs sm:text-sm">
+                  <p className="text-muted text-xs sm:text-sm leading-relaxed max-w-[200px] mx-auto">
                     {t(`step${step}_desc`)}
                   </p>
                 </motion.div>

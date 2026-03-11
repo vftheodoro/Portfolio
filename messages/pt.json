@@ -20,8 +20,8 @@
   },
   "about": {
     "title": "Sobre Mim",
-    "bio": "Sou um desenvolvedor FullStack de Registro, São Paulo, apaixonado por tecnologia e inovação. Minha jornada começou na ETEC de Registro, onde desenvolvi o WACS — um sistema inteligente de automação para cadeiras de rodas que promove independência para PCDs. Essa experiência me ensinou que a tecnologia tem o poder de transformar vidas.",
-    "bio2": "Combino habilidades técnicas sólidas em desenvolvimento web e mobile com uma visão focada em impacto social. Busco constantemente aprender e criar soluções que fazem a diferença.",
+    "bio": "Sou um desenvolvedor apaixonado por tecnologia de impacto, com atuação reconhecida como engenheiro de software devido à complexidade das soluções que entrego. Minha trajetória de excelência iniciou na ETEC de Registro — eleita a 3ª melhor escola pública do estado de SP — onde criei o WACS, um ecossistema inteligente de automação para cadeiras de rodas premiado internacionalmente.",
+    "bio2": "Atualmente, curso Desenvolvimento de Sistemas Multiplataforma na FATEC de Registro, unindo uma base acadêmica sólida com experiência prática em sistemas escaláveis. Busco constantemente resolver problemas complexos através de código limpo e arquitetura moderna.",
     "stats": {
       "projects": "Projetos",
       "awards": "Prêmios",
@@ -36,8 +36,8 @@
     "categories": {
       "frontend": "Frontend",
       "backend": "Backend",
-      "database": "Banco de Dados",
-      "tools": "Ferramentas & Outros"
+      "database": "Cloud & Banco de Dados",
+      "tools": "Ferramentas & Áreas"
     }
   },
   "projects": {
@@ -51,7 +51,7 @@
   },
   "services": {
     "title": "Serviços",
-    "subtitle": "Soluções sob medida para o seu negócio",
+    "subtitle": "Soluções de engenharia de software sob medida",
     "websites_title": "Sites & Landing Pages",
     "websites_desc": "Sites institucionais modernos e landing pages de alta conversão. Design responsivo, otimizado para SEO e performance.",
     "mobile_title": "Aplicativos Mobile",
@@ -61,15 +61,15 @@
     "iot_title": "Automação & IoT",
     "iot_desc": "Soluções inteligentes com Arduino, sensores e integração IoT. Automação residencial e industrial.",
     "process_title": "Como Trabalho",
-    "step1_title": "Descoberta",
-    "step1_desc": "Entendo suas necessidades e objetivos",
-    "step2_title": "Planejamento",
-    "step2_desc": "Defino a arquitetura e o cronograma",
-    "step3_title": "Desenvolvimento",
-    "step3_desc": "Codifico com qualidade e boas práticas",
-    "step4_title": "Entrega",
-    "step4_desc": "Deploy, testes e suporte contínuo",
-    "cta": "Vamos conversar sobre seu projeto?",
+    "step1_title": "1. Estratégia & Análise",
+    "step1_desc": "Mergulho profundo no seu problema para desenhar a solução técnica ideal.",
+    "step2_title": "2. Design & Arquitetura",
+    "step2_desc": "Planejamento modular focando em escalabilidade, segurança e experiência do usuário.",
+    "step3_title": "3. Desenvolvimento Ágil",
+    "step3_desc": "Codificação com sprints, testes contínuos e foco em performance real.",
+    "step4_title": "4. Lançamento & Evolução",
+    "step4_desc": "Deploy otimizado, monitoramento e suporte para o crescimento do produto.",
+    "cta": "Procurando um engenheiro de software para sua ideia?",
     "card_cta": "Solicitar orçamento"
   },
   "achievements": {
@@ -79,11 +79,13 @@
   "press": {
     "title": "Na Mídia",
     "subtitle": "Matérias e entrevistas sobre meu trabalho",
-    "read_more": "Ler matéria"
+    "read_more": "Ler matéria",
+    "view_more": "Ver mais",
+    "view_less": "Ver menos"
   },
   "contact": {
     "title": "Contato",
-    "subtitle": "Tem um projeto em mente ou quer bater um papo? Entre em contato!",
+    "subtitle": "Tem um projeto complexo ou quer bater um papo? Entre em contato!",
     "name": "Nome",
     "email": "E-mail",
     "type": "Tipo de contato",
@@ -101,7 +103,7 @@
   "footer": {
     "rights": "Todos os direitos reservados.",
     "built_with": "Feito com",
-    "tagline": "Transformando ideias em realidade",
+    "tagline": "Transformando ideias complexas em realidade digital",
     "nav_title": "Navegação",
     "services_title": "Serviços",
     "contact_title": "Contato",

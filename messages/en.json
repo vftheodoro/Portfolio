@@ -20,8 +20,8 @@
   },
   "about": {
     "title": "About Me",
-    "bio": "I'm a FullStack developer from Registro, São Paulo, Brazil, passionate about technology and innovation. My journey started at ETEC de Registro, where I developed WACS — an intelligent wheelchair automation system that promotes independence for people with disabilities. This experience taught me that technology has the power to transform lives.",
-    "bio2": "I combine solid technical skills in web and mobile development with a vision focused on social impact. I'm constantly learning and creating solutions that make a difference.",
+    "bio": "I am a developer passionate about impact technology, recognized as a software engineer for the complexity of the solutions I deliver. My path of excellence began at ETEC de Registro — elected the 3rd best public school in the state of SP — where I created WACS, an internationally award-winning intelligent wheelchair automation ecosystem.",
+    "bio2": "Currently, I am studying Multiplatform Systems Development at FATEC de Registro, combining a solid academic foundation with practical experience in scalable systems. I constantly seek to solve complex problems through clean code and modern architecture.",
     "stats": {
       "projects": "Projects",
       "awards": "Awards",
@@ -36,8 +36,8 @@
     "categories": {
       "frontend": "Frontend",
       "backend": "Backend",
-      "database": "Database",
-      "tools": "Tools & Others"
+      "database": "Cloud & Databases",
+      "tools": "Tools & Areas"
     }
   },
   "projects": {
@@ -51,25 +51,25 @@
   },
   "services": {
     "title": "Services",
-    "subtitle": "Tailored solutions for your business",
+    "subtitle": "Tailored software engineering solutions",
     "websites_title": "Websites & Landing Pages",
-    "websites_desc": "Modern institutional websites and high-conversion landing pages. Responsive design, SEO-optimized, and high performance.",
-    "mobile_title": "Mobile Applications",
-    "mobile_desc": "Cross-platform apps with React Native for iOS and Android. Intuitive interface and native experience.",
+    "websites_desc": "Modern institutional websites and high-conversion landing pages. Responsive design, optimized for SEO and performance.",
+    "mobile_title": "Mobile Apps",
+    "mobile_desc": "Multiplatform apps with React Native for iOS and Android. Intuitive interface and native experience.",
     "systems_title": "Complete Web Systems",
-    "systems_desc": "Custom fullstack platforms. From database to interface, robust systems for your business.",
+    "systems_desc": "Tailored fullstack platforms. From database to interface, robust systems for your business.",
     "iot_title": "Automation & IoT",
-    "iot_desc": "Smart solutions with Arduino, sensors, and IoT integration. Residential and industrial automation.",
+    "iot_desc": "Intelligent solutions with Arduino, sensors, and IoT integration. Home and industrial automation.",
     "process_title": "How I Work",
-    "step1_title": "Discovery",
-    "step1_desc": "I understand your needs and goals",
-    "step2_title": "Planning",
-    "step2_desc": "I define the architecture and timeline",
-    "step3_title": "Development",
-    "step3_desc": "I code with quality and best practices",
-    "step4_title": "Delivery",
-    "step4_desc": "Deploy, testing, and ongoing support",
-    "cta": "Let's talk about your project?",
+    "step1_title": "1. Strategy & Analysis",
+    "step1_desc": "A deep dive into your problem to design the ideal technical solution.",
+    "step2_title": "2. Design & Architecture",
+    "step2_desc": "Modular planning focusing on scalability, security, and user experience.",
+    "step3_title": "3. Agile Development",
+    "step3_desc": "Coding with sprints, continuous testing, and focus on real performance.",
+    "step4_title": "4. Launch & Evolution",
+    "step4_desc": "Optimized deployment, monitoring, and support for product growth.",
+    "cta": "Looking for a software engineer for your idea?",
     "card_cta": "Request a quote"
   },
   "achievements": {
@@ -79,11 +79,13 @@
   "press": {
     "title": "In the Media",
     "subtitle": "Articles and interviews about my work",
-    "read_more": "Read article"
+    "read_more": "Read more",
+    "view_more": "View more",
+    "view_less": "View less"
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Have a project in mind or want to chat? Get in touch!",
+    "subtitle": "Have a complex project or want to chat? Get in touch!",
     "name": "Name",
     "email": "Email",
     "type": "Contact type",
@@ -101,7 +103,7 @@
   "footer": {
     "rights": "All rights reserved.",
     "built_with": "Built with",
-    "tagline": "Turning ideas into reality",
+    "tagline": "Transforming complex ideas into digital reality",
     "nav_title": "Navigation",
     "services_title": "Services",
     "contact_title": "Contact",

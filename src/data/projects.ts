@@ -44,21 +44,7 @@ export const projects: Project[] = [
       en: "Intelligent wheelchair automation system that promotes independence for people with disabilities. Voice control, AI-assisted navigation, IoT device integration, and intuitive mobile interface. Award-winning at FETEPS (largest tech fair in Latin America) and recognized by the City Council.",
     },
   },
-  {
-    id: "filmreviews",
-    featured: false,
-    awarded: false,
-    github: "https://github.com/vftheodoro",
-    technologies: ["Python", "Flask", "HTML", "CSS", "SQLite"],
-    title: {
-      pt: "FilmReviews — Plataforma de Avaliação de Filmes",
-      en: "FilmReviews — Movie Review Platform",
-    },
-    description: {
-      pt: "Plataforma web para avaliação e review de filmes, construída com Python e Flask. Eleito melhor site da turma na matéria de Programação Web III.",
-      en: "Web platform for movie reviews and ratings, built with Python and Flask. Voted best website of the class in Web Programming III.",
-    },
-  },
+
   {
     id: "portfolio",
     featured: false,

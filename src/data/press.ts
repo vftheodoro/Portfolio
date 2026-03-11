@@ -4,6 +4,7 @@ export interface PressItem {
   type: "article" | "interview" | "social";
   url: string;
   image?: string;
+  logo?: string;
   title: {
     pt: string;
     en: string;
@@ -17,6 +18,7 @@ export const pressItems: PressItem[] = [
     type: "interview",
     url: "https://www.instagram.com/p/DPQr2keDQy4/",
     image: "/Portfolio/images/press/cnn.jpg",
+    logo: "/Portfolio/images/press/cnn-logo.png",
     title: {
       pt: "Entrevista sobre o projeto WACS",
       en: "Interview about the WACS project",
@@ -28,6 +30,7 @@ export const pressItems: PressItem[] = [
     type: "interview",
     url: "https://www.instagram.com/p/DQj8IxEkdov/",
     image: "/Portfolio/images/press/estadao.jpg",
+    logo: "/Portfolio/images/press/estadao-logo.png",
     title: {
       pt: "Entrevista sobre tecnologia assistiva",
       en: "Interview about assistive technology",

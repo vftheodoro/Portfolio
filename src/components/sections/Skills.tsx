@@ -21,8 +21,11 @@ import {
   SiExpo,
   SiAndroidstudio,
   SiLinux,
+  SiNextdotjs,
+  SiGooglecloud,
 } from "react-icons/si";
 import { HiCode } from "react-icons/hi";
+import { FaVial, FaNetworkWired, FaUserShield, FaAws } from "react-icons/fa";
 import { skillCategories } from "@/data/skills";
 import SectionTitle from "../ui/SectionTitle";
 
@@ -45,6 +48,13 @@ const iconColors: Record<string, string> = {
   android: "text-green-500",
   linux: "text-yellow-400",
   api: "text-primary",
+  nextjs: "text-slate-100",
+  aws: "text-orange-400",
+  googlecloud: "text-blue-400",
+  testing: "text-red-400",
+  network: "text-blue-500",
+  security: "text-green-500",
+  ejs: "text-yellow-500",
 };
 
 const iconMap: Record<string, IconType> = {
@@ -66,6 +76,13 @@ const iconMap: Record<string, IconType> = {
   android: SiAndroidstudio,
   linux: SiLinux,
   api: HiCode,
+  nextjs: SiNextdotjs,
+  aws: FaAws,
+  googlecloud: SiGooglecloud,
+  testing: FaVial,
+  network: FaNetworkWired,
+  security: FaUserShield,
+  ejs: HiCode,
 };
 
 export default function Skills() {

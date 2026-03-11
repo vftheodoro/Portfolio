@@ -50,7 +50,7 @@ export default function Footer() {
               aria-label="Ir ao topo"
             >
               <Image
-                src="/images/victor/vt-logo.png"
+                src="/Portfolio/images/victor/vt-logo.png"
                 alt="VT — Victor Theodoro"
                 width={44}
                 height={44}
@@ -137,11 +137,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:vftheodoro@gmail.com"
+                  href="mailto:victorgft@outlook.com"
                   className="flex items-center gap-2.5 text-sm text-muted hover:text-foreground transition-colors group"
                 >
                   <FaEnvelope size={14} className="text-primary/60 group-hover:text-primary transition-colors shrink-0" />
-                  vftheodoro@gmail.com
+                  victorgft@outlook.com
                 </a>
               </li>
               <li>
@@ -170,7 +170,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Victor Theodoro. {t("rights")}
           </p>
           <p className="text-xs text-muted flex items-center gap-1">
-            {t("built_with")} <FaHeart className="text-red-500 mx-0.5" size={11} /> &amp; Next.js
+            {t("built_with")} <FaHeart className="text-red-500 mx-0.5" size={11} />
           </p>
         </div>
       </div>

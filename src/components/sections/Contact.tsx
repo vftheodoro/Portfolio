@@ -24,7 +24,7 @@ const contactLinks = [
   {
     icon: FaEnvelope,
     label: "Email",
-    href: "mailto:contato@victortheodoro.dev",
+    href: "mailto:victorgft@outlook.com",
     color: "hover:text-blue-400",
   },
   {

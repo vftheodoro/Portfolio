@@ -17,6 +17,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "JavaScript", icon: "javascript" },
       { name: "TypeScript", icon: "typescript" },
       { name: "React Native", icon: "react" },
+      { name: "Next.js", icon: "nextjs" },
       { name: "Figma", icon: "figma" },
     ],
   },
@@ -25,6 +26,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Node.js", icon: "nodejs" },
       { name: "Python", icon: "python" },
+      { name: "EJS", icon: "ejs" },
       { name: "REST APIs", icon: "api" },
       { name: "Firebase", icon: "firebase" },
     ],
@@ -34,6 +36,8 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: "MySQL", icon: "mysql" },
       { name: "Firebase RTDB", icon: "firebase" },
+      { name: "AWS", icon: "aws" },
+      { name: "Google Cloud", icon: "googlecloud" },
     ],
   },
   {
@@ -41,6 +45,9 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Git", icon: "git" },
       { name: "GitHub", icon: "github" },
+      { name: "Testes", icon: "testing" },
+      { name: "Redes", icon: "network" },
+      { name: "Segurança", icon: "security" },
       { name: "Arduino/IoT", icon: "arduino" },
       { name: "Postman", icon: "postman" },
       { name: "Expo", icon: "expo" },

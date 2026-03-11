@@ -8,6 +8,16 @@ import SectionTitle from "../ui/SectionTitle";
 
 const educationItems = [
   {
+    key: "fatec",
+    icon: FaGraduationCap,
+    title: { 
+      pt: "Análise e Desenvolvimento de Sistemas Multiplataforma", 
+      en: "Multiplatform Systems Analysis and Development" 
+    },
+    institution: "FATEC de Registro",
+    period: "2024 - 2027 (Cursando)",
+  },
+  {
     key: "etec",
     icon: FaGraduationCap,
     title: { pt: "Técnico em Desenvolvimento de Sistemas", en: "Systems Development Technician" },
@@ -33,13 +43,6 @@ const educationItems = [
     icon: FaGamepad,
     title: { pt: "Desenvolvimento de Games FullStack", en: "FullStack Game Development" },
     institution: "Danki Code",
-    period: "2023",
-  },
-  {
-    key: "sebrae",
-    icon: FaBriefcase,
-    title: { pt: "Oficina \"Partiu Mercado\"", en: "\"Partiu Mercado\" Workshop" },
-    institution: "Sebrae-SP",
     period: "2023",
   },
 ];
@@ -109,7 +112,7 @@ export default function About() {
             <p className="text-muted leading-relaxed mb-4">{t("bio")}</p>
             <p className="text-muted leading-relaxed mb-8">{t("bio2")}</p>
             <a
-              href="/Portfolio/cv/victor-theodoro-cv.pdf"
+              href={locale === "pt" ? "/Portfolio/cv/Curriculo_Theodoro.pdf" : "/Portfolio/cv/EN_Theodoro.pdf"}
               download
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-surface border border-border rounded-xl text-sm font-medium hover:border-primary/50 hover:text-primary transition-all group"
             >

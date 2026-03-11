@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { FaExternalLinkAlt, FaNewspaper, FaMicrophone, FaHashtag } from "react-icons/fa";
 import { pressItems } from "@/data/press";
@@ -23,6 +24,10 @@ const typeColors: Record<string, string> = {
 export default function Press() {
   const t = useTranslations("press");
   const locale = useLocale() as "pt" | "en";
+  const [showAll, setShowAll] = useState(false);
+
+  // Initial items: CNN and Estadão
+  const visibleItems = showAll ? pressItems : pressItems.filter(item => ["cnn", "estadao"].includes(item.id));
 
   return (
     <section id="press" className="py-20 sm:py-28 bg-surface/30">
@@ -30,7 +35,7 @@ export default function Press() {
         <SectionTitle title={t("title")} subtitle={t("subtitle")} />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {pressItems.map((item, index) => {
+          {visibleItems.map((item, index) => {
             const TypeIcon = typeIcons[item.type] || FaNewspaper;
             const typeColor = typeColors[item.type] || "text-primary";
 
@@ -43,7 +48,8 @@ export default function Press() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
+                layout
+                transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="bg-surface rounded-2xl border border-border hover:border-primary/30 transition-all group block overflow-hidden"
               >
                 {/* Image thumbnail */}
@@ -57,6 +63,19 @@ export default function Press() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent" />
+                    
+                    {/* Logo Overlay */}
+                    {item.logo && (
+                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-1.5 rounded-lg shadow-lg">
+                        <Image 
+                          src={item.logo} 
+                          alt={item.source} 
+                          width={60} 
+                          height={20} 
+                          className="h-5 w-auto object-contain"
+                        />
+                      </div>
+                    )}
                   </div>
                 )}
 
@@ -84,6 +103,17 @@ export default function Press() {
             );
           })}
         </div>
+
+        {pressItems.length > 2 && (
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="px-8 py-3 bg-surface border border-border rounded-xl text-sm font-medium hover:border-primary/50 hover:text-primary transition-all"
+            >
+              {showAll ? t("view_less") : t("view_more")}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
