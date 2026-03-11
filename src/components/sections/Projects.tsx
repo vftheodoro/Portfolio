@@ -13,13 +13,13 @@ import { projects } from "@/data/projects";
 import SectionTitle from "../ui/SectionTitle";
 
 const wacsScreenshots = [
-  { src: "/images/wacs/login.jpeg", alt: "WACS Login" },
-  { src: "/images/wacs/home.jpeg", alt: "WACS Home" },
-  { src: "/images/wacs/control.jpeg", alt: "WACS Control" },
-  { src: "/images/wacs/bluetooth.png", alt: "WACS Bluetooth" },
-  { src: "/images/wacs/locations.jpeg", alt: "WACS Locations" },
-  { src: "/images/wacs/profile.jpeg", alt: "WACS Profile" },
-  { src: "/images/wacs/security.jpeg", alt: "WACS Security" },
+  { src: "/Portfolio/images/wacs/login.jpeg", alt: "WACS Login" },
+  { src: "/Portfolio/images/wacs/home.jpeg", alt: "WACS Home" },
+  { src: "/Portfolio/images/wacs/control.jpeg", alt: "WACS Control" },
+  { src: "/Portfolio/images/wacs/bluetooth.png", alt: "WACS Bluetooth" },
+  { src: "/Portfolio/images/wacs/locations.jpeg", alt: "WACS Locations" },
+  { src: "/Portfolio/images/wacs/profile.jpeg", alt: "WACS Profile" },
+  { src: "/Portfolio/images/wacs/security.jpeg", alt: "WACS Security" },
 ];
 
 export default function Projects() {
@@ -144,10 +144,10 @@ export default function Projects() {
             <div className="border-t border-border p-6 sm:p-8">
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
-                  { src: "/images/press/cnn.jpg", alt: "Entrevista CNN Brasil" },
-                  { src: "/images/press/estadao.jpg", alt: "Entrevista Estadão" },
-                  { src: "/images/press/equipe-vereador.png", alt: "Equipe WACS com Vereador" },
-                  { src: "/images/press/prototipo.jpg", alt: "Protótipo WACS" },
+                  { src: "/Portfolio/images/press/cnn.jpg", alt: "Entrevista CNN Brasil" },
+                  { src: "/Portfolio/images/press/estadao.jpg", alt: "Entrevista Estadão" },
+                  { src: "/Portfolio/images/press/equipe-vereador.png", alt: "Equipe WACS com Vereador" },
+                  { src: "/Portfolio/images/press/prototipo.jpg", alt: "Protótipo WACS" },
                 ].map((photo) => (
                   <div
                     key={photo.alt}

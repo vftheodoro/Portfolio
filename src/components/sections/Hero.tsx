@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -103,7 +103,7 @@ export default function Hero() {
               {/* Photo container */}
               <div className="absolute inset-6 rounded-full overflow-hidden border-2 border-primary/30 shadow-xl shadow-primary/20">
                 <Image
-                  src="/images/victor/profile.png"
+                  src="/Portfolio/images/victor/profile.png"
                   alt="Victor Theodoro"
                   fill
                   className="object-cover object-top"

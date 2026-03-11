@@ -16,7 +16,7 @@ export const pressItems: PressItem[] = [
     source: "CNN Brasil",
     type: "interview",
     url: "https://www.instagram.com/p/DPQr2keDQy4/",
-    image: "/images/press/cnn.jpg",
+    image: "/Portfolio/images/press/cnn.jpg",
     title: {
       pt: "Entrevista sobre o projeto WACS",
       en: "Interview about the WACS project",
@@ -27,7 +27,7 @@ export const pressItems: PressItem[] = [
     source: "Estadão",
     type: "interview",
     url: "https://www.instagram.com/p/DQj8IxEkdov/",
-    image: "/images/press/estadao.jpg",
+    image: "/Portfolio/images/press/estadao.jpg",
     title: {
       pt: "Entrevista sobre tecnologia assistiva",
       en: "Interview about assistive technology",
@@ -38,7 +38,7 @@ export const pressItems: PressItem[] = [
     source: "Centro Paula Souza",
     type: "article",
     url: "https://www.cps.sp.gov.br/grupo-da-etec-registro-cria-cadeira-de-rodas-com-sistema-de-acessibilidade-inteligente/",
-    image: "/images/press/equipe-vereador.png",
+    image: "/Portfolio/images/press/equipe-vereador.png",
     title: {
       pt: "Grupo da Etec Registro cria cadeira de rodas com sistema de acessibilidade inteligente",
       en: "ETEC Registro group creates wheelchair with intelligent accessibility system",
@@ -49,7 +49,7 @@ export const pressItems: PressItem[] = [
     source: "FETEPS Oficial",
     type: "article",
     url: "https://feteps.cps.sp.gov.br/projetos/wacs-autonomia-inteligente-para-pcds/",
-    image: "/images/press/prototipo.jpg",
+    image: "/Portfolio/images/press/prototipo.jpg",
     title: {
       pt: "WACS — Autonomia inteligente para PCDs",
       en: "WACS — Intelligent autonomy for people with disabilities",
@@ -60,7 +60,7 @@ export const pressItems: PressItem[] = [
     source: "Etec Registro",
     type: "article",
     url: "https://etecregistro.cps.sp.gov.br/alunos-da-etec-de-registro-sao-destaques-na-16a-feira-de-tecnologia-do-centro-paula-souza/",
-    image: "/images/press/camara-vereador.png",
+    image: "/Portfolio/images/press/camara-vereador.png",
     title: {
       pt: "Alunos da Etec de Registro são destaques na 16ª FETEPS",
       en: "ETEC Registro students stand out at the 16th FETEPS",
@@ -71,7 +71,7 @@ export const pressItems: PressItem[] = [
     source: "Região Hoje",
     type: "article",
     url: "https://www.regiaohoje.com.br/noticia/38090/santa-barbara/brasil/grupo-de-etec-cria-cadeira-de-rodas-com-sistema-de-acessibilidade-inteligente.html",
-    image: "/images/press/estadao-jornal.jpg",
+    image: "/Portfolio/images/press/estadao-jornal.jpg",
     title: {
       pt: "Grupo de Etec cria cadeira de rodas com sistema de acessibilidade inteligente",
       en: "ETEC group creates wheelchair with intelligent accessibility system",
@@ -102,7 +102,7 @@ export const pressItems: PressItem[] = [
     source: "Câmara Municipal de Registro",
     type: "social",
     url: "https://www.instagram.com/p/DRhNkyNiKor/",
-    image: "/images/press/camara-mocao.png",
+    image: "/Portfolio/images/press/camara-mocao.png",
     title: {
       pt: "Moção de Aplauso pelo projeto WACS",
       en: "Motion of Applause for the WACS project",

@@ -82,7 +82,7 @@ export default function Header() {
           aria-label="Ir ao topo"
         >
           <Image
-            src="/images/victor/vt-logo.png"
+            src="/Portfolio/images/victor/vt-logo.png"
             alt="VT — Victor Theodoro"
             width={38}
             height={38}
