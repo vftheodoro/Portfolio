@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "skills": "Skills",
+    "projects": "Projetos",
+    "services": "Serviços",
+    "achievements": "Conquistas",
+    "press": "Na Mídia",
+    "contact": "Contato",
+    "hire_me": "Contratar"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "name": "Victor Theodoro",
+    "role": "Desenvolvedor FullStack",
+    "description": "Desenvolvedor apaixonado por criar soluções que transformam vidas. Especialista em soluções web e mobile modernas, escaláveis e focadas em impacto real.",
+    "cta_work": "Ver meu trabalho",
+    "cta_hire": "Solicitar orçamento",
+    "available": "Disponível para projetos"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "bio": "Sou um desenvolvedor FullStack de Registro, São Paulo, apaixonado por tecnologia e inovação. Minha jornada começou na ETEC de Registro, onde desenvolvi o WACS — um sistema inteligente de automação para cadeiras de rodas que promove independência para PCDs. Essa experiência me ensinou que a tecnologia tem o poder de transformar vidas.",
+    "bio2": "Combino habilidades técnicas sólidas em desenvolvimento web e mobile com uma visão focada em impacto social. Busco constantemente aprender e criar soluções que fazem a diferença.",
+    "stats": {
+      "projects": "Projetos",
+      "awards": "Prêmios",
+      "technologies": "Tecnologias"
+    },
+    "education_title": "Formação & Certificações",
+    "download_cv": "Baixar CV"
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "subtitle": "Tecnologias e ferramentas que utilizo para transformar ideias em realidade",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Banco de Dados",
+      "tools": "Ferramentas & Outros"
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Conheça alguns dos projetos que desenvolvi",
+    "featured": "Projeto Destaque",
+    "awarded": "Premiado",
+    "visit_site": "Visitar Site",
+    "view_code": "Ver Código",
+    "view_instagram": "Instagram"
+  },
+  "services": {
+    "title": "Serviços",
+    "subtitle": "Soluções sob medida para o seu negócio",
+    "websites_title": "Sites & Landing Pages",
+    "websites_desc": "Sites institucionais modernos e landing pages de alta conversão. Design responsivo, otimizado para SEO e performance.",
+    "mobile_title": "Aplicativos Mobile",
+    "mobile_desc": "Aplicativos multiplataforma com React Native para iOS e Android. Interface intuitiva e experiência nativa.",
+    "systems_title": "Sistemas Web Completos",
+    "systems_desc": "Plataformas fullstack sob medida. Do banco de dados à interface, sistemas robustos para seu negócio.",
+    "iot_title": "Automação & IoT",
+    "iot_desc": "Soluções inteligentes com Arduino, sensores e integração IoT. Automação residencial e industrial.",
+    "process_title": "Como Trabalho",
+    "step1_title": "Descoberta",
+    "step1_desc": "Entendo suas necessidades e objetivos",
+    "step2_title": "Planejamento",
+    "step2_desc": "Defino a arquitetura e o cronograma",
+    "step3_title": "Desenvolvimento",
+    "step3_desc": "Codifico com qualidade e boas práticas",
+    "step4_title": "Entrega",
+    "step4_desc": "Deploy, testes e suporte contínuo",
+    "cta": "Vamos conversar sobre seu projeto?",
+    "card_cta": "Solicitar orçamento"
+  },
+  "achievements": {
+    "title": "Conquistas & Prêmios",
+    "subtitle": "Reconhecimentos que marcaram minha trajetória"
+  },
+  "press": {
+    "title": "Na Mídia",
+    "subtitle": "Matérias e entrevistas sobre meu trabalho",
+    "read_more": "Ler matéria"
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Tem um projeto em mente ou quer bater um papo? Entre em contato!",
+    "name": "Nome",
+    "email": "E-mail",
+    "type": "Tipo de contato",
+    "type_recruitment": "Recrutamento",
+    "type_freelance": "Projeto Freelancer",
+    "type_other": "Outro",
+    "message": "Mensagem",
+    "send": "Enviar mensagem",
+    "sending": "Enviando...",
+    "success": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+    "error": "Erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.",
+    "or": "ou entre em contato diretamente",
+    "whatsapp_cta": "Chamar no WhatsApp"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados.",
+    "built_with": "Feito com",
+    "tagline": "Transformando ideias em realidade",
+    "nav_title": "Navegação",
+    "services_title": "Serviços",
+    "contact_title": "Contato",
+    "location": "Registro, São Paulo — BR",
+    "hire_me": "Contratar"
+  }
+}

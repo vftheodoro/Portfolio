@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "services": "Services",
+    "achievements": "Achievements",
+    "press": "Press",
+    "contact": "Contact",
+    "hire_me": "Hire Me"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Victor Theodoro",
+    "role": "FullStack Developer",
+    "description": "A passionate developer creating solutions that transform lives. Specialized in modern, scalable web and mobile solutions focused on real impact.",
+    "cta_work": "See my work",
+    "cta_hire": "Request a quote",
+    "available": "Available for projects"
+  },
+  "about": {
+    "title": "About Me",
+    "bio": "I'm a FullStack developer from Registro, São Paulo, Brazil, passionate about technology and innovation. My journey started at ETEC de Registro, where I developed WACS — an intelligent wheelchair automation system that promotes independence for people with disabilities. This experience taught me that technology has the power to transform lives.",
+    "bio2": "I combine solid technical skills in web and mobile development with a vision focused on social impact. I'm constantly learning and creating solutions that make a difference.",
+    "stats": {
+      "projects": "Projects",
+      "awards": "Awards",
+      "technologies": "Technologies"
+    },
+    "education_title": "Education & Certifications",
+    "download_cv": "Download CV"
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "subtitle": "Technologies and tools I use to turn ideas into reality",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "tools": "Tools & Others"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Check out some of the projects I've built",
+    "featured": "Featured Project",
+    "awarded": "Award-winning",
+    "visit_site": "Visit Site",
+    "view_code": "View Code",
+    "view_instagram": "Instagram"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Tailored solutions for your business",
+    "websites_title": "Websites & Landing Pages",
+    "websites_desc": "Modern institutional websites and high-conversion landing pages. Responsive design, SEO-optimized, and high performance.",
+    "mobile_title": "Mobile Applications",
+    "mobile_desc": "Cross-platform apps with React Native for iOS and Android. Intuitive interface and native experience.",
+    "systems_title": "Complete Web Systems",
+    "systems_desc": "Custom fullstack platforms. From database to interface, robust systems for your business.",
+    "iot_title": "Automation & IoT",
+    "iot_desc": "Smart solutions with Arduino, sensors, and IoT integration. Residential and industrial automation.",
+    "process_title": "How I Work",
+    "step1_title": "Discovery",
+    "step1_desc": "I understand your needs and goals",
+    "step2_title": "Planning",
+    "step2_desc": "I define the architecture and timeline",
+    "step3_title": "Development",
+    "step3_desc": "I code with quality and best practices",
+    "step4_title": "Delivery",
+    "step4_desc": "Deploy, testing, and ongoing support",
+    "cta": "Let's talk about your project?",
+    "card_cta": "Request a quote"
+  },
+  "achievements": {
+    "title": "Achievements & Awards",
+    "subtitle": "Recognitions that marked my journey"
+  },
+  "press": {
+    "title": "In the Media",
+    "subtitle": "Articles and interviews about my work",
+    "read_more": "Read article"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a project in mind or want to chat? Get in touch!",
+    "name": "Name",
+    "email": "Email",
+    "type": "Contact type",
+    "type_recruitment": "Recruitment",
+    "type_freelance": "Freelance Project",
+    "type_other": "Other",
+    "message": "Message",
+    "send": "Send message",
+    "sending": "Sending...",
+    "success": "Message sent successfully! I'll get back to you soon.",
+    "error": "Failed to send. Try again or contact me via WhatsApp.",
+    "or": "or contact me directly",
+    "whatsapp_cta": "Chat on WhatsApp"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "built_with": "Built with",
+    "tagline": "Turning ideas into reality",
+    "nav_title": "Navigation",
+    "services_title": "Services",
+    "contact_title": "Contact",
+    "location": "Registro, São Paulo — BR",
+    "hire_me": "Hire Me"
+  }
+}
