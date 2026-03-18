@@ -15,8 +15,8 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const titles = {
-    pt: "Victor Theodoro | Desenvolvedor FullStack",
-    en: "Victor Theodoro | FullStack Developer",
+    pt: "Victor Theodoro | Dev",
+    en: "Victor Theodoro | Dev",
   };
   const descriptions = {
     pt: "Portfólio profissional de Victor Theodoro — Desenvolvedor FullStack especializado em soluções web, mobile e IoT. Serviços freelancer de desenvolvimento de sistemas.",
@@ -25,6 +25,11 @@ export async function generateMetadata({
   return {
     title: titles[locale as "pt" | "en"] || titles.pt,
     description: descriptions[locale as "pt" | "en"] || descriptions.pt,
+    icons: {
+      icon: "/images/victor/vt-logo.png",
+      shortcut: "/images/victor/vt-logo.png",
+      apple: "/images/victor/vt-logo.png",
+    },
   };
 }
 

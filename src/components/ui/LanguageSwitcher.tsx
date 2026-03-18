@@ -6,8 +6,8 @@ import Image from "next/image";
 
 const locales = ["pt", "en"] as const;
 const flagIcons: Record<string, string> = { 
-  pt: "/Portfolio/images/flags/br.png", 
-  en: "/Portfolio/images/flags/us.png" 
+  pt: "/images/flags/br.png", 
+  en: "/images/flags/us.png" 
 };
 
 export default function LanguageSwitcher() {

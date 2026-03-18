@@ -13,7 +13,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Victor Theodoro | Desenvolvedor FullStack",
+  title: "Victor Theodoro | Dev",
   description:
     "Portfólio profissional de Victor Theodoro — Desenvolvedor FullStack especializado em soluções web, mobile e IoT. Serviços freelancer de desenvolvimento de sistemas.",
   keywords: [
@@ -26,6 +26,11 @@ export const metadata: Metadata = {
     "IoT",
     "WACS",
   ],
+  icons: {
+    icon: "/images/victor/vt-logo.png",
+    shortcut: "/images/victor/vt-logo.png",
+    apple: "/images/victor/vt-logo.png",
+  },
 };
 
 export default function RootLayout({

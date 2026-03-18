@@ -50,7 +50,7 @@ export default function Footer() {
               aria-label="Ir ao topo"
             >
               <Image
-                src="/Portfolio/images/victor/vt-logo.png"
+                src="/images/victor/vt-logo.png"
                 alt="VT — Victor Theodoro"
                 width={44}
                 height={44}

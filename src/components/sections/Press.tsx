@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { FaExternalLinkAlt, FaNewspaper, FaMicrophone, FaHashtag } from "react-icons/fa";
 import { pressItems } from "@/data/press";
@@ -25,6 +25,12 @@ export default function Press() {
   const t = useTranslations("press");
   const locale = useLocale() as "pt" | "en";
   const [showAll, setShowAll] = useState(false);
+
+  useEffect(() => {
+    const handleOpenMore = () => setShowAll(true);
+    window.addEventListener("openPressMore", handleOpenMore);
+    return () => window.removeEventListener("openPressMore", handleOpenMore);
+  }, []);
 
   // Initial items: CNN and Estadão
   const visibleItems = showAll ? pressItems : pressItems.filter(item => ["cnn", "estadao"].includes(item.id));
