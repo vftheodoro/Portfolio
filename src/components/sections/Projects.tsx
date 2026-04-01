@@ -11,6 +11,8 @@ import {
   FaTrophy,
   FaNewspaper,
   FaTimes,
+  FaChevronLeft,
+  FaChevronRight,
 } from "react-icons/fa";
 import { projects } from "@/data/projects";
 import SectionTitle from "../ui/SectionTitle";
@@ -18,7 +20,27 @@ import SectionTitle from "../ui/SectionTitle";
 export default function Projects() {
   const t = useTranslations("projects");
   const locale = useLocale() as "pt" | "en";
-  const [selectedImage, setSelectedImage] = useState<{src: string, alt: string} | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{images: {src: string, alt: string}[], currentIndex: number} | null>(null);
+
+  const handlePrevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedImage) {
+      setSelectedImage({
+        ...selectedImage,
+        currentIndex: selectedImage.currentIndex === 0 ? selectedImage.images.length - 1 : selectedImage.currentIndex - 1
+      });
+    }
+  };
+
+  const handleNextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedImage) {
+      setSelectedImage({
+        ...selectedImage,
+        currentIndex: (selectedImage.currentIndex + 1) % selectedImage.images.length
+      });
+    }
+  };
 
   const featuredProjects = projects.filter((p) => p.featured);
   const others = projects.filter((p) => !p.featured);
@@ -151,7 +173,7 @@ export default function Projects() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: index * 0.05 }}
                             className="shrink-0 snap-center group/img relative cursor-zoom-in"
-                            onClick={() => setSelectedImage(screenshot)}
+                            onClick={() => setSelectedImage({images: project.screenshots!, currentIndex: index})}
                           >
                             {/* Device mockup */}
                             <div className={`relative ${project.id === 'wacs' ? 'w-[150px] h-[300px] sm:w-[170px] sm:h-[340px]' : 'w-[280px] h-[170px] sm:w-[320px] sm:h-[195px]'} bg-surface rounded-[24px] border-2 border-border p-1.5 shadow-xl shadow-black/30 group-hover/img:border-primary/40 transition-colors`}>
@@ -190,11 +212,11 @@ export default function Projects() {
               {project.gallery && project.gallery.length > 0 && (
                 <div className="border-t border-border p-6 sm:p-8 bg-black/5">
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    {project.gallery.map((photo) => (
+                    {project.gallery.map((photo, index) => (
                       <div
                         key={photo.alt}
                         className="relative aspect-video rounded-xl overflow-hidden border border-border group cursor-pointer"
-                        onClick={() => setSelectedImage(photo)}
+                        onClick={() => setSelectedImage({images: project.gallery!, currentIndex: index})}
                       >
                         <Image
                           src={photo.src}
@@ -307,10 +329,27 @@ export default function Projects() {
               className="relative max-w-5xl w-full h-full max-h-[85vh] flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative flex-1 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              {selectedImage.images.length > 1 && (
+                <>
+                  <button
+                    className="absolute left-2 sm:-left-16 top-1/2 -translate-y-1/2 z-10 p-4 text-white hover:text-primary transition-colors bg-black/40 hover:bg-black/60 rounded-full backdrop-blur-md border border-white/10"
+                    onClick={handlePrevImage}
+                  >
+                    <FaChevronLeft size={24} />
+                  </button>
+                  <button
+                    className="absolute right-2 sm:-right-16 top-1/2 -translate-y-1/2 z-10 p-4 text-white hover:text-primary transition-colors bg-black/40 hover:bg-black/60 rounded-full backdrop-blur-md border border-white/10"
+                    onClick={handleNextImage}
+                  >
+                    <FaChevronRight size={24} />
+                  </button>
+                </>
+              )}
+
+              <div className="relative flex-1 rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black/20">
                 <Image
-                  src={selectedImage.src}
-                  alt={selectedImage.alt}
+                  src={selectedImage.images[selectedImage.currentIndex].src}
+                  alt={selectedImage.images[selectedImage.currentIndex].alt}
                   fill
                   className="object-contain"
                   quality={100}
@@ -322,7 +361,10 @@ export default function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-white/80 text-center mt-6 text-lg font-medium"
               >
-                {selectedImage.alt}
+                {selectedImage.images[selectedImage.currentIndex].alt}
+                <span className="block text-sm text-white/50 mt-1">
+                  {selectedImage.currentIndex + 1} / {selectedImage.images.length}
+                </span>
               </motion.p>
             </motion.div>
           </motion.div>

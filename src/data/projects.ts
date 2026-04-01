@@ -91,19 +91,5 @@ export const projects: Project[] = [
     },
   },
 
-  {
-    id: "portfolio",
-    featured: false,
-    awarded: false,
-    github: "https://github.com/vftheodoro",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    title: {
-      pt: "Portfólio Pessoal",
-      en: "Personal Portfolio",
-    },
-    description: {
-      pt: "Este portfólio profissional, desenvolvido com Next.js, TypeScript e Tailwind CSS. Design dark mode moderno, bilíngue PT/EN e totalmente responsivo.",
-      en: "This professional portfolio, built with Next.js, TypeScript, and Tailwind CSS. Modern dark mode design, bilingual PT/EN, and fully responsive.",
-    },
-  },
+
 ];
