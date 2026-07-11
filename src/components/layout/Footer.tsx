@@ -12,7 +12,7 @@ const socials = [
   { icon: FaWhatsapp, href: "https://wa.me/5513996016551", label: "WhatsApp", color: "hover:text-green-400" },
 ];
 
-const navLinks = ["about", "experience", "teaching", "services", "projects", "press", "contact"] as const;
+const navLinks = ["about", "experience", "bythe", "teaching", "services", "projects", "contact"] as const;
 
 const serviceLinks = [
   { key: "support", label: { pt: "Suporte e manutenção", en: "Support and maintenance" } },
@@ -60,6 +60,21 @@ export default function Footer() {
             <p className="text-sm text-muted leading-relaxed mb-5 max-w-[220px]">
               {t("tagline")}
             </p>
+            <a
+              href="https://bythe.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-5 block w-fit rounded-lg border border-[#0080ff]/20 bg-[#0080ff]/5 px-3 py-2 transition hover:border-[#0080ff]/45 hover:bg-[#0080ff]/10"
+              aria-label={t("bythe_link")}
+            >
+              <Image
+                src="/images/bythe-logo.svg"
+                alt="BYTHE"
+                width={120}
+                height={20}
+                className="h-auto w-[110px]"
+              />
+            </a>
             <div className="flex items-center gap-4">
               {socials.map(({ icon: Icon, href, label, color }) => (
                 <a

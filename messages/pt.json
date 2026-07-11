@@ -2,6 +2,7 @@
   "nav": {
     "about": "Sobre",
     "experience": "Atuação",
+    "bythe": "BYTHE",
     "teaching": "Ensino",
     "services": "Serviços",
     "projects": "Projetos",
@@ -49,6 +50,21 @@
     "education": { "eyebrow": "Professor e instrutor", "title": "Formação profissional em tecnologia", "description": "Planejamento e condução completa de turmas em programas do Governo do Estado de São Paulo e iniciativas ligadas ao Centro Paula Souza, Fundação FAT, prefeituras e instituições da região." },
     "bythe": { "eyebrow": "Empreendedorismo", "title": "Fundador da BYTHE", "description": "Marca de soluções tecnológicas criada para apoiar empresas com suporte, infraestrutura, modernização e projetos digitais." },
     "projects": { "eyebrow": "Tecnologia aplicada", "title": "WACS e Printh3D", "description": "Projetos que demonstram integração entre desenvolvimento, automação, acessibilidade, gestão e operação de negócios." }
+  },
+  "bythe": {
+    "eyebrow": "Empresa fundada por Victor Theodoro",
+    "logo_link_label": "Acessar o site oficial da BYTHE",
+    "headline": "Tecnologia para vender, operar e crescer melhor.",
+    "description": "A BYTHE transforma experiência técnica em soluções para empresas do Vale do Ribeira: suporte, infraestrutura, modernização e projetos digitais com atendimento próximo e responsável.",
+    "services_title": "Soluções para empresas",
+    "services": {
+      "support": "Suporte e manutenção de TI",
+      "infrastructure": "Infraestrutura, redes e equipamentos",
+      "modernization": "Modernização e automação de processos",
+      "projects": "Sites, sistemas e projetos sob medida"
+    },
+    "cta": "Conhecer a BYTHE",
+    "contact_cta": "Conversar sobre um projeto"
   },
   "teaching": {
     "title": "Professor e instrutor",
@@ -142,6 +158,7 @@
     "rights": "Todos os direitos reservados.",
     "built_with": "Construído com propósito no Vale do Ribeira.",
     "tagline": "Tecnologia prática, ensino e soluções para quem precisa fazer acontecer.",
+    "bythe_link": "Acessar o site da BYTHE",
     "nav_title": "Navegação",
     "services_title": "Atuação",
     "contact_title": "Contato",

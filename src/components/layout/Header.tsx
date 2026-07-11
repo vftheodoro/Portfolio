@@ -10,10 +10,10 @@ import LanguageSwitcher from "../ui/LanguageSwitcher";
 const navItems = [
   "about",
   "experience",
+  "bythe",
   "teaching",
   "services",
   "projects",
-  "press",
 ] as const;
 
 export default function Header() {

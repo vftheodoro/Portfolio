@@ -2,6 +2,7 @@
   "nav": {
     "about": "About",
     "experience": "Experience",
+    "bythe": "BYTHE",
     "teaching": "Teaching",
     "services": "Services",
     "projects": "Projects",
@@ -49,6 +50,21 @@
     "education": { "eyebrow": "Teacher and instructor", "title": "Professional technology education", "description": "End-to-end class planning and teaching in São Paulo State Government programs and initiatives connected to Centro Paula Souza, Fundação FAT, city governments, and regional institutions." },
     "bythe": { "eyebrow": "Entrepreneurship", "title": "Founder of BYTHE", "description": "A technology solutions brand created to support companies with infrastructure, modernization, support, and digital projects." },
     "projects": { "eyebrow": "Applied technology", "title": "WACS and Printh3D", "description": "Projects demonstrating integration across development, automation, accessibility, management, and business operations." }
+  },
+  "bythe": {
+    "eyebrow": "Company founded by Victor Theodoro",
+    "logo_link_label": "Visit BYTHE's official website",
+    "headline": "Technology to sell, operate, and grow better.",
+    "description": "BYTHE turns technical expertise into solutions for companies in Vale do Ribeira, Brazil: support, infrastructure, modernization, and digital projects with close, responsible service.",
+    "services_title": "Business solutions",
+    "services": {
+      "support": "IT support and maintenance",
+      "infrastructure": "Infrastructure, networks, and equipment",
+      "modernization": "Process modernization and automation",
+      "projects": "Websites, systems, and tailored projects"
+    },
+    "cta": "Visit BYTHE",
+    "contact_cta": "Discuss a project"
   },
   "teaching": {
     "title": "Teacher and instructor",
@@ -130,6 +146,7 @@
     "rights": "All rights reserved.",
     "built_with": "Built with purpose in Vale do Ribeira.",
     "tagline": "Practical technology, education, and solutions for people who make things happen.",
+    "bythe_link": "Visit BYTHE's website",
     "nav_title": "Navigation",
     "services_title": "What I do",
     "contact_title": "Contact",

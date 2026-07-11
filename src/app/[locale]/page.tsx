@@ -3,6 +3,7 @@ import { routing } from "@/i18n/routing";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Experience from "@/components/sections/Experience";
+import Bythe from "@/components/sections/Bythe";
 import Teaching from "@/components/sections/Teaching";
 import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
@@ -30,6 +31,7 @@ export default async function HomePage({
       <Hero />
       <About />
       <Experience />
+      <Bythe />
       <Teaching />
       <Services />
       <Projects />
