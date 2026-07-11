@@ -53,8 +53,8 @@ export const projects: Project[] = [
       en: "WACS — Wheelchair Automation Control System",
     },
     description: {
-      pt: "Sistema inteligente de automação para cadeiras de rodas que promove independência para PCDs. Controle por voz, navegação assistida por IA, integração com dispositivos IoT e interface mobile intuitiva. Premiado na FETEPS (maior feira da América Latina) e reconhecido pela Câmara Municipal.",
-      en: "Intelligent wheelchair automation system that promotes independence for people with disabilities. Voice control, AI-assisted navigation, IoT device integration, and intuitive mobile interface. Award-winning at FETEPS (largest tech fair in Latin America) and recognized by the City Council.",
+      pt: "Projeto de tecnologia assistiva de baixo custo que integra aplicativo mobile, Arduino, Bluetooth, sensores e mapeamento de acessibilidade. O protótipo funcional foi apresentado na FETEPS e recebeu reconhecimento público em Registro.",
+      en: "A low-cost assistive technology project integrating a mobile app, Arduino, Bluetooth, sensors, and accessibility mapping. The functional prototype was presented at FETEPS and received public recognition in Registro, Brazil.",
     },
   },
   {
@@ -86,8 +86,8 @@ export const projects: Project[] = [
       en: "Printh3D — Manufacturing, Sales and Management",
     },
     description: {
-      pt: "Ecossistema Full-Stack completo para manufatura aditiva, integrando um catálogo dinâmico de vendas a um painel administrativo robusto. Inclui gestão de KPIs, calculadora inteligente de custos industriais, controle de estoque e segurança avançada com JWT.",
-      en: "Full-Stack ecosystem for additive manufacturing, combining a dynamic sales catalog with a robust administrative dashboard. Features KPI management, intelligent industrial cost calculator, inventory control, and advanced security with JWT.",
+      pt: "Plataforma comercial e administrativa para uma operação de impressão 3D, com catálogo, gestão de produtos, indicadores, cálculo de custos e controle de acesso.",
+      en: "A commercial and administrative platform for a 3D printing operation, with catalog, product management, metrics, cost calculation, and access control.",
     },
   },
 

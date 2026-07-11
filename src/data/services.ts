@@ -4,50 +4,50 @@ export interface ServiceFeature {
 }
 
 export interface Service {
-  id: string;
-  icon: string;
+  id: "support" | "infrastructure" | "training" | "solutions";
+  icon: "support" | "network" | "training" | "solutions";
   features: ServiceFeature[];
 }
 
 export const services: Service[] = [
   {
-    id: "websites",
-    icon: "globe",
+    id: "support",
+    icon: "support",
     features: [
-      { pt: "Design responsivo", en: "Responsive design" },
-      { pt: "Otimizado para SEO", en: "SEO optimized" },
-      { pt: "Alta performance", en: "High performance" },
-      { pt: "Painel administrativo", en: "Admin panel" },
-    ],
+      { pt: "Computadores e periféricos", en: "Computers and peripherals" },
+      { pt: "Suporte remoto e presencial", en: "Remote and on-site support" },
+      { pt: "Manutenção preventiva", en: "Preventive maintenance" },
+      { pt: "Orientação aos usuários", en: "User guidance" }
+    ]
   },
   {
-    id: "mobile",
-    icon: "smartphone",
+    id: "infrastructure",
+    icon: "network",
     features: [
-      { pt: "iOS e Android", en: "iOS and Android" },
-      { pt: "React Native", en: "React Native" },
-      { pt: "Interface intuitiva", en: "Intuitive UI" },
-      { pt: "Integração com APIs", en: "API integration" },
-    ],
+      { pt: "Redes e Wi-Fi", en: "Networks and Wi-Fi" },
+      { pt: "Roteadores e equipamentos", en: "Routers and equipment" },
+      { pt: "Organização de infraestrutura", en: "Infrastructure organization" },
+      { pt: "Backups e segurança básica", en: "Backups and baseline security" }
+    ]
   },
   {
-    id: "systems",
-    icon: "server",
+    id: "training",
+    icon: "training",
     features: [
-      { pt: "Fullstack sob medida", en: "Custom fullstack" },
-      { pt: "Banco de dados", en: "Database design" },
-      { pt: "Autenticação segura", en: "Secure authentication" },
-      { pt: "Dashboard analítico", en: "Analytics dashboard" },
-    ],
+      { pt: "Informática e produtividade", en: "Computing and productivity" },
+      { pt: "Windows, internet e Excel", en: "Windows, internet, and Excel" },
+      { pt: "Empregabilidade digital", en: "Digital employability" },
+      { pt: "Conteúdo sob medida", en: "Tailored content" }
+    ]
   },
   {
-    id: "iot",
-    icon: "cpu",
+    id: "solutions",
+    icon: "solutions",
     features: [
-      { pt: "Arduino & sensores", en: "Arduino & sensors" },
-      { pt: "Integração IoT", en: "IoT integration" },
-      { pt: "Monitoramento remoto", en: "Remote monitoring" },
-      { pt: "Automação inteligente", en: "Smart automation" },
-    ],
-  },
+      { pt: "Sites e sistemas", en: "Websites and systems" },
+      { pt: "Automação de processos", en: "Process automation" },
+      { pt: "Implantação de ferramentas", en: "Tool implementation" },
+      { pt: "Integrações e projetos especiais", en: "Integrations and special projects" }
+    ]
+  }
 ];

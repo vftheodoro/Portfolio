@@ -2,6 +2,8 @@ import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
+import Experience from "@/components/sections/Experience";
+import Teaching from "@/components/sections/Teaching";
 import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Services from "@/components/sections/Services";
@@ -27,11 +29,13 @@ export default async function HomePage({
     <>
       <Hero />
       <About />
-      <Skills />
-      <Projects />
+      <Experience />
+      <Teaching />
       <Services />
+      <Projects />
       <Achievements />
       <Press />
+      <Skills />
       <Contact />
       <ScrollToTop />
       <FloatingWhatsApp />

@@ -15,12 +15,12 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const titles = {
-    pt: "Victor Theodoro | Dev",
-    en: "Victor Theodoro | Dev",
+    pt: "Victor Theodoro | Especialista em Tecnologia",
+    en: "Victor Theodoro | Technology Specialist",
   };
   const descriptions = {
-    pt: "Portfólio profissional de Victor Theodoro — Desenvolvedor FullStack especializado em soluções web, mobile e IoT. Serviços freelancer de desenvolvimento de sistemas.",
-    en: "Professional portfolio of Victor Theodoro — FullStack Developer specialized in web, mobile, and IoT solutions. Freelance systems development services.",
+    pt: "Site profissional de Victor Theodoro — suporte, infraestrutura, manutenção, ensino e soluções tecnológicas no Vale do Ribeira.",
+    en: "Victor Theodoro's professional website — support, infrastructure, maintenance, education, and technology solutions in Vale do Ribeira, Brazil.",
   };
   return {
     title: titles[locale as "pt" | "en"] || titles.pt,

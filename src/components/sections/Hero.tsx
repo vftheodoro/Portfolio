@@ -3,133 +3,106 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { FaArrowRight, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 
-
-const techBadges = ["React Native", "Node.js", "TypeScript", "Python", "Firebase"];
+const proofPoints = ["support", "education", "solutions"] as const;
 
 export default function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
-      <div className="absolute top-1/4 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-primary/8 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-accent/8 rounded-full blur-3xl animate-pulse" />
-
-      {/* Grid pattern overlay */}
+    <section className="relative min-h-[92vh] overflow-hidden border-b border-border/70 pt-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_35%,rgba(6,182,212,0.14),transparent_28%),radial-gradient(circle_at_15%_10%,rgba(139,92,246,0.08),transparent_24%)]" />
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.025]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
+            "linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
         }}
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-          {/* Text content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex-1 text-center lg:text-left"
-          >
-            {/* Availability badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-500/10 border border-green-500/30 rounded-full text-green-400 text-xs font-mono mb-5"
+      <div className="relative mx-auto grid min-h-[calc(92vh-6rem)] max-w-6xl items-center gap-12 px-4 pb-16 sm:px-6 lg:grid-cols-[1.08fr_.92fr] lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65 }}
+          className="relative z-10 text-center lg:text-left"
+        >
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary">
+            <FaMapMarkerAlt size={11} />
+            {t("location")}
+          </div>
+
+          <p className="mb-3 font-mono text-sm uppercase tracking-[0.2em] text-muted">
+            {t("eyebrow")}
+          </p>
+          <h1 className="mb-5 text-4xl font-bold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
+            {t("name")}
+          </h1>
+          <h2 className="mb-6 max-w-2xl text-xl font-medium leading-snug text-primary sm:text-2xl">
+            {t("role")}
+          </h2>
+          <p className="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-muted sm:text-lg lg:mx-0">
+            {t("description")}
+          </p>
+
+          <div className="mb-10 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+            <a
+              href="https://wa.me/5513996016551"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 font-semibold text-background transition hover:bg-primary-hover hover:shadow-lg hover:shadow-primary/20"
             >
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              {t("available")}
-            </motion.div>
+              <FaWhatsapp size={17} />
+              {t("cta_contact")}
+            </a>
+            <a
+              href="#experience"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-surface/70 px-6 py-3.5 font-semibold transition hover:border-primary/40 hover:text-primary"
+            >
+              {t("cta_work")}
+              <FaArrowRight size={13} />
+            </a>
+          </div>
 
-            <p className="text-primary font-mono text-sm sm:text-base mb-3 tracking-wider">
-              {t("greeting")}
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-transparent">
-              {t("name")}
-            </h1>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl text-muted mb-6 font-light">
-              {t("role")}
-            </h2>
-            <p className="text-muted max-w-xl mx-auto lg:mx-0 mb-6 text-sm sm:text-base leading-relaxed">
-              {t("description")}
-            </p>
-
-            {/* Tech badges */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
-              {techBadges.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2.5 py-1 text-xs font-mono bg-surface border border-border rounded-lg text-muted hover:border-primary/40 hover:text-primary transition-colors"
-                >
-                  {tech}
+          <div className="grid grid-cols-3 gap-2 border-t border-border/70 pt-6 sm:gap-4">
+            {proofPoints.map((point) => (
+              <div key={point} className="text-left">
+                <strong className="block text-sm font-semibold sm:text-base">
+                  {t(`proof.${point}.title`)}
+                </strong>
+                <span className="mt-1 block text-[11px] leading-snug text-muted sm:text-xs">
+                  {t(`proof.${point}.label`)}
                 </span>
-              ))}
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <a
-                href="#projects"
-                className="px-8 py-3.5 bg-primary text-background font-semibold rounded-xl hover:bg-primary-hover transition-all hover:shadow-lg hover:shadow-primary/25 glow-primary"
-              >
-                {t("cta_work")}
-              </a>
-              <a
-                href="#contact"
-                className="px-8 py-3.5 border border-primary/50 text-primary font-semibold rounded-xl hover:bg-primary/10 transition-all"
-              >
-                {t("cta_hire")}
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Professional photo */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative shrink-0"
-          >
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-              {/* Decorative rings */}
-              <div className="absolute inset-0 rounded-full border-2 border-primary/20 animate-[spin_20s_linear_infinite]" />
-              <div className="absolute inset-3 rounded-full border border-accent/15 animate-[spin_25s_linear_infinite_reverse]" />
-
-              {/* Photo container */}
-              <div className="absolute inset-6 rounded-full overflow-hidden border-2 border-primary/30 shadow-xl shadow-primary/20">
-                <Image
-                  src="/images/victor/profile.png"
-                  alt="Victor Theodoro"
-                  fill
-                  className="object-cover object-top"
-                  priority
-                  sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 384px"
-                />
               </div>
+            ))}
+          </div>
+        </motion.div>
 
-              {/* Glowing dots */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-primary rounded-full shadow-lg shadow-primary/50" />
-              <div className="absolute bottom-4 right-4 w-2 h-2 bg-accent rounded-full shadow-lg shadow-accent/50" />
+        <motion.div
+          initial={{ opacity: 0, x: 28 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.12 }}
+          className="relative mx-auto w-full max-w-[470px]"
+        >
+          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-primary/25 via-transparent to-accent/20 blur-2xl" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 bg-surface shadow-2xl shadow-black/40">
+            <Image
+              src="/images/victor/portrait-2026.png"
+              alt={t("photo_alt")}
+              fill
+              priority
+              sizes="(max-width: 1024px) 90vw, 470px"
+              className="object-cover object-[50%_30%]"
+            />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/45 to-transparent p-6 pt-24">
+              <p className="text-sm font-semibold">{t("photo_caption")}</p>
+              <p className="mt-1 text-xs text-muted">{t("photo_subcaption")}</p>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-      >
-        <div className="w-6 h-10 border-2 border-muted/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-muted/50 rounded-full mt-2" />
-        </div>
-      </motion.div>
     </section>
   );
 }

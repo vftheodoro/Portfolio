@@ -1,113 +1,151 @@
 {
   "nav": {
     "about": "Sobre",
-    "skills": "Skills",
-    "projects": "Projetos",
+    "experience": "Atuação",
+    "teaching": "Ensino",
     "services": "Serviços",
+    "projects": "Projetos",
     "achievements": "Conquistas",
-    "press": "Na Mídia",
+    "press": "Na mídia",
+    "skills": "Tecnologias",
     "contact": "Contato",
-    "hire_me": "Contratar"
+    "hire_me": "Falar comigo"
   },
   "hero": {
-    "greeting": "Olá, eu sou",
+    "eyebrow": "Tecnologia • Ensino • Empreendedorismo",
     "name": "Victor Theodoro",
-    "role": "Desenvolvedor FullStack",
-    "description": "Desenvolvedor apaixonado por criar soluções que transformam vidas. Especialista em soluções web e mobile modernas, escaláveis e focadas em impacto real.",
-    "cta_work": "Ver meu trabalho",
-    "cta_hire": "Solicitar orçamento",
-    "available": "Disponível para projetos"
-  },
-  "about": {
-    "title": "Sobre Mim",
-    "bio": "Sou um desenvolvedor apaixonado por tecnologia de impacto, com atuação reconhecida como engenheiro de software devido à complexidade das soluções que entrego. Minha trajetória de excelência iniciou na ETEC de Registro — eleita a 3ª melhor escola pública do estado de SP — onde criei o WACS, um ecossistema inteligente de automação para cadeiras de rodas premiado internacionalmente.",
-    "bio2": "Atualmente, curso Desenvolvimento de Sistemas Multiplataforma na FATEC de Registro, unindo uma base acadêmica sólida com experiência prática em sistemas escaláveis. Busco constantemente resolver problemas complexos através de código limpo e arquitetura moderna.",
-    "stats": {
-      "projects": "Projetos",
-      "awards": "Prêmios",
-      "technologies": "Tecnologias"
-    },
-    "education_title": "Formação & Certificações",
-    "download_cv": "Baixar CV"
-  },
-  "skills": {
-    "title": "Habilidades Técnicas",
-    "subtitle": "Tecnologias e ferramentas que utilizo para transformar ideias em realidade",
-    "categories": {
-      "frontend": "Frontend",
-      "backend": "Backend",
-      "database": "Cloud & Banco de Dados",
-      "tools": "Ferramentas & Áreas"
+    "role": "Tecnologia prática para empresas, instituições e pessoas.",
+    "description": "Atuo com suporte, infraestrutura, manutenção, redes, capacitação e soluções digitais no Vale do Ribeira — do diagnóstico à entrega.",
+    "location": "Vale do Ribeira • São Paulo",
+    "cta_contact": "Falar no WhatsApp",
+    "cta_work": "Conhecer minha atuação",
+    "photo_alt": "Retrato profissional de Victor Theodoro",
+    "photo_caption": "Tecnologia que resolve.",
+    "photo_subcaption": "Atendimento técnico, ensino e projetos reais.",
+    "proof": {
+      "support": { "title": "Empresas", "label": "suporte e infraestrutura" },
+      "education": { "title": "Professor", "label": "cursos de tecnologia" },
+      "solutions": { "title": "Builder", "label": "projetos ponta a ponta" }
     }
   },
-  "projects": {
-    "title": "Projetos",
-    "subtitle": "Conheça alguns dos projetos que desenvolvi",
-    "featured": "Projeto Destaque",
-    "awarded": "Premiado",
-    "visit_site": "Visitar Site",
-    "view_code": "Ver Código",
-    "view_instagram": "Instagram"
+  "about": {
+    "title": "Sobre mim",
+    "subtitle": "Versatilidade técnica com foco em execução e confiança",
+    "lead": "Sou Victor Theodoro, especialista em tecnologia, professor e fundador da BYTHE.",
+    "bio": "Minha atuação nasceu da prática: resolver problemas de computadores, redes, infraestrutura e sistemas para manter pessoas e empresas trabalhando. No Vale do Ribeira, construí uma rede de confiança com atendimentos, indicações e capacitação profissional.",
+    "bio2": "Atualmente, concilio atendimentos de TI, docência em cursos de tecnologia e a graduação em Desenvolvimento de Software Multiplataforma na Fatec Registro. Também desenvolvo projetos que conectam software, hardware e impacto social, como o WACS.",
+    "download_cv": "Baixar currículo",
+    "visit_bythe": "Conhecer a BYTHE",
+    "highlights": {
+      "business": { "title": "Tecnologia para empresas", "description": "Suporte, manutenção e infraestrutura com linguagem clara e foco na continuidade da operação." },
+      "teaching": { "title": "Ensino e capacitação", "description": "Experiência ministrando cursos de informática, produtividade, empregabilidade e tecnologia." },
+      "builder": { "title": "Soluções completas", "description": "Capacidade de conectar software, eletrônica, infraestrutura e necessidades reais em um único projeto." }
+    }
+  },
+  "experience": {
+    "title": "Atuação profissional",
+    "subtitle": "Experiências que comprovam execução no mundo real",
+    "corporate": { "eyebrow": "Suporte corporativo", "title": "Operações empresariais", "description": "Atendimento técnico em ambientes corporativos, incluindo suporte recorrente à unidade da Pernambucanas em Registro por meio de parceria de field service." },
+    "education": { "eyebrow": "Professor e instrutor", "title": "Formação profissional em tecnologia", "description": "Planejamento e condução completa de turmas em programas do Governo do Estado de São Paulo e iniciativas ligadas ao Centro Paula Souza, Fundação FAT, prefeituras e instituições da região." },
+    "bythe": { "eyebrow": "Empreendedorismo", "title": "Fundador da BYTHE", "description": "Marca de soluções tecnológicas criada para apoiar empresas com suporte, infraestrutura, modernização e projetos digitais." },
+    "projects": { "eyebrow": "Tecnologia aplicada", "title": "WACS e Printh3D", "description": "Projetos que demonstram integração entre desenvolvimento, automação, acessibilidade, gestão e operação de negócios." }
+  },
+  "teaching": {
+    "title": "Professor e instrutor",
+    "subtitle": "Tecnologia ensinada de forma prática, acessível e conectada ao trabalho",
+    "eyebrow": "Experiência em sala de aula",
+    "lead": "Da preparação do conteúdo à avaliação final da turma.",
+    "description": "Ministro cursos de tecnologia e formação profissional para diferentes públicos. Além das aulas, assumo o planejamento, os materiais, os exercícios, as provas e o acompanhamento dos alunos.",
+    "subjects": {
+      "computing": "Informática básica",
+      "windows": "Windows",
+      "excel": "Excel",
+      "internet": "Internet",
+      "productivity": "Produtividade",
+      "employability": "Empregabilidade",
+      "technology": "Tecnologia"
+    },
+    "responsibilities_title": "Responsabilidade pedagógica",
+    "responsibilities": {
+      "planning": "Planejamento das aulas e organização da sequência de aprendizagem.",
+      "exercises": "Criação de materiais, atividades práticas e exercícios.",
+      "assessments": "Elaboração e aplicação de provas e avaliações.",
+      "attendance": "Controle de presença e acompanhamento da participação.",
+      "evaluation": "Avaliação do desenvolvimento dos alunos e orientação individual."
+    },
+    "institutions": "Atuação em iniciativas relacionadas ao Centro Paula Souza, Fundação FAT, Governo do Estado e instituições públicas municipais, incluindo participação em cerimônias de conclusão.",
+    "credentials_title": "Formação e credenciais",
+    "credentials": {
+      "fatec": {
+        "status": "Em andamento",
+        "title": "Desenvolvimento de Software Multiplataforma",
+        "institution": "Fatec Registro"
+      },
+      "etec": {
+        "status": "Concluído",
+        "title": "Técnico em Desenvolvimento de Sistemas — ETIM",
+        "institution": "Etec Registro"
+      },
+      "cisco": {
+        "status": "Certificações e estudos",
+        "title": "Redes, defesa de redes e segurança",
+        "institution": "Cisco Networking Academy"
+      }
+    }
   },
   "services": {
-    "title": "Serviços",
-    "subtitle": "Soluções de engenharia de software sob medida",
-    "websites_title": "Sites & Landing Pages",
-    "websites_desc": "Sites institucionais modernos e landing pages de alta conversão. Design responsivo, otimizado para SEO e performance.",
-    "mobile_title": "Aplicativos Mobile",
-    "mobile_desc": "Aplicativos multiplataforma com React Native para iOS e Android. Interface intuitiva e experiência nativa.",
-    "systems_title": "Sistemas Web Completos",
-    "systems_desc": "Plataformas fullstack sob medida. Do banco de dados à interface, sistemas robustos para seu negócio.",
-    "iot_title": "Automação & IoT",
-    "iot_desc": "Soluções inteligentes com Arduino, sensores e integração IoT. Automação residencial e industrial.",
-    "process_title": "Como Trabalho",
-    "step1_title": "1. Estratégia & Análise",
-    "step1_desc": "Mergulho profundo no seu problema para desenhar a solução técnica ideal.",
-    "step2_title": "2. Design & Arquitetura",
-    "step2_desc": "Planejamento modular focando em escalabilidade, segurança e experiência do usuário.",
-    "step3_title": "3. Desenvolvimento Ágil",
-    "step3_desc": "Codificação com sprints, testes contínuos e foco em performance real.",
-    "step4_title": "4. Lançamento & Evolução",
-    "step4_desc": "Deploy otimizado, monitoramento e suporte para o crescimento do produto.",
-    "cta": "Procurando um engenheiro de software para sua ideia?",
-    "card_cta": "Solicitar orçamento"
+    "title": "Como posso ajudar",
+    "subtitle": "Atendimento direto para resolver, organizar e modernizar sua tecnologia",
+    "support_title": "Suporte e manutenção",
+    "support_desc": "Diagnóstico, correção e prevenção de problemas em computadores e no ambiente de trabalho.",
+    "infrastructure_title": "Infraestrutura e redes",
+    "infrastructure_desc": "Organização da estrutura tecnológica para trabalhar com mais estabilidade, segurança e eficiência.",
+    "training_title": "Cursos e capacitação",
+    "training_desc": "Formações práticas adaptadas ao público, à instituição e aos objetivos de cada turma.",
+    "solutions_title": "Sistemas e modernização",
+    "solutions_desc": "Sites, sistemas, automações e implantação de ferramentas quando a operação pede uma solução sob medida.",
+    "process_title": "Um processo simples e responsável",
+    "step1_title": "Diagnóstico",
+    "step1_desc": "Entendo o problema, o ambiente e a prioridade real.",
+    "step2_title": "Plano de ação",
+    "step2_desc": "Defino escopo, prazo e investimento com clareza.",
+    "step3_title": "Execução",
+    "step3_desc": "Implemento, testo e documento o que foi realizado.",
+    "step4_title": "Acompanhamento",
+    "step4_desc": "Oriento a equipe e acompanho a evolução da solução.",
+    "cta": "Precisa resolver ou organizar a tecnologia da sua empresa?",
+    "card_cta": "Conversar sobre a necessidade"
   },
-  "achievements": {
-    "title": "Conquistas & Prêmios",
-    "subtitle": "Reconhecimentos que marcaram minha trajetória"
+  "projects": {
+    "title": "Projetos em destaque",
+    "subtitle": "Engenharia, impacto e soluções aplicadas",
+    "featured": "Projeto destaque",
+    "awarded": "Reconhecido",
+    "visit_site": "Visitar projeto",
+    "view_code": "Ver código",
+    "view_instagram": "Instagram"
   },
-  "press": {
-    "title": "Na Mídia",
-    "subtitle": "Matérias e entrevistas sobre meu trabalho",
-    "read_more": "Ler matéria",
-    "view_more": "Ver mais",
-    "view_less": "Ver menos"
-  },
+  "achievements": { "title": "Conquistas", "subtitle": "Reconhecimentos que marcaram minha trajetória" },
+  "press": { "title": "Na mídia", "subtitle": "Registros públicos sobre projetos e resultados", "read_more": "Abrir fonte", "view_more": "Ver todas as matérias", "view_less": "Mostrar menos" },
+  "skills": { "title": "Base técnica", "subtitle": "Tecnologias e ferramentas que sustentam minhas entregas", "categories": { "frontend": "Interfaces", "backend": "Aplicações", "database": "Cloud e dados", "tools": "Infraestrutura e ferramentas" } },
   "contact": {
-    "title": "Contato",
-    "subtitle": "Tem um projeto complexo ou quer bater um papo? Entre em contato!",
-    "name": "Nome",
-    "email": "E-mail",
-    "type": "Tipo de contato",
-    "type_recruitment": "Recrutamento",
-    "type_freelance": "Projeto Freelancer",
-    "type_other": "Outro",
-    "message": "Mensagem",
-    "send": "Enviar mensagem",
-    "sending": "Enviando...",
-    "success": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
-    "error": "Erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.",
-    "or": "ou entre em contato diretamente",
-    "whatsapp_cta": "Chamar no WhatsApp"
+    "title": "Vamos conversar",
+    "subtitle": "Explique o que precisa. Eu avalio o cenário e respondo com objetividade.",
+    "primary_title": "Atendimento e projetos",
+    "primary_text": "Para suporte, infraestrutura, cursos, parcerias ou projetos, o caminho mais rápido é o WhatsApp.",
+    "whatsapp_cta": "Chamar no WhatsApp",
+    "bythe_cta": "Conhecer a BYTHE",
+    "social_title": "Acompanhe meu trabalho",
+    "location": "Jacupiranga e Vale do Ribeira, São Paulo"
   },
   "footer": {
     "rights": "Todos os direitos reservados.",
-    "built_with": "Feito com",
-    "tagline": "Transformando ideias complexas em realidade digital",
+    "built_with": "Construído com propósito no Vale do Ribeira.",
+    "tagline": "Tecnologia prática, ensino e soluções para quem precisa fazer acontecer.",
     "nav_title": "Navegação",
-    "services_title": "Serviços",
+    "services_title": "Atuação",
     "contact_title": "Contato",
-    "location": "Registro, São Paulo — BR",
-    "hire_me": "Contratar"
+    "location": "Vale do Ribeira, São Paulo — BR",
+    "hire_me": "Falar comigo"
   }
 }

@@ -32,8 +32,10 @@ export default function Press() {
     return () => window.removeEventListener("openPressMore", handleOpenMore);
   }, []);
 
-  // Initial items: CNN and Estadão
-  const visibleItems = showAll ? pressItems : pressItems.filter(item => ["cnn", "estadao"].includes(item.id));
+  // Prioritize official, independently accessible records.
+  const visibleItems = showAll
+    ? pressItems
+    : pressItems.filter((item) => ["cps", "feteps", "etec_feteps"].includes(item.id));
 
   return (
     <section id="press" className="py-20 sm:py-28 bg-surface/30">

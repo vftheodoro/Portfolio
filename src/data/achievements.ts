@@ -24,8 +24,8 @@ export const achievements: Achievement[] = [
       en: "7th Place — 16th FETEPS",
     },
     description: {
-      pt: "Maior feira de tecnologia do Centro Paula Souza e da América Latina. Representante do projeto WACS.",
-      en: "Largest technology fair of Centro Paula Souza and Latin America. Representative of the WACS project.",
+      pt: "Projeto WACS classificado entre os destaques da feira de tecnologia do Centro Paula Souza.",
+      en: "WACS ranked among the highlighted projects at Centro Paula Souza's technology fair.",
     },
     date: {
       pt: "Outubro 2025",
@@ -60,8 +60,8 @@ export const achievements: Achievement[] = [
       en: "Recognition from the Registro City Council for the 7th place at FETEPS and innovation in Vale do Ribeira.",
     },
     date: {
-      pt: "Novembro 2024",
-      en: "November 2024",
+      pt: "Novembro 2025",
+      en: "November 2025",
     },
   },
   {

@@ -3,11 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
-import { useTranslations } from "next-intl";
 
 export default function FloatingWhatsApp() {
   const [visible, setVisible] = useState(false);
-  const t = useTranslations("hero");
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 600);

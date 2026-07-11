@@ -13,17 +13,17 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Victor Theodoro | Dev",
+  title: "Victor Theodoro | Especialista em Tecnologia",
   description:
-    "Portfólio profissional de Victor Theodoro — Desenvolvedor FullStack especializado em soluções web, mobile e IoT. Serviços freelancer de desenvolvimento de sistemas.",
+    "Site profissional de Victor Theodoro — suporte, infraestrutura, manutenção, ensino e soluções tecnológicas no Vale do Ribeira.",
   keywords: [
-    "desenvolvedor",
-    "fullstack",
-    "react native",
-    "node.js",
-    "python",
-    "freelancer",
-    "IoT",
+    "Victor Theodoro",
+    "especialista em tecnologia",
+    "suporte de TI",
+    "infraestrutura de TI",
+    "Vale do Ribeira",
+    "instrutor de tecnologia",
+    "BYTHE",
     "WACS",
   ],
   icons: {

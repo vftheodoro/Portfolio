@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import {
-  HiGlobeAlt,
-  HiDeviceMobile,
+  HiDesktopComputer,
+  HiAcademicCap,
   HiServer,
-  HiChip,
+  HiSparkles,
   HiLightBulb,
   HiClipboardList,
   HiCode,
@@ -18,10 +18,10 @@ import SectionTitle from "../ui/SectionTitle";
 import { IconType } from "react-icons";
 
 const serviceIcons: Record<string, IconType> = {
-  globe: HiGlobeAlt,
-  smartphone: HiDeviceMobile,
-  server: HiServer,
-  cpu: HiChip,
+  support: HiDesktopComputer,
+  network: HiServer,
+  training: HiAcademicCap,
+  solutions: HiSparkles,
 };
 
 const stepIcons = [HiLightBulb, HiClipboardList, HiCode, HiCheckCircle];
@@ -112,7 +112,7 @@ export default function Services() {
                     <StepIcon size={24} className="text-primary group-hover:scale-110 transition-transform" />
                   </div>
                   <div className="text-[10px] text-primary/60 font-mono mb-2 bg-primary/5 w-fit mx-auto px-2 py-0.5 rounded-full border border-primary/10 tracking-widest">
-                    STEP 0{step}
+                    0{step}
                   </div>
                   <h4 className="font-semibold mb-2 text-sm sm:text-base group-hover:text-primary transition-colors">
                     {t(`step${step}_title`)}

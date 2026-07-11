@@ -1,113 +1,139 @@
 {
   "nav": {
     "about": "About",
-    "skills": "Skills",
-    "projects": "Projects",
+    "experience": "Experience",
+    "teaching": "Teaching",
     "services": "Services",
+    "projects": "Projects",
     "achievements": "Achievements",
     "press": "Press",
+    "skills": "Technology",
     "contact": "Contact",
-    "hire_me": "Hire Me"
+    "hire_me": "Contact me"
   },
   "hero": {
-    "greeting": "Hi, I'm",
+    "eyebrow": "Technology • Education • Entrepreneurship",
     "name": "Victor Theodoro",
-    "role": "FullStack Developer",
-    "description": "A passionate developer creating solutions that transform lives. Specialized in modern, scalable web and mobile solutions focused on real impact.",
-    "cta_work": "See my work",
-    "cta_hire": "Request a quote",
-    "available": "Available for projects"
-  },
-  "about": {
-    "title": "About Me",
-    "bio": "I am a developer passionate about impact technology, recognized as a software engineer for the complexity of the solutions I deliver. My path of excellence began at ETEC de Registro — elected the 3rd best public school in the state of SP — where I created WACS, an internationally award-winning intelligent wheelchair automation ecosystem.",
-    "bio2": "Currently, I am studying Multiplatform Systems Development at FATEC de Registro, combining a solid academic foundation with practical experience in scalable systems. I constantly seek to solve complex problems through clean code and modern architecture.",
-    "stats": {
-      "projects": "Projects",
-      "awards": "Awards",
-      "technologies": "Technologies"
-    },
-    "education_title": "Education & Certifications",
-    "download_cv": "Download CV"
-  },
-  "skills": {
-    "title": "Technical Skills",
-    "subtitle": "Technologies and tools I use to turn ideas into reality",
-    "categories": {
-      "frontend": "Frontend",
-      "backend": "Backend",
-      "database": "Cloud & Databases",
-      "tools": "Tools & Areas"
+    "role": "Practical technology for businesses, institutions, and people.",
+    "description": "I work with support, infrastructure, maintenance, networking, training, and digital solutions in Brazil's Vale do Ribeira — from diagnosis to delivery.",
+    "location": "Vale do Ribeira • São Paulo, Brazil",
+    "cta_contact": "Chat on WhatsApp",
+    "cta_work": "Explore my work",
+    "photo_alt": "Professional portrait of Victor Theodoro",
+    "photo_caption": "Technology that solves problems.",
+    "photo_subcaption": "Technical support, education, and real projects.",
+    "proof": {
+      "support": { "title": "Business", "label": "support and infrastructure" },
+      "education": { "title": "Teacher", "label": "technology courses" },
+      "solutions": { "title": "Builder", "label": "end-to-end projects" }
     }
   },
-  "projects": {
-    "title": "Projects",
-    "subtitle": "Check out some of the projects I've built",
-    "featured": "Featured Project",
-    "awarded": "Award-winning",
-    "visit_site": "Visit Site",
-    "view_code": "View Code",
-    "view_instagram": "Instagram"
+  "about": {
+    "title": "About me",
+    "subtitle": "Technical versatility focused on execution and trust",
+    "lead": "I am Victor Theodoro, a technology specialist, teacher, and founder of BYTHE.",
+    "bio": "My career grew from hands-on work: solving computer, network, infrastructure, and system problems to keep people and businesses working. In Vale do Ribeira, I have built trust through service, referrals, and professional training.",
+    "bio2": "I currently combine IT services, teaching technology courses, and a degree in Multiplatform Software Development at Fatec Registro. I also build projects connecting software, hardware, and social impact, such as WACS.",
+    "download_cv": "Download résumé",
+    "visit_bythe": "Visit BYTHE",
+    "highlights": {
+      "business": { "title": "Technology for business", "description": "Support, maintenance, and infrastructure in clear language, focused on business continuity." },
+      "teaching": { "title": "Education and training", "description": "Experience teaching computing, productivity, employability, and technology." },
+      "builder": { "title": "Complete solutions", "description": "Connecting software, electronics, infrastructure, and real needs in a single project." }
+    }
+  },
+  "experience": {
+    "title": "Professional experience",
+    "subtitle": "Work that demonstrates real-world execution",
+    "corporate": { "eyebrow": "Corporate support", "title": "Business operations", "description": "Technical service in corporate environments, including recurring support for the Pernambucanas store in Registro through a field-service partnership." },
+    "education": { "eyebrow": "Teacher and instructor", "title": "Professional technology education", "description": "End-to-end class planning and teaching in São Paulo State Government programs and initiatives connected to Centro Paula Souza, Fundação FAT, city governments, and regional institutions." },
+    "bythe": { "eyebrow": "Entrepreneurship", "title": "Founder of BYTHE", "description": "A technology solutions brand created to support companies with infrastructure, modernization, support, and digital projects." },
+    "projects": { "eyebrow": "Applied technology", "title": "WACS and Printh3D", "description": "Projects demonstrating integration across development, automation, accessibility, management, and business operations." }
+  },
+  "teaching": {
+    "title": "Teacher and instructor",
+    "subtitle": "Practical, accessible technology education connected to the workplace",
+    "eyebrow": "Classroom experience",
+    "lead": "From preparing the content to the class's final assessment.",
+    "description": "I teach technology and professional training courses to different audiences. Beyond teaching, I handle planning, materials, exercises, tests, and student follow-up.",
+    "subjects": {
+      "computing": "Computer basics",
+      "windows": "Windows",
+      "excel": "Excel",
+      "internet": "Internet",
+      "productivity": "Productivity",
+      "employability": "Employability",
+      "technology": "Technology"
+    },
+    "responsibilities_title": "Teaching responsibilities",
+    "responsibilities": {
+      "planning": "Class planning and organization of the learning sequence.",
+      "exercises": "Creation of materials, practical activities, and exercises.",
+      "assessments": "Preparation and application of tests and assessments.",
+      "attendance": "Attendance control and participation tracking.",
+      "evaluation": "Student development assessment and individual guidance."
+    },
+    "institutions": "Work in initiatives related to Centro Paula Souza, Fundação FAT, the São Paulo State Government, and municipal public institutions, including participation in graduation ceremonies.",
+    "credentials_title": "Education and credentials",
+    "credentials": {
+      "fatec": {
+        "status": "In progress",
+        "title": "Multiplatform Software Development",
+        "institution": "Fatec Registro"
+      },
+      "etec": {
+        "status": "Completed",
+        "title": "Technical Degree in Systems Development — ETIM",
+        "institution": "Etec Registro"
+      },
+      "cisco": {
+        "status": "Certifications and coursework",
+        "title": "Networking, network defense, and security",
+        "institution": "Cisco Networking Academy"
+      }
+    }
   },
   "services": {
-    "title": "Services",
-    "subtitle": "Tailored software engineering solutions",
-    "websites_title": "Websites & Landing Pages",
-    "websites_desc": "Modern institutional websites and high-conversion landing pages. Responsive design, optimized for SEO and performance.",
-    "mobile_title": "Mobile Apps",
-    "mobile_desc": "Multiplatform apps with React Native for iOS and Android. Intuitive interface and native experience.",
-    "systems_title": "Complete Web Systems",
-    "systems_desc": "Tailored fullstack platforms. From database to interface, robust systems for your business.",
-    "iot_title": "Automation & IoT",
-    "iot_desc": "Intelligent solutions with Arduino, sensors, and IoT integration. Home and industrial automation.",
-    "process_title": "How I Work",
-    "step1_title": "1. Strategy & Analysis",
-    "step1_desc": "A deep dive into your problem to design the ideal technical solution.",
-    "step2_title": "2. Design & Architecture",
-    "step2_desc": "Modular planning focusing on scalability, security, and user experience.",
-    "step3_title": "3. Agile Development",
-    "step3_desc": "Coding with sprints, continuous testing, and focus on real performance.",
-    "step4_title": "4. Launch & Evolution",
-    "step4_desc": "Optimized deployment, monitoring, and support for product growth.",
-    "cta": "Looking for a software engineer for your idea?",
-    "card_cta": "Request a quote"
+    "title": "How I can help",
+    "subtitle": "Direct support to solve, organize, and modernize your technology",
+    "support_title": "Support and maintenance",
+    "support_desc": "Diagnosis, repair, and prevention for computers and workplace technology.",
+    "infrastructure_title": "Infrastructure and networks",
+    "infrastructure_desc": "Organizing technology for greater stability, security, and efficiency.",
+    "training_title": "Courses and training",
+    "training_desc": "Practical programs adapted to each audience, institution, and learning goal.",
+    "solutions_title": "Systems and modernization",
+    "solutions_desc": "Websites, systems, automations, and tool implementation when the operation needs a tailored solution.",
+    "process_title": "A simple, responsible process",
+    "step1_title": "Diagnosis", "step1_desc": "I understand the problem, environment, and real priority.",
+    "step2_title": "Action plan", "step2_desc": "I define scope, timing, and investment clearly.",
+    "step3_title": "Execution", "step3_desc": "I implement, test, and document the work.",
+    "step4_title": "Follow-up", "step4_desc": "I guide the team and follow the solution's evolution.",
+    "cta": "Need to solve or organize your company's technology?",
+    "card_cta": "Discuss your needs"
   },
-  "achievements": {
-    "title": "Achievements & Awards",
-    "subtitle": "Recognitions that marked my journey"
-  },
-  "press": {
-    "title": "In the Media",
-    "subtitle": "Articles and interviews about my work",
-    "read_more": "Read more",
-    "view_more": "View more",
-    "view_less": "View less"
-  },
+  "projects": { "title": "Featured projects", "subtitle": "Engineering, impact, and applied solutions", "featured": "Featured project", "awarded": "Recognized", "visit_site": "Visit project", "view_code": "View code", "view_instagram": "Instagram" },
+  "achievements": { "title": "Achievements", "subtitle": "Recognition throughout my journey" },
+  "press": { "title": "Press", "subtitle": "Public records of projects and results", "read_more": "Open source", "view_more": "View all coverage", "view_less": "Show less" },
+  "skills": { "title": "Technical foundation", "subtitle": "Technology and tools supporting my work", "categories": { "frontend": "Interfaces", "backend": "Applications", "database": "Cloud and data", "tools": "Infrastructure and tools" } },
   "contact": {
-    "title": "Contact",
-    "subtitle": "Have a complex project or want to chat? Get in touch!",
-    "name": "Name",
-    "email": "Email",
-    "type": "Contact type",
-    "type_recruitment": "Recruitment",
-    "type_freelance": "Freelance Project",
-    "type_other": "Other",
-    "message": "Message",
-    "send": "Send message",
-    "sending": "Sending...",
-    "success": "Message sent successfully! I'll get back to you soon.",
-    "error": "Failed to send. Try again or contact me via WhatsApp.",
-    "or": "or contact me directly",
-    "whatsapp_cta": "Chat on WhatsApp"
+    "title": "Let's talk",
+    "subtitle": "Tell me what you need. I will assess the scenario and respond directly.",
+    "primary_title": "Services and projects",
+    "primary_text": "For support, infrastructure, courses, partnerships, or projects, WhatsApp is the fastest route.",
+    "whatsapp_cta": "Chat on WhatsApp",
+    "bythe_cta": "Visit BYTHE",
+    "social_title": "Follow my work",
+    "location": "Jacupiranga and Vale do Ribeira, São Paulo, Brazil"
   },
   "footer": {
     "rights": "All rights reserved.",
-    "built_with": "Built with",
-    "tagline": "Transforming complex ideas into digital reality",
+    "built_with": "Built with purpose in Vale do Ribeira.",
+    "tagline": "Practical technology, education, and solutions for people who make things happen.",
     "nav_title": "Navigation",
-    "services_title": "Services",
+    "services_title": "What I do",
     "contact_title": "Contact",
-    "location": "Registro, São Paulo — BR",
-    "hire_me": "Hire Me"
+    "location": "Vale do Ribeira, São Paulo — Brazil",
+    "hire_me": "Contact me"
   }
 }

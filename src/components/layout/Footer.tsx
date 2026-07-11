@@ -12,13 +12,13 @@ const socials = [
   { icon: FaWhatsapp, href: "https://wa.me/5513996016551", label: "WhatsApp", color: "hover:text-green-400" },
 ];
 
-const navLinks = ["about", "skills", "projects", "services", "achievements", "press", "contact"] as const;
+const navLinks = ["about", "experience", "teaching", "services", "projects", "press", "contact"] as const;
 
 const serviceLinks = [
-  { key: "websites", label: { pt: "Sites & Landing Pages", en: "Websites & Landing Pages" } },
-  { key: "mobile", label: { pt: "Apps Mobile", en: "Mobile Apps" } },
-  { key: "systems", label: { pt: "Sistemas Web", en: "Web Systems" } },
-  { key: "iot", label: { pt: "Automação & IoT", en: "Automation & IoT" } },
+  { key: "support", label: { pt: "Suporte e manutenção", en: "Support and maintenance" } },
+  { key: "infrastructure", label: { pt: "Infraestrutura e redes", en: "Infrastructure and networks" } },
+  { key: "training", label: { pt: "Cursos e capacitação", en: "Courses and training" } },
+  { key: "solutions", label: { pt: "Sistemas e modernização", en: "Systems and modernization" } },
 ];
 
 export default function Footer() {
