@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Victor Theodoro — Developer Portfolio
 
-## Getting Started
+Personal portfolio of Victor Theodoro, presenting software projects, technical experience, and ways to get in touch. Built as a bilingual (Portuguese/English) Next.js application.
 
-First, run the development server:
+**Live portfolio:** https://vftheodoro.vercel.app/pt  
+**English version:** https://vftheodoro.vercel.app/en  
+**LinkedIn:** https://www.linkedin.com/in/vftheodoro/
+
+## Features
+
+- Localized content for Portuguese and English using `next-intl`.
+- Sections for projects, experience, achievements, teaching, skills, and contact.
+- Responsive React components and UI animation with Framer Motion.
+- Contact experience using EmailJS in the frontend.
+
+## Stack
+
+Next.js (App Router), React, TypeScript, Tailwind CSS, `next-intl`, Framer Motion, and EmailJS.
+
+## Run locally
 
 ```bash
+git clone https://github.com/vftheodoro/Portfolio.git
+cd Portfolio
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. Routes are localized under `/pt` and `/en`. Features requiring a configured external provider may need additional environment settings.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Available scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start local development |
+| `npm run build` | Create a production build |
+| `npm run start` | Serve a production build |
+| `npm run lint` | Run ESLint |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app/[locale]`: localized pages and layouts.
+- `src/components/sections`: portfolio sections.
+- `src/data`: project, achievement, service, and press data.
+- `messages/pt.json`, `messages/en.json`: translation content.
+- `src/i18n`: internationalization configuration.
+- `public`: local media assets.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Maintenance
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Edit portfolio entries in `src/data` and translations in `messages`. Review both languages when changing shared content. Verify external links and contact configuration before publishing.
 
-## Deploy on Vercel
+## Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This is a personal portfolio, not a reusable SaaS template. Project descriptions should distinguish implemented features from prototypes and planned work. No credentials should be committed to the repository.
