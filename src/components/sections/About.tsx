@@ -1,77 +1,90 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { useLocale, useTranslations } from "next-intl";
-import { FaBuilding, FaChalkboardTeacher, FaDownload, FaLightbulb } from "react-icons/fa";
+import { getTranslations } from "next-intl/server";
+import { SwFrame, SwSection, SwType, sw } from "@/components/swarm/Sw";
 import SectionTitle from "../ui/SectionTitle";
 
-const highlights = [
-  { key: "business", icon: FaBuilding },
-  { key: "teaching", icon: FaChalkboardTeacher },
-  { key: "builder", icon: FaLightbulb },
-] as const;
+const EDUCATION = ["etec", "fatec"] as const;
+const APPROACH = ["requirements", "decisions", "quality", "communication"] as const;
 
-export default function About() {
-  const t = useTranslations("about");
-  const locale = useLocale();
+export default async function About() {
+  const t = await getTranslations("about");
 
   return (
-    <section id="about" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <SectionTitle title={t("title")} subtitle={t("subtitle")} />
+    <SwSection name="about" id="about" className="py-24 md:py-32" aria-labelledby="about-title">
+      <div className="wrap">
+        <SectionTitle
+          typed
+          group="about-head"
+          index="01"
+          label={t("label")}
+          title={t("title")}
+          accent={t("accent")}
+          id="about-title"
+        />
 
-        <div className="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-16">
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="rounded-2xl border border-border bg-surface p-6 sm:p-8"
-          >
-            <p className="mb-5 text-lg font-medium leading-relaxed">{t("lead")}</p>
-            <p className="mb-4 leading-relaxed text-muted">{t("bio")}</p>
-            <p className="mb-8 leading-relaxed text-muted">{t("bio2")}</p>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href={locale === "pt" ? "/cv/Curriculo_Theodoro.pdf" : "/cv/EN_Theodoro.pdf"}
-                download
-                className="inline-flex items-center gap-2 rounded-xl border border-border px-5 py-2.5 text-sm font-medium transition hover:border-primary/50 hover:text-primary"
-              >
-                <FaDownload size={13} />
-                {t("download_cv")}
-              </a>
-              <a
-                href="https://bythe.tech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-xl bg-primary/10 px-5 py-2.5 text-sm font-medium text-primary transition hover:bg-primary/20"
-              >
-                {t("visit_bythe")}
-              </a>
-            </div>
-          </motion.div>
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_.9fr] lg:gap-16">
+          <div className="space-y-5">
+            <p {...sw("block", { group: "about-text" })} className="text-lg leading-[1.65] text-foreground">
+              {t("p1")}
+            </p>
+            <p {...sw("block", { group: "about-text" })} className="leading-[1.65] text-muted">
+              {t("p2")}
+            </p>
+            <p {...sw("block", { group: "about-text" })} className="leading-[1.65] text-muted">
+              {t("p3")}
+            </p>
+            <SwFrame group="about-goal" className="mt-8 p-5">
+              <p className="label text-primary">{t("goal_label")}</p>
+              <p {...sw("block", { group: "about-goal" })} className="mt-2 leading-[1.65]">
+                {t("goal")}
+              </p>
+            </SwFrame>
+          </div>
 
-          <div className="grid gap-4">
-            {highlights.map(({ key, icon: Icon }, index) => (
-              <motion.article
-                key={key}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                className="flex gap-4 rounded-2xl border border-border bg-surface/60 p-5 transition hover:border-primary/30"
-              >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <Icon size={19} />
-                </div>
-                <div>
-                  <h3 className="mb-1 font-semibold">{t(`highlights.${key}.title`)}</h3>
-                  <p className="text-sm leading-relaxed text-muted">{t(`highlights.${key}.description`)}</p>
-                </div>
-              </motion.article>
-            ))}
+          <div>
+            <p className="label mb-4">{t("education_label")}</p>
+            <ol className="grid grid-cols-1 gap-4">
+              {EDUCATION.map((key) => (
+                <li key={key}>
+                  <SwFrame group={`about-${key}`} className="p-5">
+                    <p className="label">{t(`education.${key}.status`)}</p>
+                    <SwType
+                      as="h3"
+                      group={`about-${key}`}
+                      text={t(`education.${key}.title`)}
+                      className="mt-2 block text-lg font-semibold leading-snug tracking-[-0.01em]"
+                    />
+                    <p {...sw("block", { group: `about-${key}` })} className="mt-1 text-sm text-muted">
+                      {t(`education.${key}.org`)}
+                    </p>
+                  </SwFrame>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
+
+        <div className="mt-16 md:mt-20">
+          <p className="label mb-4">{t("approach_label")}</p>
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {APPROACH.map((key, i) => (
+              <li key={key}>
+                <SwFrame group={`about-${key}`} className="h-full p-5">
+                  <p className="font-mono text-xs text-primary">{String(i + 1).padStart(2, "0")}</p>
+                  <SwType
+                    as="h3"
+                    group={`about-${key}`}
+                    text={t(`approach.${key}.title`)}
+                    className="mt-3 block font-semibold leading-snug"
+                  />
+                  <p {...sw("block", { group: `about-${key}` })} className="mt-2 text-sm leading-[1.65] text-muted">
+                    {t(`approach.${key}.text`)}
+                  </p>
+                </SwFrame>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </section>
+    </SwSection>
   );
 }

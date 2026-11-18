@@ -1,31 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-});
-
+/**
+ * Layout raiz mínimo. `<html lang>` e `<body>` vivem em `[locale]/layout.tsx`
+ * (idioma correto por rota) e em `not-found.tsx`; esta camada só carrega o CSS
+ * global e os ícones comuns a todas as rotas.
+ */
 export const metadata: Metadata = {
-  title: "Victor Theodoro | Especialista em Tecnologia",
-  description:
-    "Site profissional de Victor Theodoro — suporte, infraestrutura, manutenção, ensino e soluções tecnológicas no Vale do Ribeira.",
-  keywords: [
-    "Victor Theodoro",
-    "especialista em tecnologia",
-    "suporte de TI",
-    "infraestrutura de TI",
-    "Vale do Ribeira",
-    "instrutor de tecnologia",
-    "BYTHE",
-    "WACS",
-  ],
   icons: {
     icon: "/images/victor/vt-logo.png",
     shortcut: "/images/victor/vt-logo.png",
@@ -33,19 +14,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="pt" suppressHydrationWarning data-scroll-behavior="smooth">
-      <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
-        suppressHydrationWarning
-      >
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return children;
 }

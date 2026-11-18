@@ -1,0 +1,13 @@
+@page { size: A4; margin: 14mm 15mm; }
+* { box-sizing: border-box; }
+body { font: 9.6pt/1.45 "Segoe UI", Arial, sans-serif; color: #111; margin: 0; }
+h1 { font-size: 21pt; margin: 0; letter-spacing: -0.01em; }
+.role { font-size: 11pt; color: #0b6e99; margin: 2px 0 6px; font-weight: 600; }
+.meta { font-size: 8.8pt; color: #333; }
+h2 { font-size: 9pt; letter-spacing: .14em; text-transform: uppercase; color: #0b6e99; border-bottom: 1px solid #c9d6df; padding-bottom: 2px; margin: 13px 0 6px; }
+.item { margin: 0 0 7px; }
+.item b { font-weight: 650; }
+.when { color: #555; font-size: 8.8pt; }
+ul { margin: 2px 0 0; padding-left: 15px; }
+li { margin: 1px 0; }
+p { margin: 0 0 4px; }

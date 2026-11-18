@@ -1,108 +1,119 @@
-"use client";
+﻿import Image from "next/image";
+import { getLocale, getTranslations } from "next-intl/server";
+import { FaArrowRight, FaDownload, FaGithub } from "react-icons/fa";
+import { SwFrame, SwSection, SwType, sw } from "@/components/swarm/Sw";
+import { btnPrimary, btnSecondary } from "../ui/buttons";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-import { FaArrowRight, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
+/** Tecnologias com evidÃªncia em repositÃ³rios (docs/CONTENT_AUDIT.md, seÃ§Ã£o 3.7). */
+const STACK = ["TypeScript", "Node.js", "React", "Next.js", "Supabase", "PostgreSQL"] as const;
 
-const proofPoints = ["support", "education", "solutions"] as const;
+const CV = { pt: "/cv/Victor-Theodoro-CV-PT.pdf", en: "/cv/Victor-Theodoro-CV-EN.pdf" } as const;
 
-export default function Hero() {
-  const t = useTranslations("hero");
+export default async function Hero() {
+  const [t, tCommon, locale] = await Promise.all([getTranslations("hero"), getTranslations("common"), getLocale()]);
+  const cv = locale === "en" ? CV.en : CV.pt;
 
   return (
-    <section className="relative min-h-[92vh] overflow-hidden border-b border-border/70 pt-24">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_35%,rgba(6,182,212,0.14),transparent_28%),radial-gradient(circle_at_15%_10%,rgba(139,92,246,0.08),transparent_24%)]" />
-      <div
-        className="absolute inset-0 opacity-[0.025]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
-      />
+    <SwSection name="hero" id="top" className="pb-16 pt-24 md:pb-24 md:pt-28" aria-labelledby="hero-title">
+      <div className="wrap">
+        <SwFrame group="hero" className="p-5 sm:p-8 lg:p-12">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_.85fr] lg:gap-14">
+            <div>
+              <p className="label mb-6 flex items-center gap-3">
+                <span aria-hidden="true" className="size-1.5 rounded-full bg-ok" />
+                {t("status")}
+              </p>
 
-      <div className="relative mx-auto grid min-h-[calc(92vh-6rem)] max-w-6xl items-center gap-12 px-4 pb-16 sm:px-6 lg:grid-cols-[1.08fr_.92fr] lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65 }}
-          className="relative z-10 text-center lg:text-left"
-        >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary">
-            <FaMapMarkerAlt size={11} />
-            {t("location")}
-          </div>
+              <h1
+                id="hero-title"
+                className="text-[clamp(2.5rem,7vw,5rem)] font-semibold leading-[1.02] tracking-[-0.03em]"
+              >
+                <SwType as="span" text={t("name")} className="block" />{" "}
+                <SwType
+                  as="span"
+                  text={t("role")}
+                  className="mt-2 block text-[clamp(1.25rem,3vw,2rem)] font-medium leading-[1.15] tracking-[-0.02em] text-primary"
+                />
+              </h1>
 
-          <p className="mb-3 font-mono text-sm uppercase tracking-[0.2em] text-muted">
-            {t("eyebrow")}
-          </p>
-          <h1 className="mb-5 text-4xl font-bold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
-            {t("name")}
-          </h1>
-          <h2 className="mb-6 max-w-2xl text-xl font-medium leading-snug text-primary sm:text-2xl">
-            {t("role")}
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-muted sm:text-lg lg:mx-0">
-            {t("description")}
-          </p>
+              <p {...sw("block")} className="mt-5 font-mono text-[0.78rem] leading-relaxed text-muted">
+                {t("headline")}
+              </p>
+              <p {...sw("block")} className="mt-5 max-w-xl text-lg leading-[1.65] text-muted">
+                {t("lead")}
+              </p>
 
-          <div className="mb-10 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
-            <a
-              href="https://wa.me/5513996016551"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 font-semibold text-background transition hover:bg-primary-hover hover:shadow-lg hover:shadow-primary/20"
-            >
-              <FaWhatsapp size={17} />
-              {t("cta_contact")}
-            </a>
-            <a
-              href="#experience"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-surface/70 px-6 py-3.5 font-semibold transition hover:border-primary/40 hover:text-primary"
-            >
-              {t("cta_work")}
-              <FaArrowRight size={13} />
-            </a>
-          </div>
+              <ul aria-label={t("stack_label")} className="mt-7 flex flex-wrap gap-2">
+                {STACK.map((tech) => (
+                  <li
+                    key={tech}
+                    {...sw("chip")}
+                    className="rounded-[var(--radius-sm)] border border-border-strong px-2.5 py-1 font-mono text-xs text-foreground"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
 
-          <div className="grid grid-cols-3 gap-2 border-t border-border/70 pt-6 sm:gap-4">
-            {proofPoints.map((point) => (
-              <div key={point} className="text-left">
-                <strong className="block text-sm font-semibold sm:text-base">
-                  {t(`proof.${point}.title`)}
-                </strong>
-                <span className="mt-1 block text-[11px] leading-snug text-muted sm:text-xs">
-                  {t(`proof.${point}.label`)}
-                </span>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a href="#projects" {...sw("link")} className={btnPrimary}>
+                  {t("cta_projects")}
+                  <FaArrowRight size={12} aria-hidden="true" />
+                </a>
+                <a
+                  href="https://github.com/vftheodoro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  {...sw("link")}
+                  className={btnSecondary}
+                >
+                  <FaGithub size={15} aria-hidden="true" />
+                  GitHub
+                  <span className="sr-only">({tCommon("new_tab")})</span>
+                </a>
+                <a href={cv} download {...sw("link")} className={btnSecondary}>
+                  <FaDownload size={13} aria-hidden="true" />
+                  {t("cta_cv")}
+                </a>
+                <a href="#contact" {...sw("link")} className={btnSecondary}>
+                  {t("cta_contact")}
+                </a>
               </div>
-            ))}
-          </div>
-        </motion.div>
+            </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 28 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.12 }}
-          className="relative mx-auto w-full max-w-[470px]"
-        >
-          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-primary/25 via-transparent to-accent/20 blur-2xl" />
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 bg-surface shadow-2xl shadow-black/40">
-            <Image
-              src="/images/victor/portrait-2026.png"
-              alt={t("photo_alt")}
-              fill
-              priority
-              sizes="(max-width: 1024px) 90vw, 470px"
-              className="object-cover object-[50%_30%]"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/45 to-transparent p-6 pt-24">
-              <p className="text-sm font-semibold">{t("photo_caption")}</p>
-              <p className="mt-1 text-xs text-muted">{t("photo_subcaption")}</p>
+            <div className="mx-auto w-full max-w-[420px] lg:max-w-none">
+              <div
+                {...sw("media")}
+                className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-md)] border border-border bg-surface"
+              >
+                <Image
+                  src="/images/victor/portrait-2026.webp"
+                  alt={t("photo_alt")}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 90vw, 440px"
+                  className="object-cover object-[50%_20%]"
+                />
+              </div>
+
+              <dl {...sw("block")} className="mt-6 grid gap-5 border-t border-border pt-5 sm:grid-cols-2">
+                <div>
+                  <dt className="label">{t("education_label")}</dt>
+                  <dd className="mt-1.5 text-sm leading-relaxed">
+                    {t("education_etec")}
+                    <br />
+                    <span className="text-muted">{t("education_fatec")}</span>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="label">{t("location_label")}</dt>
+                  <dd className="mt-1.5 text-sm leading-relaxed">{t("location_value")}</dd>
+                </div>
+              </dl>
             </div>
           </div>
-        </motion.div>
+        </SwFrame>
       </div>
-    </section>
+    </SwSection>
   );
 }

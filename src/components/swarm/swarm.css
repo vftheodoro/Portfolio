@@ -1,0 +1,254 @@
+/*
+ * Swarm Experience — estados de construção.
+ *
+ * Regra de ouro: tudo aqui só vale com `html.swarm-on` (classe posta por um
+ * script inline mínimo, e removida pelo failsafe/modo "off"), enquanto o
+ * elemento NÃO tem `data-sw-done`, e só em tela (nunca na impressão). Sem JS,
+ * sem classe, sem esconder nada: o conteúdo do servidor aparece completo.
+ *
+ * `--b` (0..1) é escrito pelo controlador direto no elemento durante a
+ * construção. Tokens opcionais: --sw-accent, --sw-line, --sw-fill, --sw-radius.
+ */
+
+[data-sw] {
+  --b: 0;
+}
+
+/* moldura: o "chrome" (borda + fundo) fica num filho dedicado, para o arrasto
+   do retângulo não recortar o conteúdo do card */
+.sw-frame {
+  position: relative;
+}
+.sw-frame > .sw-chrome {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  border: 1px solid var(--sw-line, #1c2a3a);
+  background: var(--sw-fill, rgba(255, 255, 255, 0.02));
+  border-radius: var(--sw-radius, 6px);
+}
+.sw-frame > :not(.sw-chrome) {
+  position: relative;
+  z-index: 1;
+}
+
+@media screen {
+  /* ---- frame: retângulo arrastado do canto superior esquerdo ------------- */
+  html.swarm-on [data-sw="frame"]:not([data-sw-done]) > .sw-chrome {
+    inset: auto;
+    top: 0;
+    left: 0;
+    width: calc(var(--b) * 100%);
+    height: calc(var(--b) * 100%);
+    opacity: min(1, calc(var(--b) * 30));
+    border-color: color-mix(in srgb, var(--sw-accent, #36bcf7) calc((1 - var(--b)) * 100%), var(--sw-line, #1c2a3a));
+    background: color-mix(in srgb, var(--sw-fill, rgba(255, 255, 255, 0.02)) calc(var(--b) * 100%), transparent);
+  }
+  html.swarm-on [data-sw="frame"]:not([data-sw-done]) > .sw-chrome::before,
+  html.swarm-on [data-sw="frame"]:not([data-sw-done]) > .sw-chrome::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #fff;
+    border: 1px solid var(--sw-accent, #36bcf7);
+    box-sizing: border-box;
+  }
+  html.swarm-on [data-sw="frame"]:not([data-sw-done]) > .sw-chrome::before {
+    left: -4px;
+    top: -4px;
+  }
+  html.swarm-on [data-sw="frame"]:not([data-sw-done]) > .sw-chrome::after {
+    right: -4px;
+    bottom: -4px;
+  }
+
+  /* ---- type: caracteres revelados pelo cursor de texto -------------------- */
+  html.swarm-on [data-sw="type"]:not([data-sw-done]) .sw-c {
+    opacity: clamp(0, calc(var(--b) * var(--n) - var(--i)), 1);
+  }
+
+  /* ---- block: bloco revelado de cima para baixo, com barra de seleção ----- */
+  html.swarm-on [data-sw="block"]:not([data-sw-done]) {
+    position: relative;
+    clip-path: inset(-4px -12px calc((1 - var(--b)) * 100%) -12px);
+  }
+  html.swarm-on [data-sw="block"]:not([data-sw-done])::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 2px;
+    height: calc(var(--b) * 100%);
+    background: var(--sw-accent, #36bcf7);
+    opacity: min(1, calc(var(--b) * 30));
+  }
+
+  /* ---- media: varredura vertical + linha de scan --------------------------- */
+  html.swarm-on [data-sw="media"]:not([data-sw-done]) {
+    position: relative;
+  }
+  html.swarm-on [data-sw="media"]:not([data-sw-done]) > :first-child {
+    clip-path: inset(0 0 calc((1 - var(--b)) * 100%) 0);
+  }
+  html.swarm-on [data-sw="media"]:not([data-sw-done])::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(var(--b) * 100%);
+    height: 1px;
+    background: var(--sw-accent, #36bcf7);
+    opacity: min(1, calc(var(--b) * 30));
+    pointer-events: none;
+  }
+
+  /* ---- chip / link: posicionados com contorno tracejado ------------------- */
+  html.swarm-on [data-sw="chip"]:not([data-sw-done]),
+  html.swarm-on [data-sw="link"]:not([data-sw-done]) {
+    opacity: clamp(0, calc(var(--b) * 2.4 - 0.2), 1);
+    transform: scale(calc(0.82 + var(--b) * 0.18));
+    outline: 1px dashed color-mix(in srgb, var(--sw-accent, #36bcf7) calc((1 - var(--b)) * 100%), transparent);
+    outline-offset: 3px;
+  }
+
+  /* ---- line: traço desenhado ---------------------------------------------- */
+  html.swarm-on [data-sw="line"]:not([data-sw-done]) {
+    transform: scaleX(var(--b));
+    transform-origin: left center;
+  }
+  html.swarm-on [data-sw="line"][data-sw-axis="y"]:not([data-sw-done]) {
+    transform: scaleY(var(--b));
+    transform-origin: center top;
+  }
+}
+
+/* ---- camada de cursores (não interativa) -------------------------------- */
+#sw-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  overflow: hidden;
+  contain: strict;
+}
+.sw-cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+  transition: opacity 0.18s linear;
+}
+.sw-cursor svg {
+  display: block;
+  fill: var(--c);
+  stroke: #05080d;
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55));
+}
+.sw-flag {
+  position: absolute;
+  left: 13px;
+  top: 16px;
+  padding: 3px 6px 3px 5px;
+  border-radius: 2px 7px 7px 7px;
+  background: var(--c);
+  color: #04101a;
+  font: 600 10px/1 var(--font-mono, ui-monospace, monospace);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.sw-dim {
+  position: absolute;
+  left: 13px;
+  top: 34px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: rgba(5, 8, 13, 0.88);
+  border: 1px solid var(--c);
+  color: #e7f6ff;
+  font: 500 9.5px/1 var(--font-mono, ui-monospace, monospace);
+  white-space: nowrap;
+}
+.sw-dim:empty {
+  display: none;
+}
+.sw-cursor.is-click::after {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: -9px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--c);
+  animation: sw-ripple 0.46s ease-out forwards;
+}
+@keyframes sw-ripple {
+  from {
+    transform: scale(0.35);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2.3);
+    opacity: 0;
+  }
+}
+.sw-ghost {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px dashed var(--sw-accent, #36bcf7);
+  background: rgba(54, 188, 247, 0.05);
+  border-radius: var(--sw-radius, 6px);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* ---- botão "pular animação" --------------------------------------------- */
+.sw-skip {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 85;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--sw-line, #1c2a3a);
+  background: rgba(8, 12, 18, 0.92);
+  color: #d7e3ee;
+  font: 500 12px/1 var(--font-mono, ui-monospace, monospace);
+  cursor: pointer;
+}
+.sw-skip:hover {
+  border-color: var(--sw-accent, #36bcf7);
+  color: #fff;
+}
+.sw-skip:focus-visible {
+  outline: 2px solid var(--sw-accent, #36bcf7);
+  outline-offset: 2px;
+}
+.sw-skip i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sw-accent, #36bcf7);
+  animation: sw-pulse 1.1s ease-in-out infinite;
+}
+@keyframes sw-pulse {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@media print, (prefers-reduced-motion: reduce) {
+  #sw-layer,
+  .sw-skip {
+    display: none;
+  }
+}

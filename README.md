@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfólio — Victor Theodoro
 
-## Getting Started
+Portfólio bilíngue (PT/EN) de Engenheiro de Software Júnior. Next.js 16 (App Router), React 19, TypeScript, Tailwind 4, next-intl.
 
-First, run the development server:
+## Comandos
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm ci            # instala dependências
+npm run dev       # desenvolvimento
+npm run lint      # ESLint
+npx tsc --noEmit  # tipos
+npm test          # testes do motor Swarm (node --test)
+npm run build     # build de produção
+npm start         # serve o build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estrutura
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- `src/app/[locale]` — layout, páginas, metadados, sitemap e robots.
+- `src/components` — seções (`sections/`), projetos/estudos de caso (`projects/`), SEO (`seo/`), layout e Swarm (`swarm/`).
+- `src/data` — projetos, skills e reconhecimentos tipados e localizados.
+- `messages/{pt,en}.json` — textos.
+- `src/lib/swarm` — motor da Swarm Build Experience (planner, timeline, controlador, renderer) com testes.
+- `docs/` — `CONTENT_AUDIT.md`, `PROJECT_EVIDENCE.md`, `SWARM.md`, `DESIGN_SYSTEM.md`, capturas.
+- `scripts/cv` — fontes HTML dos currículos (PDF gerado com Chrome headless para `public/cv`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Swarm Build Experience
 
-## Learn More
+Cursores distintos constroem as seções ao carregar e rolar. O conteúdo real está sempre no HTML; a camada é decorativa (`aria-hidden`, sem pointer events). Termina ao rolar rápido, navegar por âncora ou foco; respeita `prefers-reduced-motion`; tem botão "Pular animação" e controle no rodapé; versão reduzida em celular/baixa potência. Detalhes em `docs/SWARM.md`.
 
-To learn more about Next.js, take a look at the following resources:
+## Publicação
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Nada é publicado automaticamente. O deploy (ex.: Vercel) deve ser feito só com autorização do responsável. O rodapé mantém a assinatura BYTHE (`BytheFooterCredit`); não remover.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Conteúdo
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Afirmações sem comprovação estão marcadas em `docs/CONTENT_AUDIT.md`. Não adicionar métricas, clientes ou resultados não verificados.

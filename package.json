@@ -6,12 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node --experimental-strip-types --no-warnings --test src/lib/swarm/__tests__/*.test.ts"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
-    "@swc/helpers": "0.5.19",
-    "framer-motion": "^12.35.2",
     "next": "16.1.6",
     "next-intl": "^4.8.3",
     "react": "19.2.3",

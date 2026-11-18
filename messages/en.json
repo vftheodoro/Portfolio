@@ -1,156 +1,143 @@
 {
+  "meta": {
+    "title": "Victor Theodoro | Junior Software Engineer — Backend & Full Stack",
+    "description": "Victor Theodoro, junior software engineer (backend and full stack): TypeScript, Node.js, React, cloud, automation and applied AI. Founder of BYTHE.",
+    "keywords": "Victor Theodoro, junior software engineer, backend developer, full stack developer, TypeScript, Node.js, React, Next.js, automation, applied AI, BYTHE, Brazil",
+    "og_alt": "Portrait of Victor Theodoro, junior software engineer"
+  },
+  "common": {
+    "skip_to_content": "Skip to content",
+    "new_tab": "opens in a new tab",
+    "scroll_top": "Back to top of page",
+    "language": "Language"
+  },
   "nav": {
+    "aria": "Main navigation",
+    "home": "Victor Theodoro — go to top of page",
+    "menu_open": "Open navigation menu",
+    "menu_close": "Close navigation menu",
     "about": "About",
-    "experience": "Experience",
-    "bythe": "BYTHE",
-    "teaching": "Teaching",
-    "services": "Services",
     "projects": "Projects",
-    "achievements": "Achievements",
-    "press": "Press",
-    "skills": "Technology",
-    "contact": "Contact",
-    "hire_me": "Contact me"
+    "experience": "Experience",
+    "ai": "AI",
+    "stack": "Stack",
+    "recognition": "Recognition",
+    "contact": "Contact"
   },
   "hero": {
-    "eyebrow": "Technology • Education • Entrepreneurship",
+    "status": "Open to opportunities",
     "name": "Victor Theodoro",
-    "role": "Practical technology for businesses, institutions, and people.",
-    "description": "I work with support, infrastructure, maintenance, networking, training, and digital solutions in Brazil's Vale do Ribeira — from diagnosis to delivery.",
-    "location": "Vale do Ribeira • São Paulo, Brazil",
-    "cta_contact": "Chat on WhatsApp",
-    "cta_work": "Explore my work",
-    "photo_alt": "Professional portrait of Victor Theodoro",
-    "photo_caption": "Technology that solves problems.",
-    "photo_subcaption": "Technical support, education, and real projects.",
-    "proof": {
-      "support": { "title": "Business", "label": "support and infrastructure" },
-      "education": { "title": "Teacher", "label": "technology courses" },
-      "solutions": { "title": "Builder", "label": "end-to-end projects" }
-    }
+    "role": "Junior Software Engineer",
+    "headline": "Backend & Full Stack | Cloud, Automation & Applied AI | TypeScript, Node.js, React | Founder at BYTHE",
+    "lead": "I solve real problems with software engineering: I understand the context, design the solution and deliver web systems, APIs and automations with TypeScript, Node.js and React.",
+    "stack_label": "Main technologies",
+    "cta_projects": "View projects",
+    "cta_cv": "Download résumé",
+    "cta_contact": "Professional contact",
+    "photo_alt": "Portrait of Victor Theodoro: a young man with curly hair, a short beard and a black jacket, arms crossed, against a gray background",
+    "education_label": "Education",
+    "education_etec": "Systems Development Technician, Etec Registro",
+    "education_fatec": "Multiplatform Software Development, Fatec Registro (expected graduation: Dec 2028)",
+    "location_label": "Location",
+    "location_value": "Vale do Ribeira, SP, Brazil. Remote, Curitiba or São Paulo."
   },
   "about": {
-    "title": "About me",
-    "subtitle": "Technical versatility focused on execution and trust",
-    "lead": "I am Victor Theodoro, a technology specialist, teacher, and founder of BYTHE.",
-    "bio": "My career grew from hands-on work: solving computer, network, infrastructure, and system problems to keep people and businesses working. In Vale do Ribeira, I have built trust through service, referrals, and professional training.",
-    "bio2": "I currently combine IT services, teaching technology courses, and a degree in Multiplatform Software Development at Fatec Registro. I also build projects connecting software, hardware, and social impact, such as WACS.",
-    "download_cv": "Download résumé",
-    "visit_bythe": "Visit BYTHE",
-    "highlights": {
-      "business": { "title": "Technology for business", "description": "Support, maintenance, and infrastructure in clear language, focused on business continuity." },
-      "teaching": { "title": "Education and training", "description": "Experience teaching computing, productivity, employability, and technology." },
-      "builder": { "title": "Complete solutions", "description": "Connecting software, electronics, infrastructure, and real needs in a single project." }
-    }
-  },
-  "experience": {
-    "title": "Professional experience",
-    "subtitle": "Work that demonstrates real-world execution",
-    "corporate": { "eyebrow": "Corporate support", "title": "Business operations", "description": "Technical service in corporate environments, including recurring support for the Pernambucanas store in Registro through a field-service partnership." },
-    "education": { "eyebrow": "Teacher and instructor", "title": "Professional technology education", "description": "End-to-end class planning and teaching in São Paulo State Government programs and initiatives connected to Centro Paula Souza, Fundação FAT, city governments, and regional institutions." },
-    "bythe": { "eyebrow": "Entrepreneurship", "title": "Founder of BYTHE", "description": "A technology solutions brand created to support companies with infrastructure, modernization, support, and digital projects." },
-    "projects": { "eyebrow": "Applied technology", "title": "WACS and Printh3D", "description": "Projects demonstrating integration across development, automation, accessibility, management, and business operations." }
-  },
-  "bythe": {
-    "eyebrow": "Company founded by Victor Theodoro",
-    "logo_link_label": "Visit BYTHE's official website",
-    "headline": "Technology to sell, operate, and grow better.",
-    "description": "BYTHE turns technical expertise into solutions for companies in Vale do Ribeira, Brazil: support, infrastructure, modernization, and digital projects with close, responsible service.",
-    "services_title": "Business solutions",
-    "services": {
-      "support": "IT support and maintenance",
-      "infrastructure": "Infrastructure, networks, and equipment",
-      "modernization": "Process modernization and automation",
-      "projects": "Websites, systems, and tailored projects"
-    },
-    "cta": "Visit BYTHE",
-    "contact_cta": "Discuss a project"
-  },
-  "teaching": {
-    "title": "Teacher and instructor",
-    "subtitle": "Practical, accessible technology education connected to the workplace",
-    "eyebrow": "Classroom experience",
-    "lead": "From preparing the content to the class's final assessment.",
-    "description": "I teach technology and professional training courses to different audiences. Beyond teaching, I handle planning, materials, exercises, tests, and student follow-up.",
-    "subjects": {
-      "computing": "Computer basics",
-      "windows": "Windows",
-      "excel": "Excel",
-      "internet": "Internet",
-      "productivity": "Productivity",
-      "employability": "Employability",
-      "technology": "Technology"
-    },
-    "responsibilities_title": "Teaching responsibilities",
-    "responsibilities": {
-      "planning": "Class planning and organization of the learning sequence.",
-      "exercises": "Creation of materials, practical activities, and exercises.",
-      "assessments": "Preparation and application of tests and assessments.",
-      "attendance": "Attendance control and participation tracking.",
-      "evaluation": "Student development assessment and individual guidance."
-    },
-    "institutions": "Work in initiatives related to Centro Paula Souza, Fundação FAT, the São Paulo State Government, and municipal public institutions, including participation in graduation ceremonies.",
-    "credentials_title": "Education and credentials",
-    "credentials": {
-      "fatec": {
-        "status": "In progress",
-        "title": "Multiplatform Software Development",
-        "institution": "Fatec Registro"
-      },
+    "label": "About",
+    "title": "From technical training to software engineering",
+    "accent": "software engineering",
+    "p1": "I am a junior software engineer focused on backend and full stack. I have experience with web and mobile, APIs, integrations, automation, cloud, databases and hardware projects.",
+    "p2": "My foundation comes from the Systems Development technical course at Etec Registro, and continues in the Multiplatform Software Development degree at Fatec Registro, with graduation expected in December 2028.",
+    "p3": "Alongside that, I founded BYTHE, where I apply engineering to real problems: I gather requirements, make technical decisions, and deliver and evolve solutions together with clients.",
+    "goal_label": "Goal",
+    "goal": "A Junior Software Engineer, Backend or Full Stack role, including remote, in Curitiba or São Paulo.",
+    "education_label": "Education",
+    "education": {
       "etec": {
-        "status": "Completed",
-        "title": "Technical Degree in Systems Development — ETIM",
-        "institution": "Etec Registro"
+        "status": "Technical education",
+        "title": "Systems Development Technician",
+        "org": "Etec Registro"
       },
-      "cisco": {
-        "status": "Certifications and coursework",
-        "title": "Networking, network defense, and security",
-        "institution": "Cisco Networking Academy"
+      "fatec": {
+        "status": "Degree in progress · expected graduation: Dec 2028",
+        "title": "Multiplatform Software Development",
+        "org": "Fatec Registro"
+      }
+    },
+    "approach_label": "Engineering approach",
+    "approach": {
+      "requirements": {
+        "title": "Requirements first",
+        "text": "I start by understanding the problem and who will use the solution, before choosing technology."
+      },
+      "decisions": {
+        "title": "Technical decisions",
+        "text": "I prefer the simplest solution that meets the current need, and I explain the choices made."
+      },
+      "quality": {
+        "title": "Tests and quality",
+        "text": "I validate what I build with tests and review before delivering."
+      },
+      "communication": {
+        "title": "Communication",
+        "text": "I align decisions and deliveries with clients and teammates in clear language."
       }
     }
   },
-  "services": {
-    "title": "How I can help",
-    "subtitle": "Direct support to solve, organize, and modernize your technology",
-    "support_title": "Support and maintenance",
-    "support_desc": "Diagnosis, repair, and prevention for computers and workplace technology.",
-    "infrastructure_title": "Infrastructure and networks",
-    "infrastructure_desc": "Organizing technology for greater stability, security, and efficiency.",
-    "training_title": "Courses and training",
-    "training_desc": "Practical programs adapted to each audience, institution, and learning goal.",
-    "solutions_title": "Systems and modernization",
-    "solutions_desc": "Websites, systems, automations, and tool implementation when the operation needs a tailored solution.",
-    "process_title": "A simple, responsible process",
-    "step1_title": "Diagnosis", "step1_desc": "I understand the problem, environment, and real priority.",
-    "step2_title": "Action plan", "step2_desc": "I define scope, timing, and investment clearly.",
-    "step3_title": "Execution", "step3_desc": "I implement, test, and document the work.",
-    "step4_title": "Follow-up", "step4_desc": "I guide the team and follow the solution's evolution.",
-    "cta": "Need to solve or organize your company's technology?",
-    "card_cta": "Discuss your needs"
+  "experience": {
+    "label": "Experience",
+    "title": "Engineering experience",
+    "accent": "Engineering",
+    "subtitle": "Main role, a multidisciplinary project and complementary experience.",
+    "bythe": {
+      "period": "Founder",
+      "role": "Engineering and development",
+      "title": "BYTHE",
+      "description": "Founding and hands-on work in engineering and development: requirements gathering and analysis of real problems, full stack web systems with TypeScript, React, Next.js and Node.js, APIs, databases and integrations, infrastructure and cloud, automation, technical decisions, evolution of solutions, and client communication through to delivery.",
+      "skills": [
+        "Requirements and analysis",
+        "Full stack",
+        "APIs and databases",
+        "Integrations",
+        "Infrastructure and cloud",
+        "Automation",
+        "Technical decisions",
+        "Communication and delivery"
+      ],
+      "cta": "Visit bythe.tech"
+    },
+    "wacs": {
+      "period": "2025",
+      "role": "Multidisciplinary project",
+      "title": "WACS",
+      "description": "Assistive technology system for wheelchairs, built by a team at Etec Registro. It combines a mobile app, Arduino hardware and accessibility mapping; academic prototype presented at FETEPS (7th place, as reported).",
+      "skills": ["React Native", "Arduino", "Bluetooth", "Firebase", "Software + hardware"],
+      "cta": "See in projects"
+    },
+    "teaching": {
+      "period": "2026",
+      "role": "Previous experience",
+      "title": "Technology and Computing teacher and instructor",
+      "description": "Worked as a Technology and Computing teacher and instructor in professional qualification courses, in initiatives tied to Centro Paula Souza and Fundo Social, during periods in 2026. The experience strengthened technical and teaching communication."
+    }
   },
-  "projects": { "title": "Featured projects", "subtitle": "Engineering, impact, and applied solutions", "featured": "Featured project", "awarded": "Recognized", "visit_site": "Visit project", "view_code": "View code", "view_instagram": "Instagram" },
-  "achievements": { "title": "Achievements", "subtitle": "Recognition throughout my journey" },
-  "press": { "title": "Press", "subtitle": "Public records of projects and results", "read_more": "Open source", "view_more": "View all coverage", "view_less": "Show less" },
-  "skills": { "title": "Technical foundation", "subtitle": "Technology and tools supporting my work", "categories": { "frontend": "Interfaces", "backend": "Applications", "database": "Cloud and data", "tools": "Infrastructure and tools" } },
   "contact": {
-    "title": "Let's talk",
-    "subtitle": "Tell me what you need. I will assess the scenario and respond directly.",
-    "primary_title": "Services and projects",
-    "primary_text": "For support, infrastructure, courses, partnerships, or projects, WhatsApp is the fastest route.",
-    "whatsapp_cta": "Chat on WhatsApp",
-    "bythe_cta": "Visit BYTHE",
-    "social_title": "Follow my work",
-    "location": "Jacupiranga and Vale do Ribeira, São Paulo, Brazil"
+    "label": "Contact",
+    "title": "Professional contact",
+    "accent": "Professional",
+    "lead": "Open to opportunities as a Junior Software Engineer, Backend or Full Stack, including remote, in Curitiba or São Paulo. The most direct way to reach me is e-mail or LinkedIn.",
+    "channels_label": "Channels",
+    "email_label": "E-mail",
+    "cv_label": "Résumé (PDF)",
+    "cv_value": "Download résumé",
+    "bythe_label": "Side activity",
+    "bythe_text": "I am also the founder of BYTHE, a company that builds websites and systems in Vale do Ribeira, Brazil.",
+    "bythe_cta": "Visit BYTHE"
   },
   "footer": {
-    "rights": "All rights reserved.",
-    "built_with": "Built with purpose in Vale do Ribeira.",
-    "tagline": "Practical technology, education, and solutions for people who make things happen.",
-    "bythe_link": "Visit BYTHE's website",
+    "tagline": "Junior Software Engineer · Backend & Full Stack",
+    "location": "Vale do Ribeira, SP · Brazil",
     "nav_title": "Navigation",
-    "services_title": "What I do",
     "contact_title": "Contact",
-    "location": "Vale do Ribeira, São Paulo — Brazil",
-    "hire_me": "Contact me"
+    "rights": "All rights reserved."
   }
 }

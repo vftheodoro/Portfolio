@@ -1,32 +1,32 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { FaArrowUp } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
 
+/** Botão "voltar ao topo": aparece após 400 px de rolagem; fora disso fica fora da ordem de tabulação. */
 export default function ScrollToTop() {
+  const t = useTranslations("common");
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 400);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <AnimatePresence>
-      {visible && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 right-6 z-50 p-3 bg-primary text-background rounded-full shadow-lg hover:bg-primary-hover transition-colors cursor-pointer"
-          aria-label="Scroll to top"
-        >
-          <FaArrowUp size={18} />
-        </motion.button>
-      )}
-    </AnimatePresence>
+    <button
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label={t("scroll_top")}
+      aria-hidden={!visible}
+      tabIndex={visible ? 0 : -1}
+      className={`fixed bottom-5 right-5 z-50 flex size-11 items-center justify-center rounded-[var(--radius-md)] border border-border-strong bg-surface text-foreground transition-[opacity,border-color,color] hover:border-primary hover:text-primary motion-reduce:transition-none ${
+        visible ? "opacity-100" : "pointer-events-none opacity-0"
+      }`}
+    >
+      <FaArrowUp size={14} aria-hidden="true" />
+    </button>
   );
 }

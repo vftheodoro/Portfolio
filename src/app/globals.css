@@ -1,18 +1,48 @@
 @import "tailwindcss";
 
+/*
+ * Design system — "ferramenta de engenharia, com acabamento editorial".
+ * Fundo escuro frio, linhas de 1px, acento azul BYTHE (#36BCF7), tipografia
+ * mono para rótulos/dados e serifada itálica só em destaques. Veja
+ * docs/DESIGN_SYSTEM.md. Evitar: gradientes de enfeite, glass, brilho.
+ */
 @theme inline {
-  --color-background: #0a0a0a;
-  --color-foreground: #f5f5f5;
-  --color-muted: #9ca3af;
-  --color-surface: #111827;
-  --color-surface-light: #1f2937;
-  --color-primary: #06b6d4;
-  --color-primary-hover: #22d3ee;
-  --color-accent: #8b5cf6;
-  --color-accent-hover: #a78bfa;
-  --color-border: #1e293b;
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono);
+  /* superfícies */
+  --color-background: #07090d;
+  --color-surface: #0c1118;
+  --color-surface-light: #121a26;
+  --color-border: #1c2a3a;
+  --color-border-strong: #2b4058;
+  /* texto */
+  --color-foreground: #e8eef5;
+  --color-muted: #8a9bb0;
+  --color-faint: #5d6f84;
+  /* acento (identidade BYTHE) */
+  --color-primary: #36bcf7;
+  --color-primary-hover: #7ad4fb;
+  --color-primary-ink: #04121c;
+  /* legado: mantido só para não quebrar componentes antigos durante a migração */
+  --color-accent: #a78bfa;
+  --color-accent-hover: #c4b5fd;
+  /* semânticos */
+  --color-ok: #34d399;
+  --color-warn: #fbbf24;
+
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+}
+
+:root {
+  /* tokens consumidos pelo Swarm (src/components/swarm/swarm.css) */
+  --sw-accent: #36bcf7;
+  --sw-line: #1c2a3a;
+  --sw-fill: rgba(18, 26, 38, 0.55);
+  --sw-radius: 6px;
+  --gutter: clamp(16px, 4vw, 40px);
 }
 
 html {
@@ -20,64 +50,89 @@ html {
   overflow-x: clip;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 section[id] {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 5rem;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-sans);
   overflow-x: hidden;
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-surface-light);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-muted);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
   background: var(--color-primary);
-  color: var(--color-background);
+  color: var(--color-primary-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+}
+
+/* ---- utilitários do sistema ------------------------------------------- */
+
+/* contêiner com grade rígida */
+.wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* rótulo mono em caixa alta: "01 / SOBRE" */
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* destaque editorial dentro de títulos */
+.serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* linha fina com marcas de canto (+) nas pontas */
+.rule {
+  height: 1px;
+  background: var(--color-border);
 }
 
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.glow-primary {
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-}
-
-.animate-float {
-  animation: float 4s ease-in-out infinite;
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
 }

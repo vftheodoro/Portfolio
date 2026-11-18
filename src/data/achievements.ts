@@ -1,131 +1,122 @@
-export interface Achievement {
-  id: string;
-  icon: "trophy" | "medal" | "star" | "award";
-  title: {
-    pt: string;
-    en: string;
-  };
-  description: {
-    pt: string;
-    en: string;
-  };
-  date: {
-    pt: string;
-    en: string;
-  };
+import type { L } from "./l10n";
+
+/*
+ * Reconhecimentos verificáveis. Só entra o que tem fonte pública e foi lido na
+ * auditoria (docs/CONTENT_AUDIT.md, seções 3.8 e 3.9).
+ *
+ * Omitidos de propósito (para o chefe decidir com fonte):
+ * - 1º lugar nas FETEC 2024 e 2025 (votação popular) e RoboCode interno de 2023:
+ *   só constam do currículo, sem fonte pública.
+ * - Moção de Aplauso: o post é de um vereador e a moção é à Etec de Registro, não cita
+ *   o WACS nem Victor; falta documento oficial.
+ * - Cartões de CNN Brasil e Estadão: apontavam para posts do Instagram e usavam
+ *   imagens trocadas; não são republicados.
+ * - Fisiculturismo e demais conquistas pessoais não técnicas.
+ */
+
+export interface SourceLink {
+  label: L;
+  href: string;
+  /** Observação curta e honesta sobre o que a fonte confirma. */
+  note?: L;
 }
 
-export const achievements: Achievement[] = [
+export interface Recognition {
+  id: string;
+  year: string;
+  title: L;
+  subject: L;
+  statement: L;
+  sources: SourceLink[];
+}
+
+export const recognitions: Recognition[] = [
   {
-    id: "feteps",
-    icon: "trophy",
-    title: {
-      pt: "7º Lugar — 16ª FETEPS",
-      en: "7th Place — 16th FETEPS",
+    id: "feteps-2025",
+    year: "2025",
+    title: { pt: "7º lugar na 16ª FETEPS", en: "7th place at the 16th FETEPS" },
+    subject: { pt: "Projeto WACS · Etec Registro · Centro Paula Souza", en: "WACS project · Etec Registro · Centro Paula Souza" },
+    statement: {
+      pt: "Resultado publicado pela Etec Registro em matéria que cita Victor entre os estudantes da equipe. Reconhecimento da equipe do projeto, não individual.",
+      en: "Result published by Etec Registro in an article that names Victor among the team's students. Recognition of the project team, not individual.",
     },
-    description: {
-      pt: "Projeto WACS classificado entre os destaques da feira de tecnologia do Centro Paula Souza.",
-      en: "WACS ranked among the highlighted projects at Centro Paula Souza's technology fair.",
-    },
-    date: {
-      pt: "Outubro 2025",
-      en: "October 2025",
-    },
+    sources: [
+      {
+        label: { pt: "Etec Registro: alunos são destaques na 16ª FETEPS", en: "Etec Registro: students stand out at the 16th FETEPS" },
+        href: "https://etecregistro.cps.sp.gov.br/alunos-da-etec-de-registro-sao-destaques-na-16a-feira-de-tecnologia-do-centro-paula-souza/",
+        note: { pt: "confirma o 7º lugar e cita Victor", en: "confirms 7th place and names Victor" },
+      },
+      {
+        label: { pt: "FETEPS: página do projeto WACS", en: "FETEPS: WACS project page" },
+        href: "https://feteps.cps.sp.gov.br/projetos/wacs-autonomia-inteligente-para-pcds/",
+        note: { pt: "página oficial do projeto na feira", en: "official project page at the fair" },
+      },
+    ],
   },
   {
-    id: "fetec_2025",
-    icon: "trophy",
+    id: "robocode-2023",
+    year: "2023",
+    title: { pt: "2º lugar no 11º Torneio de RoboCode", en: "2nd place at the 11th RoboCode Tournament" },
+    subject: { pt: "Robô BarbieScript · Etec Registro · Centro Paula Souza", en: "BarbieScript robot · Etec Registro · Centro Paula Souza" },
+    statement: {
+      pt: "Resultado de 29/09/2023 publicado pelo Centro Paula Souza, com a equipe da Etec Registro, da qual Victor fez parte.",
+      en: "Result from 2023-09-29 published by Centro Paula Souza, listing the Etec Registro team that Victor was part of.",
+    },
+    sources: [
+      {
+        label: { pt: "Robótica CPS: 11º Torneio de RoboCode", en: "CPS Robotics: 11th RoboCode Tournament" },
+        href: "https://robotica.cps.sp.gov.br/robocode-2023/",
+        note: { pt: "resultado e equipe", en: "result and team" },
+      },
+    ],
+  },
+];
+
+export interface PressRef {
+  id: string;
+  outlet: string;
+  title: L;
+  href: string;
+  note?: L;
+}
+
+/** Matérias e páginas oficiais sobre o WACS (todas com resposta HTTP 200 e texto lido na auditoria). */
+export const pressRefs: PressRef[] = [
+  {
+    id: "cps",
+    outlet: "Centro Paula Souza",
     title: {
-      pt: "1º Lugar — 6ª FETEC (Votação Popular)",
-      en: "1st Place — 6th FETEC (Popular Vote)",
+      pt: "Grupo da Etec Registro cria cadeira de rodas com sistema de acessibilidade inteligente",
+      en: "Etec Registro group creates a wheelchair with an intelligent accessibility system",
     },
-    description: {
-      pt: "Melhor projeto por votação popular com o WACS na FETEC da ETEC de Registro.",
-      en: "Best project by popular vote with WACS at FETEC, ETEC de Registro.",
-    },
-    date: {
-      pt: "Outubro 2025",
-      en: "October 2025",
-    },
+    href: "https://www.cps.sp.gov.br/grupo-da-etec-registro-cria-cadeira-de-rodas-com-sistema-de-acessibilidade-inteligente/",
+    note: { pt: "cita Victor", en: "names Victor" },
   },
   {
-    id: "mocao",
-    icon: "award",
+    id: "etec",
+    outlet: "Etec Registro",
     title: {
-      pt: "Moção de Aplauso — Câmara Municipal",
-      en: "Motion of Applause — City Council",
+      pt: "Alunos da Etec de Registro são destaques na 16ª Feira de Tecnologia do Centro Paula Souza",
+      en: "Etec Registro students stand out at Centro Paula Souza's 16th technology fair",
     },
-    description: {
-      pt: "Reconhecimento da Câmara Municipal de Registro pelo 7º lugar na FETEPS e inovação no Vale do Ribeira.",
-      en: "Recognition from the Registro City Council for the 7th place at FETEPS and innovation in Vale do Ribeira.",
-    },
-    date: {
-      pt: "Novembro 2025",
-      en: "November 2025",
-    },
+    href: "https://etecregistro.cps.sp.gov.br/alunos-da-etec-de-registro-sao-destaques-na-16a-feira-de-tecnologia-do-centro-paula-souza/",
+    note: { pt: "cita Victor", en: "names Victor" },
   },
   {
-    id: "fetec_2024",
-    icon: "trophy",
-    title: {
-      pt: "1º Lugar — 5ª FETEC (Votação Popular)",
-      en: "1st Place — 5th FETEC (Popular Vote)",
-    },
-    description: {
-      pt: "Melhor projeto por votação popular com o projeto 'Educação Sexual'.",
-      en: "Best project by popular vote with the 'Sexual Education' project.",
-    },
-    date: {
-      pt: "Outubro 2024",
-      en: "October 2024",
-    },
+    id: "abc",
+    outlet: "ABC do ABC",
+    title: { pt: "Etec projeta cadeira de rodas inteligente", en: "Etec designs an intelligent wheelchair" },
+    href: "https://abcdoabc.com.br/etec-projeta-cadeira-de-rodas-inteligente/",
+    note: { pt: "cita Victor", en: "names Victor" },
   },
   {
-    id: "fisiculturismo",
-    icon: "medal",
+    id: "regiao-hoje",
+    outlet: "Região Hoje",
     title: {
-      pt: "1º Lugar — Campeonato Brasileiro de Fisiculturismo",
-      en: "1st Place — Brazilian Bodybuilding Championship",
+      pt: "Grupo de Etec cria cadeira de rodas com sistema de acessibilidade inteligente",
+      en: "Etec group creates a wheelchair with an intelligent accessibility system",
     },
-    description: {
-      pt: "Campeão na categoria Men's Physique Sub Junior (até 18 anos) no 7º Campeonato Brasileiro.",
-      en: "Champion in Men's Physique Sub Junior (under 18) at the 7th Brazilian Championship.",
-    },
-    date: {
-      pt: "Setembro 2024",
-      en: "September 2024",
-    },
-  },
-  {
-    id: "robocode_estadual",
-    icon: "medal",
-    title: {
-      pt: "2º Lugar — Torneio Estadual de RoboCode",
-      en: "2nd Place — State RoboCode Tournament",
-    },
-    description: {
-      pt: "Vice-campeão no Torneio Estadual de Robótica do Centro Paula Souza.",
-      en: "Runner-up at the Centro Paula Souza State Robotics Tournament.",
-    },
-    date: {
-      pt: "Setembro 2023",
-      en: "September 2023",
-    },
-  },
-  {
-    id: "robocode_local",
-    icon: "star",
-    title: {
-      pt: "1º Lugar — Campeonato de RoboCode ETEC",
-      en: "1st Place — ETEC RoboCode Championship",
-    },
-    description: {
-      pt: "Campeão do campeonato interno de RoboCode da ETEC de Registro.",
-      en: "Champion of the ETEC de Registro internal RoboCode championship.",
-    },
-    date: {
-      pt: "Agosto 2023",
-      en: "August 2023",
-    },
+    href: "https://www.regiaohoje.com.br/noticia/38090/santa-barbara/brasil/grupo-de-etec-cria-cadeira-de-rodas-com-sistema-de-acessibilidade-inteligente.html",
+    note: { pt: "texto equivalente ao da matéria do CPS", en: "text equivalent to the CPS article" },
   },
 ];
