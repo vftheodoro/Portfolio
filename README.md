@@ -1,18 +1,30 @@
-# Portfólio — Victor Theodoro
+# Victor Theodoro — Portfólio de Engenharia de Software
 
-Portfólio bilíngue (PT/EN) de Engenheiro de Software Júnior. Next.js 16 (App Router), React 19, TypeScript, Tailwind 4, next-intl.
+Portfólio bilíngue (PT/EN) de Victor Theodoro, Engenheiro de Software Júnior (Backend & Full Stack): projetos com estudos de caso, experiência, uso responsável de IA, stack e contato. Next.js 16 (App Router), React 19, TypeScript, Tailwind 4 e next-intl.
+
+**Portfólio:** https://vftheodoro.vercel.app/pt · **English:** https://vftheodoro.vercel.app/en · **LinkedIn:** https://www.linkedin.com/in/vftheodoro/
+
+## Executar localmente
+
+```bash
+git clone https://github.com/vftheodoro/Portfolio.git
+cd Portfolio
+npm ci
+npm run dev
+```
+
+Abra http://localhost:3000. As rotas são localizadas em `/pt` e `/en`.
 
 ## Comandos
 
-```bash
-npm ci            # instala dependências
-npm run dev       # desenvolvimento
-npm run lint      # ESLint
-npx tsc --noEmit  # tipos
-npm test          # testes do motor Swarm (node --test)
-npm run build     # build de produção
-npm start         # serve o build
-```
+| Comando | Finalidade |
+| --- | --- |
+| `npm run dev` | Desenvolvimento local |
+| `npm run lint` | ESLint |
+| `npx tsc --noEmit` | Verificação de tipos |
+| `npm test` | Testes do motor Swarm (`node --test`) |
+| `npm run build` | Build de produção |
+| `npm start` | Serve o build |
 
 ## Estrutura
 
@@ -28,10 +40,6 @@ npm start         # serve o build
 
 Cursores distintos constroem as seções ao carregar e rolar. O conteúdo real está sempre no HTML; a camada é decorativa (`aria-hidden`, sem pointer events). Termina ao rolar rápido, navegar por âncora ou foco; respeita `prefers-reduced-motion`; tem botão "Pular animação" e controle no rodapé; versão reduzida em celular/baixa potência. Detalhes em `docs/SWARM.md`.
 
-## Publicação
+## Manutenção e conteúdo
 
-Nada é publicado automaticamente. O deploy (ex.: Vercel) deve ser feito só com autorização do responsável. O rodapé mantém a assinatura BYTHE (`BytheFooterCredit`); não remover.
-
-## Conteúdo
-
-Afirmações sem comprovação estão marcadas em `docs/CONTENT_AUDIT.md`. Não adicionar métricas, clientes ou resultados não verificados.
+Edite projetos em `src/data` e textos em `messages`, revisando PT e EN juntos. Afirmações sem comprovação estão marcadas em `docs/CONTENT_AUDIT.md`; não adicionar métricas, clientes ou resultados não verificados, e descrever com clareza o que é implementado, protótipo e planejado. Nenhuma credencial deve ser commitada. O rodapé mantém a assinatura BYTHE (`BytheFooterCredit`); não remover.
